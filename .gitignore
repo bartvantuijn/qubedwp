@@ -1,0 +1,12 @@
+/*
+!/wp-content
+/wp-content/*
+!/wp-content/plugins
+/wp-content/plugins/*
+!/wp-content/plugins/advanced-custom-fields-pro
+!/wp-content/themes
+/wp-content/themes/*
+!/wp-content/themes/standardwp
+!/wp-content/themes/standardwp-child
+!/.gitignore
+!/README.md

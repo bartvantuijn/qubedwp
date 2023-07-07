@@ -1,0 +1,119 @@
+/*----- RESET -----*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/*----- ELEMENTS -----*/
+/*----- TYPOGRAPHY -----*/
+/*----- COLORS -----*/
+.bg-primary {
+    background-color: var(--bs-primary)!important;
+}
+
+.bg-secondary {
+    background-color: var(--bs-secondary)!important;
+}
+
+.text-body {
+    color: var(--bs-body-color)!important;
+}
+
+.text-primary {
+    color: var(--bs-primary)!important;
+}
+
+.text-secondary {
+    color: var(--bs-secondary)!important;
+}
+
+/*----- BUTTONS -----*/
+.btn {
+    border: 0;
+}
+
+.btn-primary {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-primary-hover);
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    background-color: var(--bs-white);
+}
+
+.btn-secondary {
+    color: var(--bs-white);
+    background-color: var(--bs-secondary);
+}
+
+.btn-secondary:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-secondary-hover);
+}
+
+.btn-outline-secondary {
+    color: var(--bs-secondary);
+    background-color: var(--bs-white);
+}
+
+/*----- NAVBAR -----*/
+.navbar-brand,
+.navbar-brand img {
+    height: 40px!important;
+}
+
+.navbar-nav .nav-item > .nav-link {
+    color: var(--bs-body-color);
+    padding: .5rem 1rem;
+}
+
+.navbar-nav:not(#menu-header-menu) .nav-item > .nav-link {
+    color: var(--bs-white);
+    padding: .25rem 1rem;
+}
+
+.navbar-nav .nav-item.cta-item > *:not(.dropdown-menu) {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+.navbar-nav .nav-item.cta-item > *:not(.dropdown-menu):hover {
+    color: var(--bs-primary);
+    background-color: var(--bs-white);
+}
+
+.navbar-nav:not(#menu-header-menu) .nav-item.cta-item > *:not(.dropdown-menu) {
+    color: var(--bs-primary);
+    background-color: var(--bs-white);
+}
+
+.navbar-nav:not(#menu-header-menu) .nav-item.cta-item > *:not(.dropdown-menu):hover {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+/*----- FOOTER -----*/
+.footer-brand,
+.footer-brand img {
+    height: 100px!important;
+}
