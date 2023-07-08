@@ -31,7 +31,7 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 $headerMenu = wp_get_nav_menu_object('header-menu');
 $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
-<div class="sticky-top" style="margin-bottom:<?php echo $headerMenuFloat ? '-8.5rem' : '0rem'; ?>;">
+<div id="nav-wrapper" class="sticky-top" style="margin-bottom:<?php echo $headerMenuFloat ? '-8.5rem' : '0rem'; ?>;">
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 

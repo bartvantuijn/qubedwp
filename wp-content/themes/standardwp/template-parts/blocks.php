@@ -63,7 +63,18 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
 else :
 
-    // echo 'No content blocks found...';
-    echo '<div></div>';
+    //echo 'No content blocks found...';
+    echo '<div id="block"></div>';
 
-endif;
+    $headerMenu = wp_get_nav_menu_object('header-menu');
+    $headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
+
+    if ( $headerMenuFloat ) : ?>
+
+        <script type="text/javascript">
+            $('#block').height($('#nav-wrapper').height());
+        </script>
+
+    <?php endif; ?>
+
+<?php endif; ?>
