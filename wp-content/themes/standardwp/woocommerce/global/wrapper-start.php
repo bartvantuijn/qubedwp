@@ -23,8 +23,8 @@ $template = wc_get_theme_slug_for_templates();
 
 switch ( $template ) {
 	case 'standardwp':
-        echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';
         get_template_part('template-parts/blocks');
+        echo '<div id="primary" class="content-area container py-5"><main id="main" class="site-main" role="main">';
         break;
     default:
         echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';

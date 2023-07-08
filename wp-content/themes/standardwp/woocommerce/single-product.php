@@ -21,9 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="block-single-product py-5">
-
-	<div class="container">
+<div class="block-single-product">
 
 	<?php
 		/**
@@ -59,8 +57,6 @@ get_header( 'shop' ); ?>
 		 */
 		//do_action( 'woocommerce_sidebar' );
 	?>
-
-	</div>
 
 </div>
 
