@@ -72,7 +72,11 @@ else :
     if ( $headerMenuFloat ) : ?>
 
         <script type="text/javascript">
-            $('#block').height($('#nav-wrapper').height());
+            var total = 0;
+            $('.navbar').each(function(){
+                total += $(this).height();
+            });
+            $('#block').height(total);
         </script>
 
     <?php endif; ?>
