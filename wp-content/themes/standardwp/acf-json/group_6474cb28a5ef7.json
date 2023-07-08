@@ -3,50 +3,6 @@
     "title": "Blokken",
     "fields": [
         {
-            "key": "field_64567663b1c7d",
-            "label": "Type blok",
-            "name": "block_type",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "block-text": "Tekst",
-                "block-slider": "Slider",
-                "block-text-image": "Tekst + afbeelding",
-                "block-text-image-overflow": "Tekst + afbeelding overloop",
-                "block-text-slider": "Tekst + slider",
-                "block-columns-icons": "Tekstblokken met iconen (kolommen)",
-                "block-cta": "Call to Action",
-                "block-image-slider": "Afbeelding slider",
-                "block-images-lightbox": "Afbeeldingen (lightbox)",
-                "block-show-rooms": "Ruimtes",
-                "block-search-filter": "Ruimtes zoeken",
-                "block-featured-pages": "Uitgelichte pagina's",
-                "block-embed": "Embed (code)",
-                "block-contact": "Contact blok",
-                "block-location-map": "Alle locaties (kaart) - voorgedefinieerd",
-                "block-location-list": "Alle locaties (lijst) - voorgedefinieerd",
-                "block-project-list": "Alle projecten (lijst) - voorgedefinieerd",
-                "block-testimonials": "Testimonials - voorgedefinieerd",
-                "block-other-services": "Overige diensten - voorgedefinieerd",
-                "block-quotation-form": "Offerte formulier - voorgedefinieerd"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 1,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_6474cb29c1709",
             "label": "Blokken",
             "name": "blokken",
@@ -446,6 +402,28 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_64a9c61f97bd9",
+                            "label": "Hoogte",
+                            "name": "hoogte",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_64a9c592ec2d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_6474d642e8589",
                             "label": "Slides",
                             "name": "slides",
@@ -633,5 +611,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688729993
+    "modified": 1688848933
 }

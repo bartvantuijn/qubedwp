@@ -5,6 +5,9 @@
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
 
+// GET BLOCK DATA
+$height = get_sub_field('hoogte');
+
 if ( have_rows('slides') ) : ?>
 
     <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel">
@@ -22,7 +25,7 @@ if ( have_rows('slides') ) : ?>
                 $text = get_sub_field('tekst');
                 $image = get_sub_field('afbeelding'); ?>
 
-                    <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:450px;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
+                    <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
 
                         <div class="container">
 

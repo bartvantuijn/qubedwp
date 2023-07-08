@@ -58,6 +58,26 @@
             "placeholder": ""
         },
         {
+            "key": "field_64a9c592ec2d6",
+            "label": "Hoogte",
+            "name": "hoogte",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Voor de minimale hoogte van het blok in (px, em, rem, %)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6474d5a209d82",
             "label": "Tekst",
             "name": "tekst",
@@ -96,5 +116,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1685378479
+    "modified": 1688848919
 }
