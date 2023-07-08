@@ -52,7 +52,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
                 <?php else : ?>
 
-                    <a class="navbar-brand p-0 <?php echo $headerMenuLogoCenter ? 'position-absolute top-0 start-50 translate-middle-x' : ''; ?>" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                    <a class="navbar-brand p-0 <?php echo $headerMenuLogoCenter ? 'position-absolute top-0 start-50 translate-middle-x' : ''; ?>" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="line-height:37px;">
                         <?php bloginfo('name'); ?>
                     </a>
 

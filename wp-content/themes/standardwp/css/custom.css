@@ -78,7 +78,8 @@ a:not([class]) {
 
 /*----- NAVBAR -----*/
 .navbar-brand,
-.navbar-brand img {
+.navbar-brand img,
+#navbarMenuSupportedContent {
     height: 40px!important;
 }
 
