@@ -35,7 +35,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 
-        <nav class="navbar navbar-expand-lg <?php echo ! $headerMenuFloat ? 'bg-white' : ''; ?> shadow py-3">
+        <nav class="navbar navbar-expand-lg <?php echo ! $headerMenuFloat ? 'bg-white shadow' : ''; ?> py-3">
             <div class="container position-relative">
 
                 <?php

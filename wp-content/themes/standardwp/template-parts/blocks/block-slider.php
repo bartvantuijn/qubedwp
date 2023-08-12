@@ -10,7 +10,7 @@ $height = get_sub_field('hoogte');
 
 if ( have_rows('slides') ) : ?>
 
-    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="carousel-indicators">
             <?php while ( have_rows('slides') ) : the_row(); ?>

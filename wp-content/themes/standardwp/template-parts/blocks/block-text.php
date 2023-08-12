@@ -14,7 +14,7 @@ $col4 = get_sub_field('kolom_4');
 
 if ( $columns ) : ?>
 
-    <div class="block-text <?php echo $background . ' ' . $color; ?> py-5">
+    <div class="block-text <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 

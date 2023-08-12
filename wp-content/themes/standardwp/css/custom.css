@@ -77,6 +77,10 @@ a:not([class]) {
 }
 
 /*----- NAVBAR -----*/
+.navbar {
+    transition: .3s ease-in-out;
+}
+
 .navbar-brand,
 .navbar-brand img,
 #navbarMenuSupportedContent {

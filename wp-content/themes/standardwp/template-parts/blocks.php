@@ -64,21 +64,21 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 else :
 
     //echo 'No content blocks found...';
-    echo '<div id="block"></div>';
+    echo '<div id="block" data-block-count="1"></div>';
 
-    $headerMenu = wp_get_nav_menu_object('header-menu');
-    $headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
+endif;
 
-    if ( $headerMenuFloat ) : ?>
+$headerMenu = wp_get_nav_menu_object('header-menu');
+$headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
 
-        <script type="text/javascript">
-            var total = 0;
-            $('.navbar').each(function(){
-                total += $(this).height();
-            });
-            $('#block').height(total);
-        </script>
+if ( $headerMenuFloat ) : ?>
 
-    <?php endif; ?>
+    <script type="text/javascript">
+        var total = 0;
+        $('.navbar').each(function(){
+            total += $(this).height();
+        });
+        $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);
+    </script>
 
 <?php endif; ?>
