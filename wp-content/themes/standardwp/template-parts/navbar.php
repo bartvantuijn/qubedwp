@@ -75,6 +75,27 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
                             'walker'          => new WP_Bootstrap_Navwalker(),
                         ) );
                     ?>
+
+                    <?php
+
+                    $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+                    $headerSubMenuScrollbar = get_field('header_submenu_scrollbar', $headerSubMenu);
+
+                    if ( has_nav_menu( 'header-submenu' ) ) :
+
+                        wp_nav_menu( array(
+                            'theme_location'  => 'header-submenu',
+                            'depth'           => 2,
+                            'container'       => '',
+                            'container_class' => '',
+                            'container_id'    => 'header-submenu',
+                            'menu_class'      => 'navbar-nav d-lg-none',
+                            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        ) );
+                        //get_search_form();
+
+                    endif; ?>
                 </div>
 
             </div>
@@ -89,7 +110,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     if ( has_nav_menu( 'header-submenu' ) ) : ?>
 
-        <div class="navbar navbar-expand-lg bg-secondary">
+        <div class="navbar navbar-expand-lg bg-secondary d-none d-lg-flex">
             <div class="container">
 
                 <button class="navbar-toggler <?php echo $headerMenuAlignment; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSubMenuSupportedContent" aria-controls="navbarSubMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,8 +161,8 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     <script type="text/javascript">
         var total = 0;
-        $('.navbar').each(function(){
-            total += $(this).height();
+        $('#nav-wrapper .navbar').each(function(){
+            total += $(this).outerHeight();
         });
         $('#nav-wrapper').css('margin-bottom', -total);
     </script>
