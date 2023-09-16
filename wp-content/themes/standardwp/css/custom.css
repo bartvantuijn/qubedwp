@@ -131,11 +131,7 @@ a:not([class]) {
     height: 100px!important;
 }
 
-@media screen and (max-width:1440px) {
-
-}
-
-@media screen and (max-width:991px) {
+@media screen and (max-width:1399px) {
     #navbarMenuSupportedContent {
         position: absolute;
         top: calc(100% + 1rem);
@@ -143,6 +139,10 @@ a:not([class]) {
     }
 
     color: var(--bs-body-color);
+}
+
+@media screen and (max-width:991px) {
+
 }
 
 @media screen and (max-width:767px) {

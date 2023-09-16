@@ -35,7 +35,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 
-        <nav class="navbar navbar-expand-lg <?php echo ! $headerMenuFloat ? 'bg-white shadow' : ''; ?> py-3">
+        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? 'bg-white shadow' : ''; ?> py-3">
             <div class="container position-relative">
 
                 <?php
@@ -79,7 +79,6 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
                     <?php
 
                     $headerSubMenu = wp_get_nav_menu_object('header-submenu');
-                    $headerSubMenuScrollbar = get_field('header_submenu_scrollbar', $headerSubMenu);
 
                     if ( has_nav_menu( 'header-submenu' ) ) :
 
@@ -89,7 +88,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
                             'container'       => '',
                             'container_class' => '',
                             'container_id'    => 'header-submenu',
-                            'menu_class'      => 'navbar-nav d-lg-none',
+                            'menu_class'      => 'navbar-nav d-xxl-none',
                             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                             'walker'          => new WP_Bootstrap_Navwalker(),
                         ) );
@@ -110,7 +109,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     if ( has_nav_menu( 'header-submenu' ) ) : ?>
 
-        <div class="navbar navbar-expand-lg bg-secondary d-none d-lg-flex">
+        <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex">
             <div class="container">
 
                 <button class="navbar-toggler <?php echo $headerMenuAlignment; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSubMenuSupportedContent" aria-controls="navbarSubMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
