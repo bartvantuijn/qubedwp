@@ -74,8 +74,9 @@ if ( have_rows('slides') ) : ?>
         }
     </style>
     <script type="text/javascript">
-        var c = $('.<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
-        $('.carousel-item').css('background-color', c);
+        $('#carouselExampleControls<?php echo $args['blockCount']; ?>').append('<div class="<?php echo $background; ?>"></div>');
+        var c = $('#carouselExampleControls<?php echo $args['blockCount']; ?> .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+        $('#carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-item').css('background-color', c);
     </script>
 
 <?php endif; ?>
