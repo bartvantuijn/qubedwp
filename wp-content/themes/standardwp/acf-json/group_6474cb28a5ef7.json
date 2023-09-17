@@ -68,11 +68,11 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_6474d00fd8a5c",
+                            "key": "field_65072aab8f390",
                             "label": "Kolommen",
                             "name": "kolommen",
                             "aria-label": "",
-                            "type": "select",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -81,271 +81,60 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "1-col": "1 kolom",
-                                "2-cols": "2 kolommen",
-                                "3-cols": "3 kolommen",
-                                "4-cols": "4 kolommen"
-                            },
-                            "default_value": false,
-                            "return_format": "value",
-                            "multiple": 0,
-                            "allow_null": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_6474d0a15ccae",
-                            "label": "Kolom 1",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "!=empty"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_6474d0505cca8",
-                            "label": "Kolom 1",
-                            "name": "kolom_1",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "!=empty"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 1
-                        },
-                        {
-                            "key": "field_6474d0bc5ccaf",
-                            "label": "Kolom 2",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "2-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "3-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_6474d0665cca9",
-                            "label": "Kolom 2",
-                            "name": "kolom_2",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "2-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "3-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 1
-                        },
-                        {
-                            "key": "field_6474d0ca5ccb2",
-                            "label": "Kolom 3",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "3-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_6474d0835ccac",
-                            "label": "Kolom 3",
-                            "name": "kolom_3",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "3-cols"
-                                    }
-                                ],
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 1
-                        },
-                        {
-                            "key": "field_6474d0d45ccb3",
-                            "label": "Kolom 4",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "tab",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "placement": "top",
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_6474d0955ccad",
-                            "label": "Kolom 4",
-                            "name": "kolom_4",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6474d00fd8a5c",
-                                        "operator": "==",
-                                        "value": "4-cols"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 1
+                            "layout": "block",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Nieuwe regel",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_65072aba8f391",
+                                    "label": "Icoon",
+                                    "name": "icoon",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6507258cd63d0"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65072aab8f390"
+                                },
+                                {
+                                    "key": "field_65072ac78f392",
+                                    "label": "Tekst",
+                                    "name": "tekst",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6474d5a209d82"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65072aab8f390"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -611,5 +400,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688848933
+    "modified": 1694968652
 }

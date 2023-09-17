@@ -42,8 +42,8 @@ function my_wp_nav_menu_objects( $items, $args ) {
             }
         }
 
-        if( $icon ) {
-            $item->title = '<i class="fa fa-' . $icon . ' me-2"></i>' . $item->title;
+        if( $icon['icoon'] ) {
+            $item->title = '<i class="fa fa-' . $icon['icoon'] . ' me-2"></i>' . $item->title;
         }
 
         if( $call_to_action ) {

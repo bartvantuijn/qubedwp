@@ -63,7 +63,7 @@
             "name": "hoogte",
             "aria-label": "",
             "type": "text",
-            "instructions": "Voor de minimale hoogte van het blok in (px, em, rem, %)",
+            "instructions": "Voer de minimale hoogte van het blok in (px, em, rem, %)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -96,6 +96,26 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 1
+        },
+        {
+            "key": "field_6507258cd63d0",
+            "label": "Icoon",
+            "name": "icoon",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Voer de Font Awesome class van het icoon in (heart, user, envelope)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "fa fa-",
+            "append": ""
         }
     ],
     "location": [
@@ -116,5 +136,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688848919
+    "modified": 1694969996
 }

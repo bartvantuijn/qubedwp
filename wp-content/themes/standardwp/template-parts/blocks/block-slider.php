@@ -12,11 +12,15 @@ if ( have_rows('slides') ) : ?>
 
     <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block-count="<?php echo $args['blockCount']; ?>">
 
-        <div class="carousel-indicators">
-            <?php while ( have_rows('slides') ) : the_row(); ?>
-                <button type="button" class="<?php echo $background . (get_row_index() == 1 ? ' active' : ''); ?>" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide-to="<?php echo get_row_index() - 1; ?>" aria-current="<?php echo get_row_index() == 1 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo get_row_index(); ?>"></button>
-            <?php endwhile; ?>
-        </div>
+        <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
+
+            <div class="carousel-indicators">
+                <?php while ( have_rows('slides') ) : the_row(); ?>
+                    <button type="button" class="<?php echo $background . (get_row_index() == 1 ? ' active' : ''); ?>" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide-to="<?php echo get_row_index() - 1; ?>" aria-current="<?php echo get_row_index() == 1 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo get_row_index(); ?>"></button>
+                <?php endwhile; ?>
+            </div>
+
+        <?php endif; ?>
 
         <div class="carousel-inner">
 
@@ -30,7 +34,11 @@ if ( have_rows('slides') ) : ?>
                         <div class="container">
 
                             <div class="<?php echo $color; ?> p-5">
-                                <?php echo $text; ?>
+                                <?php if ( $text ) : ?>
+
+                                    <?php echo $text; ?>
+
+                                <?php endif; ?>
                             </div>
 
                         </div>
@@ -41,15 +49,19 @@ if ( have_rows('slides') ) : ?>
 
         </div>
 
-        <button class="carousel-control-prev <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="prev" style="width:10%;">
-            <i class="fas fa-chevron-left"></i>
-            <span class="visually-hidden">Previous</span>
-        </button>
+        <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
 
-        <button class="carousel-control-next <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="next" style="width:10%;">
-            <i class="fas fa-chevron-right"></i>
-            <span class="visually-hidden">Next</span>
-        </button>
+            <button class="carousel-control-prev <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="prev" style="width:10%;">
+                <i class="fas fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="next" style="width:10%;">
+                <i class="fas fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+        <?php endif; ?>
 
     </div>
 
@@ -62,7 +74,7 @@ if ( have_rows('slides') ) : ?>
         }
     </style>
     <script type="text/javascript">
-        var c = $('.<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.3)');
+        var c = $('.<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
         $('.carousel-item').css('background-color', c);
     </script>
 

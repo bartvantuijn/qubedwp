@@ -5,14 +5,7 @@
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
 
-// GET BLOCK DATA
-$columns = get_sub_field('kolommen');
-$col1 = get_sub_field('kolom_1');
-$col2 = get_sub_field('kolom_2');
-$col3 = get_sub_field('kolom_3');
-$col4 = get_sub_field('kolom_4');
-
-if ( $columns ) : ?>
+if ( have_rows('kolommen') ) : ?>
 
     <div class="block-text <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
 
@@ -20,45 +13,28 @@ if ( $columns ) : ?>
 
             <div class="row">
 
-                <?php if ( $col1 ) : ?>
+                <?php while ( have_rows('kolommen') ) : the_row();
+
+                    $icon = get_sub_field('icoon');
+                    $text = get_sub_field('tekst'); ?>
 
                     <div class="col-lg">
 
-                        <?php echo $col1; ?>
+                        <?php if ( $icon ) : ?>
+
+                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center"></i>'; ?>
+
+                        <?php endif; ?>
+
+                        <?php if ( $text ) : ?>
+
+                            <?php echo $text; ?>
+
+                        <?php endif; ?>
 
                     </div>
 
-                <?php endif; ?>
-
-                <?php if ( $columns == '2-cols' || $columns == '3-cols' || $columns == '4-cols' && $col2 ) : ?>
-
-                    <div class="col-lg">
-
-                        <?php echo $col2; ?>
-
-                    </div>
-
-                <?php endif; ?>
-
-                <?php if ( $columns == '3-cols' || $columns == '4-cols' && $col3 ) : ?>
-
-                    <div class="col-lg">
-
-                        <?php echo $col3; ?>
-
-                    </div>
-
-                <?php endif; ?>
-
-                <?php if ( $columns == '4-cols' && $col4 ) : ?>
-
-                    <div class="col-lg">
-
-                        <?php echo $col4; ?>
-
-                    </div>
-
-                <?php endif; ?>
+                <?php endwhile; ?>
 
             </div>
 

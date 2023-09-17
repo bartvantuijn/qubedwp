@@ -135,10 +135,8 @@ a:not([class]) {
     #navbarMenuSupportedContent {
         position: absolute;
         top: calc(100% + 1rem);
-        right: 0;
+        right: .75rem;
     }
-
-    color: var(--bs-body-color);
 }
 
 @media screen and (max-width:991px) {

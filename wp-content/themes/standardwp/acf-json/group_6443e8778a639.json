@@ -7,7 +7,7 @@
             "label": "Icoon",
             "name": "menu_item_icoon",
             "aria-label": "",
-            "type": "text",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,11 +16,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "clone": [
+                "field_6507258cd63d0"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_6443e877391b2",
@@ -61,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688732386
+    "modified": 1694968028
 }
