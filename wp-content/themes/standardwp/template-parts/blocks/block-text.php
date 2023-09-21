@@ -16,7 +16,8 @@ if ( have_rows('kolommen') ) : ?>
                 <?php while ( have_rows('kolommen') ) : the_row();
 
                     $icon = get_sub_field('icoon');
-                    $text = get_sub_field('tekst'); ?>
+                    $text = get_sub_field('tekst');
+                    $link = get_sub_field('link'); ?>
 
                     <div class="col-lg">
 
@@ -29,6 +30,12 @@ if ( have_rows('kolommen') ) : ?>
                         <?php if ( $text ) : ?>
 
                             <?php echo $text; ?>
+
+                        <?php endif; ?>
+
+                        <?php if ( $link ) : ?>
+
+                            <?php echo '<a class="btn btn-primary" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
 
                         <?php endif; ?>
 

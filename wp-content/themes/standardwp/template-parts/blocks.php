@@ -49,13 +49,17 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
             get_template_part('template-parts/blocks/block-text', null, $args);
 
+        elseif ( $blockType == 'block-image' ) :
+
+            get_template_part('template-parts/blocks/block-image', null, $args);
+
         elseif ( $blockType == 'block-slider' ) :
 
             get_template_part('template-parts/blocks/block-slider', null, $args);
 
-        elseif ( $blockType == 'block-posts' ) :
+        elseif ( $blockType == 'block-post' ) :
 
-            get_template_part('template-parts/blocks/block-posts', null, $args);
+            get_template_part('template-parts/blocks/block-post', null, $args);
 
         endif;
 
@@ -64,7 +68,7 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 else :
 
     //echo 'No content blocks found...';
-    echo '<div id="block" data-block-count="1"></div>';
+    echo '<div id="block" class="py-5" data-block-count="1"></div>';
 
 endif;
 

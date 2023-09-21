@@ -98,12 +98,53 @@
             "delay": 1
         },
         {
+            "key": "field_650a03587b9a8",
+            "label": "Afbeelding",
+            "name": "afbeelding",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_650b3b63bb95b",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_6507258cd63d0",
             "label": "Icoon",
             "name": "icoon",
             "aria-label": "",
             "type": "text",
-            "instructions": "Voer de Font Awesome class van het icoon in (heart, user, envelope)",
+            "instructions": "Voer de Font Awesome class van het icoon in (bijv. heart, user, envelope)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -136,5 +177,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694969996
+    "modified": 1695235705
 }

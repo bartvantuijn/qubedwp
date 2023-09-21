@@ -89,7 +89,7 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_65072aba8f391",
+                                    "key": "field_650c8919b205d",
                                     "label": "Icoon",
                                     "name": "icoon",
                                     "aria-label": "",
@@ -133,6 +133,247 @@
                                     "prefix_label": 0,
                                     "prefix_name": 0,
                                     "parent_repeater": "field_65072aab8f390"
+                                },
+                                {
+                                    "key": "field_650b3bd8f7583",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_650b3b63bb95b"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65072aab8f390"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_650a01feb4927": {
+                    "key": "layout_650a01feb4927",
+                    "name": "block-image",
+                    "label": "Afbeelding",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_650a061786ef0",
+                            "label": "Hoogte",
+                            "name": "hoogte",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_64a9c592ec2d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_650a038a04dfd",
+                            "label": "Afbeelding",
+                            "name": "afbeelding",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_650a03587b9a8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_650a04cae4fcd",
+                            "label": "Achtergrond",
+                            "name": "achtergrond",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6474ce7d45b5d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_650b3cdcf7586",
+                            "label": "Tekstpositie",
+                            "name": "tekstpositie",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "top": "Boven",
+                                "bottom": "Onder",
+                                "left": "Links",
+                                "right": "Rechts",
+                                "center": "Midden"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_650a04e4e4fce",
+                            "label": "Tekst",
+                            "name": "tekst",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_650b3cdcf7586",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_650c9108f0940",
+                                    "label": "Achtergrond",
+                                    "name": "achtergrond",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6474ce7d45b5d"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_650c911ff0941",
+                                    "label": "Kleur",
+                                    "name": "kleur",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6474ceb145b5e"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_650a02dbb492b",
+                                    "label": "Tekst",
+                                    "name": "tekst",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_6474d5a209d82"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_650b3c9ef7585",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_650b3b63bb95b"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
                                 }
                             ]
                         }
@@ -281,6 +522,29 @@
                                     "prefix_label": 0,
                                     "prefix_name": 0,
                                     "parent_repeater": "field_6474d642e8589"
+                                },
+                                {
+                                    "key": "field_650c86a409e99",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_650b3b63bb95b"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_6474d642e8589"
                                 }
                             ]
                         }
@@ -290,8 +554,8 @@
                 },
                 "layout_6496297070f0e": {
                     "key": "layout_6496297070f0e",
-                    "name": "block-posts",
-                    "label": "Posts",
+                    "name": "block-post",
+                    "label": "Post",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -400,5 +664,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694968652
+    "modified": 1695322420
 }
