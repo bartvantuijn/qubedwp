@@ -96,6 +96,14 @@ a:not([class]) {
     background-color: var(--bs-white);
 }
 
+#navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
+    border-radius: 5px 0 0 5px;
+}
+
+#navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
+    border-radius: 0 5px 5px 0;
+}
+
 #navbarMenuSupportedContent .navbar-nav:not(#menu-header-menu) .nav-item > .nav-link {
     color: var(--bs-body-color);
     padding: .5rem 1rem;
@@ -142,6 +150,14 @@ a:not([class]) {
         position: absolute;
         top: calc(100% + 1rem);
         right: .75rem;
+    }
+
+    #navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
+        border-radius: 5px 5px 0 0;
+    }
+
+    #navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
+        border-radius: 0 0 5px 5px;
     }
 }
 
