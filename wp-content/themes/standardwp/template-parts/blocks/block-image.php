@@ -11,7 +11,7 @@ $background = get_sub_field('achtergrond');
 $height = get_sub_field('hoogte');
 $image = get_sub_field('afbeelding');
 
-if ( true ) : ?>
+if ( $image ) : ?>
 
     <div class="block-image py-5" data-block-count="<?php echo $args['blockCount']; ?>">
 
@@ -67,7 +67,7 @@ if ( true ) : ?>
                             $text = get_sub_field('tekst');
                             $link = get_sub_field('link'); ?>
 
-                            <div class="col-lg p-5 <?php echo $position == 'left' ? 'order-1' : 'order-3'; ?>">
+                            <div class="col-lg <?php echo $background . ' ' . $color; ?> p-5 <?php echo $position == 'left' ? 'order-1' : 'order-3'; ?>">
 
                                 <?php if ( $text ) : ?>
 

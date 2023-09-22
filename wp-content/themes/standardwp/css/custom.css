@@ -86,7 +86,13 @@ a:not([class]) {
     height: 40px!important;
 }
 
+.navbar-toggler {
+    border-radius: 5px;
+    background-color: var(--bs-white);
+}
+
 #navbarMenuSupportedContent .navbar-nav {
+    border-radius: 5px;
     background-color: var(--bs-white);
 }
 

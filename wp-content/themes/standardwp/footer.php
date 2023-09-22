@@ -69,6 +69,23 @@
     Met &hearts; gemaakt door <a href="https://vantuijnvisuals.nl/" title="" target="_blank">van Tuijn Visuals</a>
 </small>
 
+<?php
+
+$headerMenu = wp_get_nav_menu_object('header-menu');
+$headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
+
+if ( $headerMenuFloat ) : ?>
+
+    <script type="text/javascript">
+        var total = 0;
+        $('.navbar').each(function(){
+            total += $(this).outerHeight();
+        });
+        $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);
+    </script>
+
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>

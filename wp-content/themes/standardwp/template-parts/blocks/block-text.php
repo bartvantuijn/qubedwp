@@ -23,7 +23,7 @@ if ( have_rows('kolommen') ) : ?>
 
                         <?php if ( $icon ) : ?>
 
-                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center"></i>'; ?>
+                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center mb-3"></i>'; ?>
 
                         <?php endif; ?>
 

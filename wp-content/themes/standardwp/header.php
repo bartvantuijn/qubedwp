@@ -74,7 +74,4 @@
 </head>
 <body <?php body_class(); ?>>
 
-    <?php // echo esc_url($abovemenubarLink); ?>
-    <?php // bloginfo('template_url'); echo '/img/icon-menu-open.svg'; ?>
-
     <?php get_template_part('template-parts/navbar'); ?>
