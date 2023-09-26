@@ -1,11 +1,9 @@
 <?php
 // BLOCK SEARCH
 
-// GET LAYOUT DATA
+// GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
-
-// GET BLOCK DATA
 $text = get_sub_field('tekst'); ?>
 
 <div class="block-search <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
@@ -13,7 +11,7 @@ $text = get_sub_field('tekst'); ?>
     <div class="container">
 
         <div class="row">
-            <div class="col-lg">
+            <div class="col-lg" data-aos="fade-up">
 
                 <?php if ( $text ) : ?>
 

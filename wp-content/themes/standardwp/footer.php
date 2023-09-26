@@ -62,14 +62,9 @@
 
 </footer>
 
-<small class="d-block text-center bg-secondary text-white p-2">
-    Copyright <?php echo date('Y'); ?> &copy; <?php echo bloginfo('name'); ?>
-</small>
-<small class="d-block text-center bg-secondary text-white p-2">
-    Met &hearts; gemaakt door <a href="https://vantuijnvisuals.nl/" title="" target="_blank">van Tuijn Visuals</a>
-</small>
-
 <?php
+
+get_template_part('template-parts/copyright');
 
 $headerMenu = wp_get_nav_menu_object('header-menu');
 $headerMenuFloat = get_field('header_menu_zweven', $headerMenu);

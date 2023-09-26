@@ -1,15 +1,11 @@
 <?php
 // BLOCK IMAGE
 
-// GET LAYOUT DATA
-$background = get_sub_field('achtergrond');
-$color = get_sub_field('kleur');
-
 // GET BLOCK DATA
-$position = get_sub_field('tekstpositie');
-$background = get_sub_field('achtergrond');
 $height = get_sub_field('hoogte');
 $image = get_sub_field('afbeelding');
+$background = get_sub_field('achtergrond');
+$position = get_sub_field('tekstpositie');
 
 if ( $image ) : ?>
 
@@ -30,7 +26,7 @@ if ( $image ) : ?>
 
                         <div class="row <?php echo $background . ' ' . $color; ?>">
 
-                            <div class="col-lg p-5">
+                            <div class="col-lg p-5" data-aos="fade-up">
 
                                 <?php if ( $text ) : ?>
 
@@ -67,7 +63,7 @@ if ( $image ) : ?>
                             $text = get_sub_field('tekst');
                             $link = get_sub_field('link'); ?>
 
-                            <div class="col-lg <?php echo $background . ' ' . $color; ?> p-5 <?php echo $position == 'left' ? 'order-1' : 'order-3'; ?>">
+                            <div class="col-lg <?php echo $background . ' ' . $color; ?> p-5 <?php echo $position == 'left' ? 'order-1' : 'order-3'; ?>" data-aos="fade-up">
 
                                 <?php if ( $text ) : ?>
 
@@ -89,7 +85,7 @@ if ( $image ) : ?>
 
                 <?php endif; ?>
 
-                <div id="img" class="col-lg p-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
+                <div id="img" class="col-lg p-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up">
 
                     <?php if ( $position == 'center' ) : ?>
 
@@ -141,7 +137,7 @@ if ( $image ) : ?>
 
                         <div class="row <?php echo $background . ' ' . $color; ?>">
 
-                            <div class="col-lg p-5">
+                            <div class="col-lg p-5" data-aos="fade-up">
 
                                 <?php if ( $text ) : ?>
 

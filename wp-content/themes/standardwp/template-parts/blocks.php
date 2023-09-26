@@ -53,6 +53,10 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
             get_template_part('template-parts/blocks/block-image', null, $args);
 
+        elseif ( $blockType == 'block-gallery' ) :
+
+            get_template_part('template-parts/blocks/block-gallery', null, $args);
+
         elseif ( $blockType == 'block-slider' ) :
 
             get_template_part('template-parts/blocks/block-slider', null, $args);

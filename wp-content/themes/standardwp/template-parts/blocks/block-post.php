@@ -1,11 +1,9 @@
 <?php
 // BLOCK POSTS
 
-// GET LAYOUT DATA
+// GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
-
-// GET BLOCK DATA
 $posts = get_sub_field('posts');
 
 if ( $posts ) : ?>
@@ -21,7 +19,7 @@ if ( $posts ) : ?>
                     // Setup this post for WP functions (variable must be named $post).
                     setup_postdata($post); ?>
 
-                    <div class="col-6 col-md-3 mb-5">
+                    <div class="col-6 col-md-3 mb-5" data-aos="fade-up">
 
                         <div class="card border-0">
                             <a href="<?php the_permalink(); ?>" class="card-image-top mb-3" style="min-height:350px;background-image:url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full') ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-repeat:no-repeat;"></a>

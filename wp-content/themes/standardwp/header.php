@@ -24,6 +24,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="author" content="van Tuijn Visuals">
 
+    <?php
+
+    $themeColors = get_field('thema_instellingen_kleuren_aanpassen', 'options');
+
+    if ( $themeColors ) : ?>
+
+        <?php if ( have_rows('thema_instellingen_kleuren', 'options') ) :
+
+            while (have_rows('thema_instellingen_kleuren', 'options')) : the_row();
+
+                $primary = get_sub_field('primair');
+                $primary_hex = sprintf("#%02x%02x%02x", $primary['red'], $primary['green'], $primary['blue']); ?>
+
+                <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('url'); echo '/favicon/apple-touch-icon.png'; ?>">
+                <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('url'); echo '/favicon/favicon-32x32.png'; ?>">
+                <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('url'); echo '/favicon/favicon-16x16.png'; ?>">
+                <link rel="manifest" href="<?php bloginfo('url'); echo '/favicon/site.webmanifest'; ?>">
+                <link rel="mask-icon" href="<?php bloginfo('url'); echo '/favicon/safari-pinned-tab.svg'; ?>" color="<?php echo $primary_hex; ?>">
+                <meta name="msapplication-TileColor" content="<?php echo $primary_hex; ?>">
+                <meta name="theme-color" content="<?php echo $primary_hex; ?>">
+
+            <?php endwhile; ?>
+
+        <?php endif; ?>
+
+    <?php else : ?>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('url'); echo '/favicon/apple-touch-icon.png'; ?>">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('url'); echo '/favicon/favicon-32x32.png'; ?>">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('url'); echo '/favicon/favicon-16x16.png'; ?>">
+        <link rel="manifest" href="<?php bloginfo('url'); echo '/favicon/site.webmanifest'; ?>">
+        <link rel="mask-icon" href="<?php bloginfo('url'); echo '/favicon/safari-pinned-tab.svg'; ?>" color="#ffffff">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+
+    <?php endif; ?>
+
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous" />
 
@@ -48,9 +85,6 @@
 
     <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" />
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" type="text/css" />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />
 

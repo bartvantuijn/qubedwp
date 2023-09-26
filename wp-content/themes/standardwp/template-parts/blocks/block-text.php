@@ -1,11 +1,12 @@
 <?php
 // BLOCK TEXT
 
-// GET LAYOUT DATA
+// GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
+$columns = get_sub_field('kolommen');
 
-if ( have_rows('kolommen') ) : ?>
+if ( $columns ) : ?>
 
     <div class="block-text <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
 
@@ -19,7 +20,7 @@ if ( have_rows('kolommen') ) : ?>
                     $text = get_sub_field('tekst');
                     $link = get_sub_field('link'); ?>
 
-                    <div class="col-lg">
+                    <div class="col-lg" data-aos="fade-up">
 
                         <?php if ( $icon ) : ?>
 
