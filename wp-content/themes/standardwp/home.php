@@ -1,0 +1,36 @@
+<?php get_header(); ?>
+
+    <main id="main" class="site-main" role="main">
+
+        <?php get_template_part('template-parts/blocks'); ?>
+
+        <?php if ( have_posts() ) : ?>
+
+            <div class="container">
+                <div class="row">
+
+                    <?php while ( have_posts() ) : the_post(); ?>
+
+                        <div class="col-6 col-md-3 mb-5" data-aos="fade-up">
+
+                            <div class="card border-0">
+                                <a href="<?php the_permalink(); ?>" class="card-image-top mb-3" style="min-height:200px;background-image:url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id(), 'full') ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-repeat:no-repeat;"></a>
+                                <div class="card-body text-body p-0">
+                                    <h2 class="card-title h6"><?php the_title(); ?></h2>
+                                    <p class="card-text"><?php the_excerpt(); ?></p>
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Bekijk bericht</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    <?php endwhile; ?>
+
+                </div>
+            </div>
+
+        <?php endif; ?>
+
+    </main>
+
+<?php get_footer(); ?>

@@ -79,7 +79,7 @@ if ( $slides ) : ?>
             transition: all 1s ease-out;
         }
         .carousel-item.scrolled {
-            background-position: center 45%!important;
+            background-position: center 47.5%!important;
         }
         .carousel-item-next, .carousel-item-prev, .carousel-item.active {
             display: flex;
