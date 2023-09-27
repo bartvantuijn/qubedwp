@@ -6,14 +6,12 @@
 
         $footerMenu = wp_get_nav_menu_object('footer-menu');
         $footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
-        $footerMenuLogoCenter = get_field('footer_menu_logo_centreren', $footerMenu);
-        $footerMenuAlignment = get_field('footer_menu_uitlijnen', $footerMenu);
 
         if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
         <div class="row">
 
-            <div class="col-lg <?php echo $footerMenuLogoCenter ? 'text-center' : ''; ?> pb-5">
+            <div class="col-lg text-center pb-5">
 
                 <?php if ( $footerMenuLogo ) : ?>
 
@@ -33,28 +31,16 @@
 
         </div>
 
-        <div class="row">
-
-            <div class="col-lg <?php echo $footerMenuAlignment; ?>">
-
-                <h5><?php echo wp_get_nav_menu_name( 'footer-menu' ); ?></h5>
-
-                <?php
-                wp_nav_menu( array(
-                    'theme_location'  => 'footer-menu',
-                    'depth'           => 2,
-                    'container'       => '',
-                    'container_class' => '',
-                    'container_id'    => 'footer-menu',
-                    'menu_class'      => 'footer-nav list-unstyled d-inline-block',
-                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'          => new WP_Bootstrap_Navwalker(),
-                ) );
-                ?>
-
-            </div>
-
-        </div>
+        <?php
+        wp_nav_menu( array(
+            'theme_location'  => 'footer-menu',
+            'depth'           => 2,
+            'container'       => '',
+            'container_class' => '',
+            'container_id'    => 'footer-menu',
+            'menu_class'      => 'footer-nav row list-unstyled',
+        ) );
+        ?>
 
         <?php endif; ?>
 
@@ -73,7 +59,7 @@ if ( $headerMenuFloat ) : ?>
 
     <script type="text/javascript">
         var total = 0;
-        $('.navbar').each(function(){
+        $('#nav-wrapper .navbar').each(function(){
             total += $(this).outerHeight();
         });
         $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);

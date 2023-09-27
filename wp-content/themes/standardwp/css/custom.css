@@ -152,6 +152,10 @@ a:not([class]) {
         right: .75rem;
     }
 
+    #navbarMenuSupportedContent .navbar-nav:not(:first-child) {
+        margin-top: 1rem;
+    }
+
     #navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
         border-radius: 5px 5px 0 0;
     }

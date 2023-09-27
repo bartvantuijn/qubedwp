@@ -49,11 +49,23 @@ function my_wp_nav_menu_objects( $items, $args ) {
         if( $call_to_action ) {
             $item->classes[] = 'cta-item';
         }
+
+        if( $args->theme_location == 'footer-menu' ) {
+            $item->classes[] = 'col-lg';
+        }
     }
 
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+//Custom Submenu Class
+function my_nav_menu_submenu_css_class( $classes ) {
+    $classes[] = 'list-unstyled';
+
+    return $classes;
+}
+add_filter('nav_menu_submenu_css_class', 'my_nav_menu_submenu_css_class');
 
 //Custom Admin Bar
 function custom_admin_bar_render() {
