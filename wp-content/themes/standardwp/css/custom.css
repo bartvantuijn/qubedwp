@@ -145,6 +145,14 @@ a:not([class]) {
     height: 100px!important;
 }
 
+footer a {
+    text-decoration: none;
+}
+
+footer .menu-item-has-children > a {
+    font-size: 1.5rem;
+}
+
 @media screen and (max-width:1399px) {
     #navbarMenuSupportedContent {
         position: absolute;

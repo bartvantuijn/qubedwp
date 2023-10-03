@@ -1,52 +1,111 @@
-<footer class="bg-primary text-white py-5">
+<?php
+// FOOTER
+$footerMenu = wp_get_nav_menu_object('footer-menu');
 
-    <div class="container position-relative">
+// GET FOOTER DATA
+$footerMenuBackground = get_field('footer_menu_achtergrond', $footerMenu);
+$footerMenuColor = get_field('footer_menu_kleur', $footerMenu);
+$footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
+$footerMenuImage = get_field('footer_menu_afbeelding', $footerMenu);
 
-        <?php
+if ( $footerMenu ) : ?>
 
-        $footerMenu = wp_get_nav_menu_object('footer-menu');
-        $footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
+    <footer class="footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?> py-5" style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up">
 
-        if ( has_nav_menu( 'footer-menu' ) ) : ?>
+        <div class="container">
 
-        <div class="row">
+            <div class="row">
+                <div class="col-lg text-center mb-5">
 
-            <div class="col-lg text-center pb-5">
+                    <?php if ( $footerMenuLogo ) : ?>
 
-                <?php if ( $footerMenuLogo ) : ?>
+                        <a class="footer-brand p-0" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                            <?php echo wp_get_attachment_image( $footerMenuLogo, 'full', '', array('class' => 'img-fluid', 'loading' => 'eager') ); ?>
+                        </a>
 
-                    <a class="footer-brand p-0" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                        <?php echo wp_get_attachment_image( $footerMenuLogo, 'full', '', array('class' => 'img-fluid', 'loading' => 'eager') ); ?>
-                    </a>
+                    <?php else : ?>
 
-                <?php else : ?>
+                        <a class="footer-brand p-0" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                            <?php bloginfo('name'); ?>
+                        </a>
 
-                    <a class="footer-brand p-0" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                        <?php bloginfo('name'); ?>
-                    </a>
+                    <?php endif; ?>
 
-                <?php endif; ?>
-
+                </div>
             </div>
+
+            <?php
+
+            $socialMediaChannels = get_field('social_media_kanalen', 'options');
+
+            if ( $socialMediaChannels ) : ?>
+
+                <div class="row">
+                    <div class="col-lg text-center">
+
+                        <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
+
+                            $text = get_sub_field('naam');
+                            $icon = get_sub_field('icoon');
+                            $link = get_sub_field('link'); ?>
+
+                            <?php if ( $link ) : ?>
+
+                                <?php echo '<a class="p-5" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">'; ?>
+
+                                    <?php if ( $icon ) : ?>
+
+                                        <?php echo '<i class="fab fa-' . $icon . ' h1 mb-5"></i>'; ?>
+
+                                    <?php endif; ?>
+
+                                <?php echo '</a>'; ?>
+
+                            <?php endif; ?>
+
+                        <?php endwhile; ?>
+
+                    </div>
+                </div>
+
+            <?php endif; ?>
+
+            <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
+
+                <div class="row">
+                    <div class="col-lg">
+
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location'  => 'footer-menu',
+                            'depth'           => 2,
+                            'container'       => '',
+                            'container_class' => '',
+                            'container_id'    => 'footer-menu',
+                            'menu_class'      => 'footer-nav row list-unstyled',
+                        ) );
+                        ?>
+
+                    </div>
+                </div>
+
+            <?php endif; ?>
 
         </div>
 
-        <?php
-        wp_nav_menu( array(
-            'theme_location'  => 'footer-menu',
-            'depth'           => 2,
-            'container'       => '',
-            'container_class' => '',
-            'container_id'    => 'footer-menu',
-            'menu_class'      => 'footer-nav row list-unstyled',
-        ) );
-        ?>
+    </footer>
 
-        <?php endif; ?>
+    <script type="text/javascript">
+        $('footer').append('<div class="<?php echo $footerMenuBackground; ?>"></div>');
+        var c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+        $('footer').css('background-color', c);
 
-    </div>
+        $('footer').append('<div class="<?php echo $footerMenuColor; ?>"></div>');
+        var d = $('footer .<?php echo $footerMenuColor; ?>').css('color');
+        $('footer a').css('color', d);
+    </script>
 
-</footer>
+<?php endif; ?>
 
 <?php
 
