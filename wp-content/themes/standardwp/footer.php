@@ -10,7 +10,7 @@ $footerMenuImage = get_field('footer_menu_afbeelding', $footerMenu);
 
 if ( $footerMenu ) : ?>
 
-    <footer class="footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?> py-5" style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up">
+    <footer class="footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?> p-5" style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up">
 
         <div class="container">
 
@@ -40,7 +40,7 @@ if ( $footerMenu ) : ?>
 
             if ( $socialMediaChannels ) : ?>
 
-                <div class="row">
+                <div class="block-social row">
                     <div class="col-lg text-center">
 
                         <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
@@ -55,7 +55,7 @@ if ( $footerMenu ) : ?>
 
                                     <?php if ( $icon ) : ?>
 
-                                        <?php echo '<i class="fab fa-' . $icon . ' h1 mb-5"></i>'; ?>
+                                        <?php echo '<i class="fab fa-' . $icon . ' mb-5"></i>'; ?>
 
                                     <?php endif; ?>
 
