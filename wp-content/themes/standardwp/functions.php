@@ -7,6 +7,9 @@ function custom_theme_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 
@@ -200,12 +203,13 @@ function dequeue_before_accepted_cookies() {
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_before_accepted_cookies', 99 );
 
-add_filter('wpcf7_form_elements', function($content) {
+add_filter( 'wpcf7_form_elements', 'my_wpcf7_form_elements' );
+function my_wpcf7_form_elements( $content ) {
     if ( !isset($_COOKIE['website_cookies']) ) {
         $content = '<button onclick="setCookie(\'website_cookies\',\'yes\', 365);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
     }
     return $content;
-});
+}
 
 //Change ACF JSON Point
 function my_acf_json_point() {

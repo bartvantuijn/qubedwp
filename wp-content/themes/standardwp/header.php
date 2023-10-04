@@ -1,3 +1,12 @@
+<?php
+
+if( ! class_exists('ACF') ) {
+    echo 'Advanced Custom Fields is niet geactiveerd';
+    die;
+}
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

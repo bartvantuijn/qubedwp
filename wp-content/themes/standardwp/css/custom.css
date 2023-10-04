@@ -159,8 +159,8 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
-    width: auto;
+    height: 100px!important;
+    width: auto!important;
 }
 
 footer .block-social i {
