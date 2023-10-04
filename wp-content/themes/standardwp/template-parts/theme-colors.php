@@ -14,12 +14,14 @@ if ( have_rows('thema_instellingen_kleuren', 'options') ) :
 
                     --bs-primary: rgb(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue']; ?>);
                     --bs-primary-hover: rgba(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue'] . ', .9'; ?>);
+                    --bs-primary-light: rgba(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue'] . ', .1'; ?>);
 
                 <?php endif; ?>
                 <?php if ( $secondary ) : ?>
 
                     --bs-secondary: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue']; ?>);
                     --bs-secondary-hover: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .9'; ?>);
+                    --bs-secondary-light: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .1'; ?>);
 
                 <?php endif; ?>
                 <?php if ( $text ) : ?>
