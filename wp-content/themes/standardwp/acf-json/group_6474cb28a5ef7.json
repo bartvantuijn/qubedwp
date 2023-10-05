@@ -170,28 +170,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_650a061786ef0",
-                            "label": "Hoogte",
-                            "name": "hoogte",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_64a9c592ec2d6"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_650a038a04dfd",
                             "label": "Afbeelding",
                             "name": "afbeelding",
@@ -236,16 +214,38 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_650b3cdcf7586",
-                            "label": "Tekstpositie",
-                            "name": "tekstpositie",
+                            "key": "field_650a061786ef0",
+                            "label": "Hoogte",
+                            "name": "hoogte",
                             "aria-label": "",
-                            "type": "select",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_64a9c592ec2d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_650b3cdcf7586",
+                            "label": "Tekstpositie",
+                            "name": "tekstpositie",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Selecteer de tekstpositie van het blok",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -579,7 +579,7 @@
                                     "label": "Afbeelding",
                                     "name": "afbeelding",
                                     "aria-label": "",
-                                    "type": "image",
+                                    "type": "clone",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -588,16 +588,13 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "preview_size": "medium",
+                                    "clone": [
+                                        "field_650a03587b9a8"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
                                     "parent_repeater": "field_6474d642e8589"
                                 },
                                 {
@@ -765,7 +762,30 @@
                                     "label": "Titel",
                                     "name": "titel",
                                     "aria-label": "",
-                                    "type": "text",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_651f0867db760"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_651dc74881a0c"
+                                },
+                                {
+                                    "key": "field_651f0448bacbd",
+                                    "label": "Icoon",
+                                    "name": "icoon",
+                                    "aria-label": "",
+                                    "type": "clone",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -774,11 +794,13 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
+                                    "clone": [
+                                        "field_6507258cd63d0"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
                                     "parent_repeater": "field_651dc74881a0c"
                                 },
                                 {
@@ -917,5 +939,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696451089
+    "modified": 1696533710
 }

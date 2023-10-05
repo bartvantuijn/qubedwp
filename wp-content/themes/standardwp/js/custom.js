@@ -5,6 +5,7 @@ function setCookie(name, value, days) {
     d.setTime(d.getTime() + (days*24*60*60*1000));
     let expires = "expires="+d.toUTCString();
     document.cookie = name + "=" + value + "; " + expires;
+    location.reload();
 }
 
 $(window).on('load', function() {
@@ -18,7 +19,11 @@ $(document).ready(function(){
 
     //Tooltips
     $(function () {
-        $('[data-bs-toggle="tooltip"]').tooltip()
+        $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+
+    $(function () {
+        $('.toast').toast('show');
     });
 
     $(function () {

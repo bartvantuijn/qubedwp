@@ -20,13 +20,21 @@ if ( $accordion ) : ?>
 
                         <?php while ( have_rows('accordion') ) : the_row();
                             $rowCount++;
+                            $icon = get_sub_field('icoon');
                             $title = get_sub_field('titel');
                             $text = get_sub_field('tekst'); ?>
 
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $rowCount; ?>" aria-expanded="false" aria-controls="collapse<?php echo $rowCount; ?>">
-                                        <?php echo $title; ?>
+                                        <h6>
+                                            <?php if ( $icon ) : ?>
+
+                                                <?php echo '<i class="fa fa-' . $icon . ' me-2"></i>'; ?>
+
+                                            <?php endif; ?>
+                                            <?php echo $title; ?>
+                                        </h6>
                                     </button>
                                 </h2>
                                 <div id="collapse<?php echo $rowCount; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample<?php echo $args['blockCount']; ?>">

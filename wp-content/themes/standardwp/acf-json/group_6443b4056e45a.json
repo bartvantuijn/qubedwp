@@ -1,11 +1,11 @@
 {
     "key": "group_6443b4056e45a",
-    "title": "Cookies",
+    "title": "Cookiebanner",
     "fields": [
         {
             "key": "field_6443b405f6304",
             "label": "Actief",
-            "name": "cookies_actief",
+            "name": "cookiebanner_actief",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -21,6 +21,34 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_651f10af21bef",
+            "label": "Tekst",
+            "name": "cookiebanner_tekst",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6443b405f6304",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Wij gebruiken cookies om onze site en onze service te optimaliseren.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -28,7 +56,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-cookies"
+                "value": "acf-options-cookiebanner"
             }
         ]
     ],
@@ -41,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688732946
+    "modified": 1696537989
 }

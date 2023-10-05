@@ -41,7 +41,7 @@ if ( $footerMenu ) : ?>
             if ( $socialMediaChannels ) : ?>
 
                 <div class="block-social row">
-                    <div class="col-lg text-center">
+                    <div class="col-lg text-center mb-5">
 
                         <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
 
@@ -51,11 +51,11 @@ if ( $footerMenu ) : ?>
 
                             <?php if ( $link ) : ?>
 
-                                <?php echo '<a class="p-5" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">'; ?>
+                                <?php echo '<a class="mx-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">'; ?>
 
                                     <?php if ( $icon ) : ?>
 
-                                        <?php echo '<i class="fab fa-' . $icon . ' mb-5"></i>'; ?>
+                                        <?php echo '<i class="fab fa-' . $icon . '"></i>'; ?>
 
                                     <?php endif; ?>
 
@@ -108,7 +108,9 @@ if ( $footerMenu ) : ?>
 <?php endif; ?>
 
 <?php
-
+if ( !isset($_COOKIE['website_cookies']) ) {
+    get_template_part('template-parts/cookiebanner');
+}
 get_template_part('template-parts/copyright');
 
 $headerMenu = wp_get_nav_menu_object('header-menu');

@@ -205,8 +205,8 @@ add_action( 'wp_enqueue_scripts', 'dequeue_before_accepted_cookies', 99 );
 
 add_filter( 'wpcf7_form_elements', 'my_wpcf7_form_elements' );
 function my_wpcf7_form_elements( $content ) {
-    if ( !isset($_COOKIE['website_cookies']) ) {
-        $content = '<button onclick="setCookie(\'website_cookies\',\'yes\', 365);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
+    if ( !isset($_COOKIE['website_cookies']) || $_COOKIE['website_cookies'] == 'no' ) {
+        $content = '<button type="button" onclick="setCookie(\'website_cookies\',\'yes\', 365);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
     }
     return $content;
 }
@@ -236,6 +236,12 @@ if ( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'  => 'Google Analytics',
+        'menu_title'  => 'Google Analytics',
+        'parent_slug' => 'thema-opties',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title'  => 'Contactgegevens',
         'menu_title'  => 'Contactgegevens',
         'parent_slug' => 'thema-opties',
@@ -248,14 +254,8 @@ if ( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'  => 'Google Analytics',
-        'menu_title'  => 'Google Analytics',
-        'parent_slug' => 'thema-opties',
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'  => 'Cookies',
-        'menu_title'  => 'Cookies',
+        'page_title'  => 'Cookiebanner',
+        'menu_title'  => 'Cookiebanner',
         'parent_slug' => 'thema-opties',
     ));
 
@@ -273,28 +273,6 @@ if ( function_exists('acf_add_options_page') ) {
         'parent_slug' => 'blokken',
     ));
 
-
-
-//    acf_add_options_page(array(
-//        'page_title' 	=> 'Thema opties',
-//        'menu_title'	=> 'Thema opties',
-//        'menu_slug' 	=> 'thema-opties',
-//        'capability'	=> 'edit_posts',
-//        'redirect'		=> true
-//    ));
-//
-//    acf_add_options_sub_page(array(
-//        'page_title' 	=> 'Contactgegevens',
-//        'menu_title'	=> 'Contactgegevens',
-//        'parent_slug'	=> 'thema-opties',
-//    ));
-//
-//    acf_add_options_sub_page(array(
-//        'page_title' 	=> 'Social media',
-//        'menu_title'	=> 'Social media',
-//        'parent_slug'	=> 'thema-opties',
-//    ));
-//
 //    acf_add_options_sub_page(array(
 //        'page_title' 	=> '404 pagina',
 //        'menu_title'	=> '404 pagina',
@@ -307,13 +285,6 @@ if ( function_exists('acf_add_options_page') ) {
 //        'parent_slug'	=> 'thema-opties',
 //    ));
 //
-//    acf_add_options_page(array(
-//        'page_title' 	=> 'Thema blokken',
-//        'menu_title'	=> 'Thema blokken',
-//        'menu_slug' 	=> 'thema-blokken',
-//        'capability'	=> 'edit_posts',
-//        'redirect'		=> true
-//    ));
 //
 //    acf_add_options_sub_page(array(
 //        'page_title' 	=> 'Call to Action',
@@ -336,53 +307,53 @@ if ( function_exists('acf_add_options_page') ) {
 }
 
 //Custom Post Type
-function custom_post_init() {
-
-    $supports = array(
-        'title',
-        'editor',
-        'author',
-        'thumbnail',
-        'excerpt',
-        'custom-fields',
-        'revisions',
-        'post-formats',
-    );
-
-    $labels = array(
-        'name'               => 'Posts',
-        'singular_name'      => 'Post',
-        'menu_name'          => 'Posts',
-        'name_admin_bar'     => 'Post',
-        'add_new'            => 'Nieuwe post toevoegen',
-        'add_new_item'       => 'Nieuwe post toevoegen',
-        'new_item'           => 'Nieuwe post',
-        'edit_item'          => 'Post aanpassen',
-        'view_item'          => 'Bekijk posts',
-        'all_items'          => 'Alle posts',
-        'search_items'       => 'Posts zoeken',
-        'parent_item_colon'  => 'Bovenliggend item:',
-        'not_found'          => 'Geen posts gevonden.',
-        'not_found_in_trash' => 'Geen posts gevonden in de prullenbak.'
-    );
-
-    $args = array(
-        'supports'           => $supports,
-        'labels'             => $labels,
-        'description'        => __( 'Description.' ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'post', 'with_front' => false ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => NULL,
-        'taxonomies'         => array( 'category' ),
-    );
-
-    register_post_type( 'posts', $args );
-}
-add_action( 'init', 'custom_post_init' );
+//function custom_post_init() {
+//
+//    $supports = array(
+//        'title',
+//        'editor',
+//        'author',
+//        'thumbnail',
+//        'excerpt',
+//        'custom-fields',
+//        'revisions',
+//        'post-formats',
+//    );
+//
+//    $labels = array(
+//        'name'               => 'Posts',
+//        'singular_name'      => 'Post',
+//        'menu_name'          => 'Posts',
+//        'name_admin_bar'     => 'Post',
+//        'add_new'            => 'Nieuwe post toevoegen',
+//        'add_new_item'       => 'Nieuwe post toevoegen',
+//        'new_item'           => 'Nieuwe post',
+//        'edit_item'          => 'Post aanpassen',
+//        'view_item'          => 'Bekijk posts',
+//        'all_items'          => 'Alle posts',
+//        'search_items'       => 'Posts zoeken',
+//        'parent_item_colon'  => 'Bovenliggend item:',
+//        'not_found'          => 'Geen posts gevonden.',
+//        'not_found_in_trash' => 'Geen posts gevonden in de prullenbak.'
+//    );
+//
+//    $args = array(
+//        'supports'           => $supports,
+//        'labels'             => $labels,
+//        'description'        => __( 'Description.' ),
+//        'public'             => true,
+//        'publicly_queryable' => true,
+//        'show_ui'            => true,
+//        'show_in_menu'       => true,
+//        'query_var'          => true,
+//        'rewrite'            => array( 'slug' => 'post', 'with_front' => false ),
+//        'capability_type'    => 'post',
+//        'has_archive'        => true,
+//        'hierarchical'       => false,
+//        'menu_position'      => NULL,
+//        'taxonomies'         => array( 'category' ),
+//    );
+//
+//    register_post_type( 'posts', $args );
+//}
+//add_action( 'init', 'custom_post_init' );

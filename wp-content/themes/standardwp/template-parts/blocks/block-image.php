@@ -34,9 +34,18 @@ if ( $image ) : ?>
 
                                 <?php endif; ?>
 
-                                <?php if ( $link ) : ?>
+                                <?php if ( $link ) :
 
-                                    <?php echo '<a class="btn btn-primary" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+                                    if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
+                                        $link['title'] = explode('{', $link['title'])[0];
+                                        $class = $output[1];
+                                    } else {
+                                        $class = 'bg-primary';
+                                    }
+
+                                    ?>
+
+                                    <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
 
                                 <?php endif; ?>
 
@@ -71,9 +80,18 @@ if ( $image ) : ?>
 
                                 <?php endif; ?>
 
-                                <?php if ( $link ) : ?>
+                                <?php if ( $link ) :
 
-                                    <?php echo '<a class="btn btn-primary" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+                                    if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
+                                        $link['title'] = explode('{', $link['title'])[0];
+                                        $class = $output[1];
+                                    } else {
+                                        $class = 'bg-primary';
+                                    }
+
+                                    ?>
+
+                                    <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
 
                                 <?php endif; ?>
 
@@ -106,9 +124,18 @@ if ( $image ) : ?>
 
                                     <?php endif; ?>
 
-                                    <?php if ( $link ) : ?>
+                                    <?php if ( $link ) :
 
-                                        <?php echo '<a class="btn btn-primary" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+                                        if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
+                                            $link['title'] = explode('{', $link['title'])[0];
+                                            $class = $output[1];
+                                        } else {
+                                            $class = 'bg-primary';
+                                        }
+
+                                        ?>
+
+                                        <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
 
                                     <?php endif; ?>
 
@@ -145,9 +172,18 @@ if ( $image ) : ?>
 
                                 <?php endif; ?>
 
-                                <?php if ( $link ) : ?>
+                                <?php if ( $link ) :
 
-                                    <?php echo '<a class="btn btn-primary" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+                                    if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
+                                        $link['title'] = explode('{', $link['title'])[0];
+                                        $class = $output[1];
+                                    } else {
+                                        $class = 'bg-primary';
+                                    }
+
+                                    ?>
+
+                                    <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
 
                                 <?php endif; ?>
 
