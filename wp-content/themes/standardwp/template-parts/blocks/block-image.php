@@ -40,7 +40,7 @@ if ( $image ) : ?>
                                         $link['title'] = explode('{', $link['title'])[0];
                                         $class = $output[1];
                                     } else {
-                                        $class = 'bg-primary';
+                                        $class = 'btn-primary';
                                     }
 
                                     ?>
@@ -86,7 +86,7 @@ if ( $image ) : ?>
                                         $link['title'] = explode('{', $link['title'])[0];
                                         $class = $output[1];
                                     } else {
-                                        $class = 'bg-primary';
+                                        $class = 'btn-primary';
                                     }
 
                                     ?>
@@ -130,7 +130,7 @@ if ( $image ) : ?>
                                             $link['title'] = explode('{', $link['title'])[0];
                                             $class = $output[1];
                                         } else {
-                                            $class = 'bg-primary';
+                                            $class = 'btn-primary';
                                         }
 
                                         ?>
@@ -178,7 +178,7 @@ if ( $image ) : ?>
                                         $link['title'] = explode('{', $link['title'])[0];
                                         $class = $output[1];
                                     } else {
-                                        $class = 'bg-primary';
+                                        $class = 'btn-primary';
                                     }
 
                                     ?>
