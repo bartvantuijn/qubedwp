@@ -6,7 +6,7 @@ if ( $cookieBannerActive ) :
 
     $cookieBannerText = get_field('cookiebanner_tekst', 'options'); ?>
 
-    <div class="card position-fixed" style="right:0;bottom:0;width:100%;max-width:25rem;">
+    <div class="card position-fixed" style="right:0;bottom:0;width:100%;max-width:25rem;z-index:9999;">
         <div class="card-body">
             <?php if ( $cookieBannerText ) : ?>
                 <p class="card-text">

@@ -24,6 +24,10 @@ a {
     color: var(--bs-primary);
 }
 
+.grecaptcha-badge {
+    visibility: hidden!important;
+}
+
 /*----- ELEMENTS -----*/
 /*----- TYPOGRAPHY -----*/
 /*----- COLORS -----*/
