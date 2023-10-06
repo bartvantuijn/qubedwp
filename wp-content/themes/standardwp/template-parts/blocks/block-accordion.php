@@ -57,7 +57,10 @@ if ( $accordion ) : ?>
     </div>
     <style>
         .accordion-button:not(.collapsed) {
-            background-color: var(--bs-primary-light);
+            background-color: var(--bs-primary-light)!important;
+        }
+        .accordion-button:not(.collapsed) > * {
+            color: var(--bs-primary)!important;
         }
     </style>
 

@@ -177,6 +177,10 @@ footer a {
     width: auto!important;
 }
 
+footer .menu-item-has-children .sub-menu {
+    margin-bottom: 1.5rem;
+}
+
 footer .menu-item-has-children > a {
     font-size: 1.5rem;
     font-weight: 500;
@@ -202,6 +206,7 @@ footer .menu-item-has-children > a {
         position: absolute;
         top: calc(100% + 2rem);
         right: .75rem;
+        min-width: 200px;
     }
 
     #navbarMenuSupportedContent .navbar-nav {
