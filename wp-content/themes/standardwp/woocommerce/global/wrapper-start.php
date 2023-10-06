@@ -23,7 +23,9 @@ $template = wc_get_theme_slug_for_templates();
 
 switch ( $template ) {
 	case 'standardwp':
-        get_template_part('template-parts/blocks');
+        if ( !is_product() ){
+            get_template_part('template-parts/blocks');
+        }
         echo '<div id="primary" class="content-area container py-5"><main id="main" class="site-main" role="main">';
         break;
     default:

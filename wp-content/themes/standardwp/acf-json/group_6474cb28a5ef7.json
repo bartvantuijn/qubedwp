@@ -928,6 +928,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
         ]
     ],
     "menu_order": 0,
@@ -939,5 +946,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696533710
+    "modified": 1696623226
 }

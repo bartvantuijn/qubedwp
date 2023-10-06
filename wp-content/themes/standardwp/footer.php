@@ -55,7 +55,7 @@ if ( $footerMenu ) : ?>
 
                                     <?php if ( $icon ) : ?>
 
-                                        <?php echo '<i class="fab fa-' . $icon . '"></i>'; ?>
+                                        <?php echo '<i class="fab fa-' . $icon . '" style="font-size:2.5rem;"></i>'; ?>
 
                                     <?php endif; ?>
 

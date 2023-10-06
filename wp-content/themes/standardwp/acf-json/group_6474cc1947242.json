@@ -144,7 +144,7 @@
             "name": "icoon",
             "aria-label": "",
             "type": "text",
-            "instructions": "Voer de Font Awesome class van het icoon in (bijv. heart, user, envelope)",
+            "instructions": "Voer class van het icoon in",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -197,5 +197,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696534439
+    "modified": 1696620913
 }

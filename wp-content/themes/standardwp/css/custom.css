@@ -1,3 +1,7 @@
+.grecaptcha-badge {
+    visibility: hidden!important;
+}
+
 /*----- RESET -----*/
 *, *::before, *::after {
     box-sizing: border-box;
@@ -8,6 +12,7 @@
     box-shadow: none!important;
 }
 
+/*----- ROOT -----*/
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -15,7 +20,6 @@ html {
 
 body {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
     line-height: 1.5;
     color: var(--bs-body-color);
 }
@@ -24,12 +28,12 @@ a {
     color: var(--bs-primary);
 }
 
-.grecaptcha-badge {
-    visibility: hidden!important;
-}
-
 /*----- ELEMENTS -----*/
 /*----- TYPOGRAPHY -----*/
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-body-color);
+}
+
 /*----- COLORS -----*/
 .bg-primary {
     background-color: var(--bs-primary)!important;
@@ -54,6 +58,7 @@ a {
 /*----- BUTTONS -----*/
 .btn {
     border: 0;
+    border-radius: 5px;
 }
 
 .btn-primary {
@@ -96,8 +101,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: auto;
+    height: 40px!important;
+    width: auto!important;
 }
 
 .navbar-toggler {
@@ -153,8 +158,7 @@ a {
     background-color: var(--bs-primary);
 }
 
-.navbar-nav .dropdown-item.active,
-.navbar-nav .dropdown-item:active {
+.navbar-nav .dropdown-item.active, .navbar-nav .dropdown-item:active {
     color: var(--bs-white);
     background-color: var(--bs-primary);
 }
@@ -173,20 +177,35 @@ footer a {
     width: auto!important;
 }
 
-footer .block-social i {
-    font-size: 2.5rem;
-}
-
 footer .menu-item-has-children > a {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
+/*----- WOOCOMMERCE -----*/
+.woocommerce .price {
+    font-size: 14px!important;
+    color: var(--bs-body-color)!important;
+    margin-bottom: 0!important;
+}
+
+.woocommerce .add_to_cart_button {
+    font-weight: 400!important;
+    color: var(--bs-white)!important;
+    background-color: var(--bs-primary)!important;
+    border-radius: 5px!important;
+    margin-top: 1.5rem!important;
+}
+
 @media screen and (max-width:1399px) {
     #navbarMenuSupportedContent {
         position: absolute;
-        top: calc(100% + 1rem);
+        top: calc(100% + 2rem);
         right: .75rem;
+    }
+
+    #navbarMenuSupportedContent .navbar-nav {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     }
 
     #navbarMenuSupportedContent .navbar-nav:not(:first-child) {
