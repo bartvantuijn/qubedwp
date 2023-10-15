@@ -29,4 +29,6 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 
 <?php the_content(); ?>
 
-<?php get_template_part('template-parts/blocks'); ?>
+<div data-block-count="-1">
+    <?php get_template_part('template-parts/blocks'); ?>
+</div>

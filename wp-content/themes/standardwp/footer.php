@@ -124,6 +124,7 @@ if ( $headerMenuFloat ) : ?>
             total += $(this).outerHeight();
         });
         $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);
+        $('*[data-block-count="-1"]').css('margin-top', -total);
     </script>
 
 <?php endif; ?>
