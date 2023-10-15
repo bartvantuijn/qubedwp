@@ -45,6 +45,13 @@ $(document).ready(function(){
         }
     });
 
+    //WooCommerce
+    $(function () {
+        if ($('.woocommerce')[0]) {
+            $('.input-text').addClass('form-control');
+        }
+    });
+
     // $('.navbar-toggler').click(function(){
     //     $('.navbar-toggler span').toggleClass('open');
     // });
