@@ -49,6 +49,7 @@ $(document).ready(function(){
     $(function () {
         if ($('.woocommerce')[0]) {
             $('.input-text').addClass('form-control');
+            $('.orderby').addClass('form-select');
         }
     });
 
