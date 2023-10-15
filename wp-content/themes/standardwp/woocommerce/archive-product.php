@@ -47,6 +47,13 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_archive_description' );
 		?>
 	</header>
+
+    <?php if ( is_active_sidebar( 'woocommerce_archive_widgets' ) ) : ?>
+
+        <?php dynamic_sidebar( 'woocommerce_archive_widgets' ); ?>
+
+    <?php endif; ?>
+
 	<?php
 	if ( woocommerce_product_loop() ) {
 

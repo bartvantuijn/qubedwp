@@ -306,6 +306,24 @@ if ( function_exists('acf_add_options_page') ) {
 
 }
 
+//WooCommerce
+if ( class_exists( 'WooCommerce' ) ) {
+
+    function register_woocommerce_archive_widgets() {
+        register_sidebar( array(
+            'id' => 'woocommerce_archive_widgets',
+            'name' => esc_html__( 'WooCommerce Archive Widgets', 'theme-domain' ),
+            'description' => esc_html__( 'A WooCommerce archive widget area', 'theme-domain' ),
+            'before_widget' => '<div id="%1$s" class="widget mb-5">',
+            'after_widget'  => '</div>',
+            'before_sidebar'=> '<div id="woocommerce-archive-widgets">',
+            'after_sidebar'=> '</div>',
+        ) );
+    }
+    add_action( 'widgets_init', 'register_woocommerce_archive_widgets' );
+
+}
+
 //Custom Post Type
 //function custom_post_init() {
 //
