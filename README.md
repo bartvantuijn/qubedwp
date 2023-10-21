@@ -1,3 +1,3 @@
 # StandardWP
 
-WordPress theme by van Tuijn Visuals.
+WordPress theme by Qubed Group.

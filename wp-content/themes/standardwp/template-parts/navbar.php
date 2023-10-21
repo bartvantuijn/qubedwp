@@ -100,6 +100,16 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
             </div>
         </nav>
 
+    <?php else : ?>
+
+        <nav class="navbar bg-white shadow py-3">
+            <div class="container">
+                <a class="navbar-brand m-auto" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="line-height:37px;">
+                    <?php bloginfo('name'); ?>
+                </a>
+            </div>
+        </nav>
+
     <?php endif; ?>
 
     <?php

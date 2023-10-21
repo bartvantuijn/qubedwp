@@ -86,7 +86,7 @@ add_action('admin_head', 'custom_admin_styles');
 
 //Custom Admin Footer Text
 function edit_admin_footer() {
-    echo '<span>Met &hearts; gemaakt door <a href="https://vantuijnvisuals.nl/" target="_blank">van Tuijn Visuals</a></span>';
+    echo '<span>Met &hearts; gemaakt door <a href="https://qubedgroup.com/" target="_blank">Qubed Group</a></span>';
 }
 add_filter( 'admin_footer_text', 'edit_admin_footer' );
 
