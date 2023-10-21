@@ -161,7 +161,7 @@ add_action('admin_init', function () {
 
     //Disable support for comments and trackbacks in post types
     foreach (get_post_types() as $post_type) {
-        if (post_type_supports($post_type, 'comments')) {
+        if ( post_type_supports($post_type, 'comments') && $post_type !== 'product' ) {
             remove_post_type_support($post_type, 'comments');
             remove_post_type_support($post_type, 'trackbacks');
         }
@@ -169,11 +169,15 @@ add_action('admin_init', function () {
 });
 
 //Close comments on the front-end
-add_filter('comments_open', '__return_false', 20, 2);
-add_filter('pings_open', '__return_false', 20, 2);
+if ( !class_exists( 'WooCommerce' ) ) {
+    add_filter('comments_open', '__return_false', 20, 2);
+    add_filter('pings_open', '__return_false', 20, 2);
+}
 
 //Hide existing comments
-add_filter('comments_array', '__return_empty_array', 10, 2);
+if ( !class_exists( 'WooCommerce' ) ) {
+    add_filter('comments_array', '__return_empty_array', 10, 2);
+}
 
 //Remove comments page in menu
 add_action('admin_menu', function () {

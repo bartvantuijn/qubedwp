@@ -66,6 +66,6 @@ $(document).ready(function(){
 
 $(document).scroll(function () {
 
-    $('nav.navbar').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
+    $('nav.navbar.floating').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
 
 });

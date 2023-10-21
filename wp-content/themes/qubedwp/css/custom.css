@@ -110,16 +110,16 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bs-white);
 }
 
-#navbarMenuSupportedContent .navbar-nav {
+.floating #navbarMenuSupportedContent .navbar-nav {
     border-radius: 5px;
     background-color: var(--bs-white);
 }
 
-#navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
+.floating #navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
     border-radius: 5px 0 0 5px;
 }
 
-#navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
+.floating #navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
     border-radius: 0 5px 5px 0;
 }
 
