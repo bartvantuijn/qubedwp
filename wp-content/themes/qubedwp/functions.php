@@ -1,5 +1,5 @@
 <?php
-//StandardWP Functions
+//QubedWP Functions
 
 //Custom Theme Setup
 function custom_theme_setup() {

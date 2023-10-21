@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $template = wc_get_theme_slug_for_templates();
 
 switch ( $template ) {
-	case 'standardwp':
+	case 'qubedwp':
         if ( !is_product() ){
             get_template_part('template-parts/blocks');
         }

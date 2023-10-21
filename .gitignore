@@ -6,7 +6,7 @@
 !/wp-content/plugins/advanced-custom-fields-pro
 !/wp-content/themes
 /wp-content/themes/*
-!/wp-content/themes/standardwp
-!/wp-content/themes/standardwp-child
+!/wp-content/themes/qubedwp
+!/wp-content/themes/qubedwp-child
 !/.gitignore
 !/README.md
