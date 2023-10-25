@@ -20,7 +20,7 @@ if ( $columns ) : ?>
                     $text = get_sub_field('tekst');
                     $link = get_sub_field('link'); ?>
 
-                    <div class="col-lg" data-aos="fade-up">
+                    <div class="col-lg mb-5" data-aos="fade-up">
 
                         <?php if ( $icon ) : ?>
 
