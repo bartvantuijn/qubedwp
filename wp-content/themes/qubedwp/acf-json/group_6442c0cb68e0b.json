@@ -1,11 +1,11 @@
 {
     "key": "group_6442c0cb68e0b",
-    "title": "Thema instellingen",
+    "title": "Uiterlijk",
     "fields": [
         {
             "key": "field_64612e8714277",
             "label": "Font",
-            "name": "thema_instellingen_font",
+            "name": "uiterlijk_font",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -25,7 +25,7 @@
         {
             "key": "field_6443aeebdefa4",
             "label": "Kleuren aanpassen",
-            "name": "thema_instellingen_kleuren_aanpassen",
+            "name": "uiterlijk_kleuren_aanpassen",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -45,7 +45,7 @@
         {
             "key": "field_6443af08defa5",
             "label": "Kleuren",
-            "name": "thema_instellingen_kleuren",
+            "name": "uiterlijk_kleuren",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -128,7 +128,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-thema-instellingen"
+                "value": "acf-options-uiterlijk"
             }
         ]
     ],
@@ -141,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688732655
+    "modified": 1698173358
 }

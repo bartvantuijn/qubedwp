@@ -1,0 +1,62 @@
+{
+    "key": "group_65380baa99f38",
+    "title": "Blokken",
+    "fields": [
+        {
+            "key": "field_65380baa9ccf8",
+            "label": "Blokken",
+            "name": "instellingen_blokken",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tekst": "Tekst",
+                "afbeelding": "Afbeelding",
+                "galerij": "Galerij",
+                "slider": "Slider",
+                "post": "Post",
+                "accordion": "Accordion"
+            },
+            "default_value": [
+                "tekst",
+                "afbeelding",
+                "galerij",
+                "slider",
+                "post",
+                "accordion"
+            ],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Nieuwe keuze toevoegen"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-blokken"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698255483
+}

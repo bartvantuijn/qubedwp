@@ -30,10 +30,6 @@ a {
 
 /*----- ELEMENTS -----*/
 /*----- TYPOGRAPHY -----*/
-h1, h2, h3, h4, h5, h6 {
-    color: var(--bs-body-color);
-}
-
 /*----- COLORS -----*/
 .bg-primary {
     background-color: var(--bs-primary)!important;
@@ -110,16 +106,16 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bs-white);
 }
 
-.floating #navbarMenuSupportedContent .navbar-nav {
+#navbarMenuSupportedContent .navbar-nav {
     border-radius: 5px;
     background-color: var(--bs-white);
 }
 
-.floating #navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
+#navbarMenuSupportedContent .navbar-nav .nav-item:first-child > .nav-link {
     border-radius: 5px 0 0 5px;
 }
 
-.floating #navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
+#navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
     border-radius: 0 5px 5px 0;
 }
 
@@ -158,7 +154,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bs-primary);
 }
 
-.navbar-nav .dropdown-item.active, .navbar-nav .dropdown-item:active {
+.navbar-nav .nav-item > .dropdown-item {
+    color: var(--bs-body-color);
+}
+
+.navbar-nav .nav-item > .dropdown-item.active,
+.navbar-nav .nav-item > .dropdown-item:active {
     color: var(--bs-white);
     background-color: var(--bs-primary);
 }
@@ -206,7 +207,7 @@ footer .menu-item-has-children > a {
         position: absolute;
         top: calc(100% + 2rem);
         right: .75rem;
-        min-width: 200px;
+        min-width: 175px;
     }
 
     #navbarMenuSupportedContent .navbar-nav {

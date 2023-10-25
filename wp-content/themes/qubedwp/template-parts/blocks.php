@@ -69,10 +69,6 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
             get_template_part('template-parts/blocks/block-accordion', null, $args);
 
-        elseif ( $blockType == 'block-search' ) :
-
-            get_template_part('template-parts/blocks/block-search', null, $args);
-
         endif;
 
     endwhile;

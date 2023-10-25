@@ -80,7 +80,7 @@ add_action( 'wp_before_admin_bar_render', 'custom_admin_bar_render' );
 
 //Custom Admin Styles
 function custom_admin_styles() {
-    echo '<style>#toplevel_page_acf-options-thema-instellingen { background-color: #323232; } #toplevel_page_acf-options-blok { background-color: #323232; }</style>';
+    echo '<style>#toplevel_page_acf-options-uiterlijk { background-color: #262626; } #toplevel_page_acf-options-blokken { background-color: #262626; }</style>';
 }
 add_action('admin_head', 'custom_admin_styles');
 
@@ -121,6 +121,12 @@ function remove_wp_block_library_css(){
 add_filter( 'use_block_editor_for_post', '__return_false' );
 add_filter( 'use_widgets_block_editor', '__return_false' );
 add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
+
+//Search Form Shortcode
+function get_search_form_shortcode() {
+    return get_search_form(false);
+}
+add_shortcode('get_search_form', 'get_search_form_shortcode');
 
 //Disable Emojis
 function disable_emojis() {
@@ -226,55 +232,63 @@ add_filter('acf/settings/load_json', 'my_acf_json_point');
 if ( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page(array(
-        'page_title'  => 'Thema opties',
-        'menu_title'  => 'Thema opties',
-        'menu_slug'   => 'thema-opties',
+        'page_title'  => 'Thema',
+        'menu_title'  => 'Thema',
+        'menu_slug'   => 'thema',
         'capability'  => 'edit_posts',
         'redirect'    => true,
+        'icon_url'    => 'dashicons-layout',
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'  => 'Thema instellingen',
-        'menu_title'  => 'Thema instellingen',
-        'parent_slug' => 'thema-opties',
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'  => 'Google Analytics',
-        'menu_title'  => 'Google Analytics',
-        'parent_slug' => 'thema-opties',
+        'page_title'  => 'Uiterlijk',
+        'menu_title'  => 'Uiterlijk',
+        'parent_slug' => 'thema',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'  => 'Contactgegevens',
         'menu_title'  => 'Contactgegevens',
-        'parent_slug' => 'thema-opties',
+        'parent_slug' => 'thema',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'  => 'Social Media',
         'menu_title'  => 'Social Media',
-        'parent_slug' => 'thema-opties',
+        'parent_slug' => 'thema',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Popup',
+        'menu_title'	=> 'Popup',
+        'parent_slug'	=> 'thema',
     ));
 
     acf_add_options_sub_page(array(
         'page_title'  => 'Cookiebanner',
         'menu_title'  => 'Cookiebanner',
-        'parent_slug' => 'thema-opties',
-    ));
-
-    acf_add_options_page(array(
-        'page_title'  => 'Blokken',
-        'menu_title'  => 'Blokken',
-        'menu_slug'   => 'blokken',
-        'capability'  => 'edit_posts',
-        'redirect'    => true,
+        'parent_slug' => 'thema',
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'  => 'Blok',
-        'menu_title'  => 'Blok',
-        'parent_slug' => 'blokken',
+        'page_title'  => 'Google Analytics',
+        'menu_title'  => 'Google Analytics',
+        'parent_slug' => 'thema',
+    ));
+
+    acf_add_options_page(array(
+        'page_title'  => 'Instellingen',
+        'menu_title'  => 'Instellingen',
+        'menu_slug'   => 'instellingen',
+        'capability'  => 'edit_posts',
+        'redirect'    => true,
+        'icon_url'    => 'dashicons-layout',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Blokken',
+        'menu_title'  => 'Blokken',
+        'parent_slug' => 'instellingen',
     ));
 
 //    acf_add_options_sub_page(array(
@@ -289,7 +303,6 @@ if ( function_exists('acf_add_options_page') ) {
 //        'parent_slug'	=> 'thema-opties',
 //    ));
 //
-//
 //    acf_add_options_sub_page(array(
 //        'page_title' 	=> 'Call to Action',
 //        'menu_title'	=> 'Call to Action',
@@ -299,12 +312,6 @@ if ( function_exists('acf_add_options_page') ) {
 //    acf_add_options_sub_page(array(
 //        'page_title' 	=> 'Reviews (slider)',
 //        'menu_title'	=> 'Reviews (slider)',
-//        'parent_slug'	=> 'thema-blokken',
-//    ));
-//
-//    acf_add_options_sub_page(array(
-//        'page_title' 	=> 'Website popup',
-//        'menu_title'	=> 'Website popup',
 //        'parent_slug'	=> 'thema-blokken',
 //    ));
 
