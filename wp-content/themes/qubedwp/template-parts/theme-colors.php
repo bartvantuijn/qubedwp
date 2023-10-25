@@ -1,8 +1,8 @@
 <?php
 
-if ( have_rows('thema_instellingen_kleuren', 'options') ) :
+if ( have_rows('uiterlijk_kleuren', 'options') ) :
 
-    while (have_rows('thema_instellingen_kleuren', 'options')) : the_row();
+    while (have_rows('uiterlijk_kleuren', 'options')) : the_row();
 
         $primary = get_sub_field('primair');
         $secondary = get_sub_field('secundair');

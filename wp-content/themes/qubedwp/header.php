@@ -75,7 +75,7 @@ if( ! class_exists('ACF') ) {
 
     <?php
 
-    $fontFamily = get_field('thema_instellingen_font', 'options');
+    $fontFamily = get_field('uiterlijk_font', 'options');
 
     if ( $fontFamily ) :
 
@@ -106,7 +106,7 @@ if( ! class_exists('ACF') ) {
 
     <?php
 
-    $themeColors = get_field('thema_instellingen_kleuren_aanpassen', 'options');
+    $themeColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
 
     if ( $themeColors ) :
 
