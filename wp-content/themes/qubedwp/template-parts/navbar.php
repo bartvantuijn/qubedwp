@@ -151,29 +151,8 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
                 <div id="scrollbar" class="progress-bar bg-primary"></div>
             </div>
 
-            <script>
-                $(document).scroll(function () {
-                    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                    var scrolled = (winScroll / height) * 100;
-                    document.getElementById("scrollbar").style.width = scrolled + "%";
-                });
-            </script>
-
         <?php endif; ?>
 
     <?php endif; ?>
 
 </div>
-
-<?php if ( $headerMenuFloat ) : ?>
-
-    <script type="text/javascript">
-        var total = 0;
-        $('#nav-wrapper .navbar').each(function(){
-            total += $(this).outerHeight();
-        });
-        $('#nav-wrapper').css('margin-bottom', -total);
-    </script>
-
-<?php endif; ?>

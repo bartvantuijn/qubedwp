@@ -280,7 +280,7 @@ if ( function_exists('acf_add_options_page') ) {
         'page_title'  => 'Instellingen',
         'menu_title'  => 'Instellingen',
         'menu_slug'   => 'instellingen',
-        'capability'  => 'edit_posts',
+        'capability'  => 'manage_options',
         'redirect'    => true,
         'icon_url'    => 'dashicons-layout',
     ));

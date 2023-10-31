@@ -13,13 +13,13 @@ if ( $images ) : ?>
 
         <div class="container">
 
-            <div class="row">
+            <div class="row g-5 my-5">
 
                 <?php while ( have_rows('afbeeldingen') ) : the_row();
 
                     $image = get_sub_field('afbeelding'); ?>
 
-                    <div class="col-4 mb-4" data-aos="fade-up">
+                    <div class="col-4" data-aos="fade-up">
                         <div style="min-height:<?php echo $height ?: '250px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;"></div>
                     </div>
 

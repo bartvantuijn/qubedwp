@@ -1,7 +1,7 @@
 <?php
 // BLOCK SLIDER
 
-// GET BLOCKK DATA
+// GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
 $height = get_sub_field('hoogte');
@@ -82,25 +82,13 @@ if ( $slides ) : ?>
 
     </div>
 
-    <style rel="media/screen">
-        .carousel-item {
-            align-items: center;
-            transition: all 1s ease-out;
-        }
-        .carousel-item.scrolled {
-            background-position: center 47.5%!important;
-        }
-        .carousel-item-next, .carousel-item-prev, .carousel-item.active {
-            display: flex;
-        }
-    </style>
     <script type="text/javascript">
-        $('#carouselExampleControls<?php echo $args['blockCount']; ?>').append('<div class="<?php echo $background; ?>"></div>');
-        var c = $('#carouselExampleControls<?php echo $args['blockCount']; ?> .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
-        $('#carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-item').css('background-color', c);
+        $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
+        var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+        $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
 
         $(document).scroll(function () {
-            $('#carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-item').toggleClass('scrolled', $(this).scrollTop() > 25);
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').toggleClass('scrolled', $(this).scrollTop() > 25);
         });
     </script>
 

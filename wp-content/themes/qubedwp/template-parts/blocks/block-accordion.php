@@ -16,7 +16,7 @@ if ( $accordion ) : ?>
 
                     $rowCount = 0; ?>
 
-                    <div class="accordion" id="accordionExample<?php echo $args['blockCount']; ?>">
+                    <div class="accordion my-5" id="accordionExample<?php echo $args['blockCount']; ?>">
 
                         <?php while ( have_rows('accordion') ) : the_row();
                             $rowCount++;
@@ -55,13 +55,5 @@ if ( $accordion ) : ?>
         </div>
 
     </div>
-    <style>
-        .accordion-button:not(.collapsed) {
-            background-color: var(--bs-primary-light)!important;
-        }
-        .accordion-button:not(.collapsed) > * {
-            color: var(--bs-primary)!important;
-        }
-    </style>
 
 <?php endif; ?>

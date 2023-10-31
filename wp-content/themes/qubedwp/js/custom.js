@@ -1,17 +1,9 @@
 AOS.init();
 
-function setCookie(name, value, days) {
-    let d = new Date();
-    d.setTime(d.getTime() + (days*24*60*60*1000));
-    let expires = "expires="+d.toUTCString();
-    document.cookie = name + "=" + value + "; " + expires;
-    location.reload();
-}
-
 $(window).on('load', function() {
 
+    $('#loading').delay(50).fadeOut(100);
     AOS.refresh();
-    //$('#loading').delay(50).fadeOut(100);
 
 });
 
@@ -66,6 +58,12 @@ $(document).ready(function(){
 
 $(document).scroll(function () {
 
-    $('nav.navbar.floating').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
-
 });
+
+function setCookie(name, value, days) {
+    let d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = name + "=" + value + "; " + expires;
+    location.reload();
+}

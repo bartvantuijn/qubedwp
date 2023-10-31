@@ -1,5 +1,5 @@
 <?php
-// FOOTER
+// FOOTER MENU
 $footerMenu = wp_get_nav_menu_object('footer-menu');
 
 // GET FOOTER DATA
@@ -111,30 +111,15 @@ if ( $footerMenu ) : ?>
 if ( !isset($_COOKIE['website_cookies']) ) {
     get_template_part('template-parts/cookiebanner');
 }
+
 get_template_part('template-parts/copyright');
-
-$headerMenu = wp_get_nav_menu_object('header-menu');
-$headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
-
-if ( $headerMenuFloat ) : ?>
-
-    <script type="text/javascript">
-        var total = 0;
-        $('#nav-wrapper .navbar').each(function(){
-            total += $(this).outerHeight();
-        });
-        $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);
-        $('*[data-block-count="-1"]').css('margin-top', -total);
-    </script>
-
-<?php endif; ?>
-
-<?php wp_footer(); ?>
+wp_footer(); ?>
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script defer src="<?php bloginfo('template_url'); ?>/js/glightbox.min.js"></script>
+<script defer src="<?php bloginfo('template_url'); echo '/js/navbar.js?v=' . filemtime( get_stylesheet_directory() . '/js/navbar.js'); ?>"></script>
 <script defer src="<?php bloginfo('template_url'); echo '/js/custom.js?v=' . filemtime( get_stylesheet_directory() . '/js/custom.js'); ?>"></script>
 
 </body>

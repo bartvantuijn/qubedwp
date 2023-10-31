@@ -2,6 +2,17 @@
     visibility: hidden!important;
 }
 
+/*----- LOADING -----*/
+#loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: var(--bs-white);
+}
+
 /*----- RESET -----*/
 *, *::before, *::after {
     box-sizing: border-box;
@@ -29,6 +40,10 @@ a {
 }
 
 /*----- ELEMENTS -----*/
+.card {
+    background-color: transparent;
+}
+
 /*----- TYPOGRAPHY -----*/
 /*----- COLORS -----*/
 .bg-primary {
@@ -99,6 +114,12 @@ a {
     justify-content: center;
     height: 40px!important;
     width: auto!important;
+    color: var(--bs-primary);
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: var(--bs-primary);
 }
 
 .navbar-toggler {
@@ -162,6 +183,26 @@ a {
 .navbar-nav .nav-item > .dropdown-item:active {
     color: var(--bs-white);
     background-color: var(--bs-primary);
+}
+
+/*----- BLOCK SLIDER -----*/
+.block-slider .carousel-item {
+    align-items: center;
+    transition: all 1s ease-out;
+}
+.block-slider .carousel-item.scrolled {
+    background-position: center 47.5%!important;
+}
+.block-slider .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display: flex;
+}
+
+/*----- BLOCK ACCORDION -----*/
+.block-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--bs-primary-light)!important;
+}
+.block-accordion .accordion-button:not(.collapsed) > * {
+    color: var(--bs-primary)!important;
 }
 
 /*----- FOOTER -----*/

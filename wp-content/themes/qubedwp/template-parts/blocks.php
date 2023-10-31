@@ -75,7 +75,7 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
 else :
 
-    //echo 'No content blocks found...';
+    //No content blocks found
     echo '<div id="block" data-block-count="1"></div>';
 
 endif;

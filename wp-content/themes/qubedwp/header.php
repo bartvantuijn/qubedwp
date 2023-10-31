@@ -104,6 +104,15 @@ if( ! class_exists('ACF') ) {
 
     <link rel="stylesheet" href="<?php bloginfo('template_url'); echo '/style.css?v=' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" />
 
+    <style type="text/css" media="screen">
+        :root {
+            --bs-primary-hover: rgba(var(--bs-primary-rgb), .9);
+            --bs-primary-light: rgba(var(--bs-primary-rgb), .1);
+            --bs-secondary-hover: rgba(var(--bs-secondary-rgb), .9);
+            --bs-secondary-light: rgba(var(--bs-secondary-rgb), .1);
+        }
+    </style>
+
     <?php
 
     $themeColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
@@ -117,4 +126,6 @@ if( ! class_exists('ACF') ) {
 </head>
 <body <?php body_class(); ?>>
 
-    <?php get_template_part('template-parts/navbar'); ?>
+    <?php
+    get_template_part('template-parts/loading');
+    get_template_part('template-parts/navbar'); ?>
