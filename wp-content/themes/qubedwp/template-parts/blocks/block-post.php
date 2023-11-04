@@ -8,7 +8,7 @@ $posts = get_sub_field('posts');
 
 if ( $posts ) : ?>
 
-    <div class="block-posts <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-post <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 

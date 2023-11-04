@@ -39,11 +39,11 @@ a {
     color: var(--bs-primary);
 }
 
-/*----- ELEMENTS -----*/
-.card {
-    background-color: transparent;
+a:hover {
+    color: var(--bs-primary-hover);
 }
 
+/*----- ELEMENTS -----*/
 /*----- TYPOGRAPHY -----*/
 /*----- COLORS -----*/
 .bg-primary {
@@ -195,6 +195,11 @@ a {
 }
 .block-slider .carousel-item-next, .carousel-item-prev, .carousel-item.active {
     display: flex;
+}
+
+/*----- BLOCK POST -----*/
+.block-post .card {
+    background-color: transparent;
 }
 
 /*----- BLOCK ACCORDION -----*/

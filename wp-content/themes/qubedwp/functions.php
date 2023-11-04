@@ -317,6 +317,60 @@ if ( function_exists('acf_add_options_page') ) {
 
 }
 
+//Custom ACF Block Access
+function my_acf_block_access() {
+    $blockAccess = get_field('instellingen_blokken', 'options');
+
+    if( $blockAccess && !in_array('tekst', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-text"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
+    if( $blockAccess && in_array('afbeelding', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-image"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
+    if( $blockAccess && in_array('galerij', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-gallery"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
+    if( $blockAccess && in_array('slider', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-slider"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
+    if( $blockAccess && in_array('post', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-post"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
+    if( $blockAccess && in_array('accordion', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-accordion"] {
+            display:none!important;
+        }
+        </style>';
+    }
+}
+add_action( 'admin_head', 'my_acf_block_access' );
+
 //WooCommerce
 if ( class_exists( 'WooCommerce' ) ) {
 

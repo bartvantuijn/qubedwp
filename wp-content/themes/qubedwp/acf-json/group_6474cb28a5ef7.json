@@ -835,7 +835,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Nieuwe regel"
+            "button_label": "Blok toevoegen"
         }
     ],
     "location": [
@@ -870,5 +870,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698255467
+    "modified": 1698962470
 }

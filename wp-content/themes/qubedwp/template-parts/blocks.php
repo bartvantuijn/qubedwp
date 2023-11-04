@@ -34,6 +34,7 @@ endif;
 
 if ( $pageID && have_rows('blokken', $pageID) ) :
 
+    $blockAccess = get_field('instellingen_blokken', 'options');
     $blockCount = 0;
 
     while ( have_rows('blokken', $pageID) ) : the_row();
@@ -47,27 +48,39 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
 
         if ( $blockType == 'block-text' ) :
 
-            get_template_part('template-parts/blocks/block-text', null, $args);
+            if( $blockAccess && in_array('tekst', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-text', null, $args);
+            endif;
 
         elseif ( $blockType == 'block-image' ) :
 
-            get_template_part('template-parts/blocks/block-image', null, $args);
+            if( $blockAccess && in_array('afbeelding', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-image', null, $args);
+            endif;
 
         elseif ( $blockType == 'block-gallery' ) :
 
-            get_template_part('template-parts/blocks/block-gallery', null, $args);
+            if( $blockAccess && in_array('galerij', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-gallery', null, $args);
+            endif;
 
         elseif ( $blockType == 'block-slider' ) :
 
-            get_template_part('template-parts/blocks/block-slider', null, $args);
+            if( $blockAccess && in_array('slider', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-slider', null, $args);
+            endif;
 
         elseif ( $blockType == 'block-post' ) :
 
-            get_template_part('template-parts/blocks/block-post', null, $args);
+            if( $blockAccess && in_array('post', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-post', null, $args);
+            endif;
 
         elseif ( $blockType == 'block-accordion' ) :
 
-            get_template_part('template-parts/blocks/block-accordion', null, $args);
+            if( $blockAccess && in_array('accordion', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-accordion', null, $args);
+            endif;
 
         endif;
 
