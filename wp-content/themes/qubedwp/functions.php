@@ -329,7 +329,7 @@ function my_acf_block_access() {
         </style>';
     }
 
-    if( $blockAccess && in_array('afbeelding', $blockAccess) ) {
+    if( $blockAccess && !in_array('afbeelding', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-image"] {
             display:none!important;
@@ -337,7 +337,7 @@ function my_acf_block_access() {
         </style>';
     }
 
-    if( $blockAccess && in_array('galerij', $blockAccess) ) {
+    if( $blockAccess && !in_array('galerij', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-gallery"] {
             display:none!important;
@@ -345,7 +345,7 @@ function my_acf_block_access() {
         </style>';
     }
 
-    if( $blockAccess && in_array('slider', $blockAccess) ) {
+    if( $blockAccess && !in_array('slider', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-slider"] {
             display:none!important;
@@ -353,7 +353,7 @@ function my_acf_block_access() {
         </style>';
     }
 
-    if( $blockAccess && in_array('post', $blockAccess) ) {
+    if( $blockAccess && !in_array('post', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-post"] {
             display:none!important;
@@ -361,7 +361,7 @@ function my_acf_block_access() {
         </style>';
     }
 
-    if( $blockAccess && in_array('accordion', $blockAccess) ) {
+    if( $blockAccess && !in_array('accordion', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-accordion"] {
             display:none!important;
