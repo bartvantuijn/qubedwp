@@ -9,7 +9,7 @@ $slides = get_sub_field('slides');
 
 if ( $slides ) : ?>
 
-    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
 
         <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
 

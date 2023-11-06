@@ -8,7 +8,7 @@ $columns = get_sub_field('kolommen');
 
 if ( $columns ) : ?>
 
-    <div class="block-text <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-text <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
 
         <div class="container">
 

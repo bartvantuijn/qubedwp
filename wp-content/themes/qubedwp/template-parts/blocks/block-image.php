@@ -9,7 +9,7 @@ $position = get_sub_field('tekstpositie');
 
 if ( $image ) : ?>
 
-    <div class="block-image py-5" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-image bg-white" data-block-background="bg-white" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
 
         <div class="container">
 

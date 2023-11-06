@@ -9,7 +9,7 @@ $images = get_sub_field('afbeeldingen');
 
 if ( $images ) : ?>
 
-    <div class="block-gallery <?php echo $background . ' ' . $color; ?> py-5" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-gallery <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
 
         <div class="container">
 

@@ -737,6 +737,50 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6549348f61085",
+                            "label": "Achtergrond",
+                            "name": "achtergrond",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6474ce7d45b5d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_654934a561086",
+                            "label": "Kleur",
+                            "name": "kleur",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6474ceb145b5e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_651dc74881a0c",
                             "label": "Accordion",
                             "name": "accordion",
@@ -870,5 +914,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698962470
+    "modified": 1699296441
 }

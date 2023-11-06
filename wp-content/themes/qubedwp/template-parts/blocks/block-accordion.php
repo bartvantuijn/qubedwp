@@ -2,11 +2,13 @@
 // BLOCK ACCORDION
 
 // GET BLOCK DATA
+$background = get_sub_field('achtergrond');
+$color = get_sub_field('kleur');
 $accordion = get_sub_field('accordion');
 
 if ( $accordion ) : ?>
 
-    <div class="block-accordion py-5" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-accordion <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
 
         <div class="container">
 
