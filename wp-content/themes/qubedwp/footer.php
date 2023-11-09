@@ -10,12 +10,12 @@ $footerMenuImage = get_field('footer_menu_afbeelding', $footerMenu);
 
 if ( $footerMenu ) : ?>
 
-    <footer class="footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?> p-5" style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up">
+    <footer class="block-footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
 
         <div class="container">
 
             <div class="row">
-                <div class="col-lg text-center mb-5">
+                <div class="col-lg text-center" data-aos="fade-up">
 
                     <?php if ( $footerMenuLogo ) : ?>
 
@@ -40,8 +40,8 @@ if ( $footerMenu ) : ?>
 
             if ( $socialMediaChannels ) : ?>
 
-                <div class="block-social row">
-                    <div class="col-lg text-center mb-5">
+                <div class="row">
+                    <div class="col-lg text-center mt-4" data-aos="fade-up">
 
                         <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
 
@@ -73,7 +73,7 @@ if ( $footerMenu ) : ?>
             <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
                 <div class="row">
-                    <div class="col-lg">
+                    <div class="col-lg mt-4" data-aos="fade-up">
 
                         <?php
                         wp_nav_menu( array(

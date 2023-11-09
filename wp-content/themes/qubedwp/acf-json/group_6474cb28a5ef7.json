@@ -250,8 +250,6 @@
                                 "id": ""
                             },
                             "choices": {
-                                "top": "Boven",
-                                "bottom": "Onder",
                                 "left": "Links",
                                 "right": "Rechts",
                                 "center": "Midden"
@@ -901,7 +899,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "product"
             }
         ]
     ],
@@ -914,5 +912,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699296441
+    "modified": 1699388969
 }

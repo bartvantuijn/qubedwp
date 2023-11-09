@@ -8,50 +8,52 @@ $accordion = get_sub_field('accordion');
 
 if ( $accordion ) : ?>
 
-    <div class="block-accordion <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
+    <div class="block-accordion <?php echo $background . ' ' . $color; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 
             <div class="row">
+                <div class="col-lg" data-aos="fade-up">
 
-                <?php if ( have_rows('accordion') ) :
+                    <?php if ( have_rows('accordion') ) :
 
-                    $rowCount = 0; ?>
+                        $rowCount = 0; ?>
 
-                    <div class="accordion my-5" id="accordionExample<?php echo $args['blockCount']; ?>">
+                        <div class="accordion" id="accordionExample<?php echo $args['blockCount']; ?>">
 
-                        <?php while ( have_rows('accordion') ) : the_row();
-                            $rowCount++;
-                            $icon = get_sub_field('icoon');
-                            $title = get_sub_field('titel');
-                            $text = get_sub_field('tekst'); ?>
+                            <?php while ( have_rows('accordion') ) : the_row();
+                                $rowCount++;
+                                $icon = get_sub_field('icoon');
+                                $title = get_sub_field('titel');
+                                $text = get_sub_field('tekst'); ?>
 
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $rowCount; ?>" aria-expanded="false" aria-controls="collapse<?php echo $rowCount; ?>">
-                                        <h6>
-                                            <?php if ( $icon ) : ?>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $rowCount; ?>" aria-expanded="false" aria-controls="collapse<?php echo $rowCount; ?>">
+                                            <h6>
+                                                <?php if ( $icon ) : ?>
 
-                                                <?php echo '<i class="fa fa-' . $icon . ' me-2"></i>'; ?>
+                                                    <?php echo '<i class="fa fa-' . $icon . ' me-2"></i>'; ?>
 
-                                            <?php endif; ?>
-                                            <?php echo $title; ?>
-                                        </h6>
-                                    </button>
-                                </h2>
-                                <div id="collapse<?php echo $rowCount; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample<?php echo $args['blockCount']; ?>">
-                                    <div class="accordion-body">
-                                        <?php echo $text; ?>
+                                                <?php endif; ?>
+                                                <?php echo $title; ?>
+                                            </h6>
+                                        </button>
+                                    </h2>
+                                    <div id="collapse<?php echo $rowCount; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample<?php echo $args['blockCount']; ?>">
+                                        <div class="accordion-body">
+                                            <?php echo $text; ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        <?php endwhile; ?>
+                            <?php endwhile; ?>
 
-                    </div>
+                        </div>
 
-                <?php endif; ?>
+                    <?php endif; ?>
 
+                </div>
             </div>
 
         </div>

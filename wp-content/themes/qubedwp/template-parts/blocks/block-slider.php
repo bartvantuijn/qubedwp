@@ -9,7 +9,7 @@ $slides = get_sub_field('slides');
 
 if ( $slides ) : ?>
 
-    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
+    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block data-block-count="<?php echo $args['blockCount']; ?>">
 
         <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
 
@@ -33,7 +33,7 @@ if ( $slides ) : ?>
 
                     <div class="container">
 
-                        <div class="<?php echo $color; ?> p-5" data-aos="fade-up">
+                        <div class="<?php echo $color; ?>" data-aos="fade-up">
 
                             <?php if ( $text ) : ?>
 
@@ -80,16 +80,15 @@ if ( $slides ) : ?>
 
         <?php endif; ?>
 
+        <script type="text/javascript">
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
+
+            $(document).scroll(function () {
+                $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').toggleClass('scrolled', $(this).scrollTop() > 25);
+            });
+        </script>
     </div>
-
-    <script type="text/javascript">
-        $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
-        var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
-        $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
-
-        $(document).scroll(function () {
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').toggleClass('scrolled', $(this).scrollTop() > 25);
-        });
-    </script>
 
 <?php endif; ?>

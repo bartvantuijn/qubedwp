@@ -235,17 +235,30 @@ footer .menu-item-has-children > a {
 
 /*----- WOOCOMMERCE -----*/
 .woocommerce .price {
-    font-size: 14px!important;
-    color: var(--bs-body-color)!important;
-    margin-bottom: 0!important;
+    font-size: 24px!important;
+    color: var(--bs-primary)!important;
+    margin-bottom: 1.5rem!important;
 }
 
-.woocommerce .add_to_cart_button {
+.woocommerce .product .button {
     font-weight: 400!important;
     color: var(--bs-white)!important;
     background-color: var(--bs-primary)!important;
     border-radius: 5px!important;
-    margin-top: 1.5rem!important;
+}
+
+.woocommerce .product .button:hover {
+    color: var(--bs-white)!important;
+    background-color: var(--bs-primary-hover)!important;
+}
+
+.woocommerce .products .woocommerce-loop-product__title {
+    color: var(--bs-body-color)!important;
+}
+
+.woocommerce .products .price {
+    font-size: 14px!important;
+    margin-bottom: 0!important;
 }
 
 @media screen and (max-width:1399px) {

@@ -9,11 +9,11 @@ $images = get_sub_field('afbeeldingen');
 
 if ( $images ) : ?>
 
-    <div class="block-gallery <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
+    <div class="block-gallery <?php echo $background . ' ' . $color; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 
-            <div class="row g-5 my-5">
+            <div class="row g-4">
 
                 <?php while ( have_rows('afbeeldingen') ) : the_row();
 

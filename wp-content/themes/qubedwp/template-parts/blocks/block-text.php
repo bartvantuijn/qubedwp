@@ -8,11 +8,11 @@ $columns = get_sub_field('kolommen');
 
 if ( $columns ) : ?>
 
-    <div class="block-text <?php echo $background . ' ' . $color; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
+    <div class="block-text <?php echo $background . ' ' . $color; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 
-            <div class="row">
+            <div class="row g-4">
 
                 <?php while ( have_rows('kolommen') ) : the_row();
 
@@ -20,11 +20,11 @@ if ( $columns ) : ?>
                     $text = get_sub_field('tekst');
                     $link = get_sub_field('link'); ?>
 
-                    <div class="col-lg my-5" data-aos="fade-up">
+                    <div class="col-lg" data-aos="fade-up">
 
                         <?php if ( $icon ) : ?>
 
-                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center mb-5"></i>'; ?>
+                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center mb-4"></i>'; ?>
 
                         <?php endif; ?>
 

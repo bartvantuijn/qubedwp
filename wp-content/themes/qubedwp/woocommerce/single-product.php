@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="block-single-product" data-block-count="1">
+<div class="block-single-product" data-block data-block-count="1">
 
 	<?php
 		/**

@@ -379,7 +379,7 @@ if ( class_exists( 'WooCommerce' ) ) {
             'id' => 'woocommerce_archive_widgets',
             'name' => esc_html__( 'WooCommerce Archive Widgets', 'theme-domain' ),
             'description' => esc_html__( 'A WooCommerce archive widget area', 'theme-domain' ),
-            'before_widget' => '<div id="%1$s" class="widget mb-5">',
+            'before_widget' => '<div id="%1$s" class="widget">',
             'after_widget'  => '</div>',
             'before_sidebar'=> '<div id="woocommerce-archive-widgets">',
             'after_sidebar'=> '</div>',

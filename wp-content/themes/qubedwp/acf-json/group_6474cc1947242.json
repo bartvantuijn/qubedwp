@@ -128,7 +128,7 @@
             "name": "link",
             "aria-label": "",
             "type": "link",
-            "instructions": "",
+            "instructions": "Voeg optioneel {classes} toe",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -197,5 +197,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696620913
+    "modified": 1699566828
 }
