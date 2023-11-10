@@ -216,7 +216,7 @@ add_action( 'wp_enqueue_scripts', 'dequeue_before_accepted_cookies', 99 );
 add_filter( 'wpcf7_form_elements', 'my_wpcf7_form_elements' );
 function my_wpcf7_form_elements( $content ) {
     if ( !isset($_COOKIE['website_cookies']) || $_COOKIE['website_cookies'] == 'no' ) {
-        $content = '<button type="button" onclick="setCookie(\'website_cookies\',\'yes\', 365);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
+        $content = '<button type="button" onclick="setCookie(\'website_cookies\', \'yes\', 365, null, location.href);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
     }
     return $content;
 }

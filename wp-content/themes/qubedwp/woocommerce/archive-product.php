@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' ); ?>
 
-<div class="block-archive-product" data-block data-block-background="bg-white">
+<div class="block-archive-product">
 
 	<?php
 	/**

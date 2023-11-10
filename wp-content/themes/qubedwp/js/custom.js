@@ -2,7 +2,7 @@ AOS.init();
 
 $(window).on('load', function() {
 
-    $('#loading').delay(50).fadeOut(100);
+    $('#loader').delay(100).fadeOut(250);
     AOS.refresh();
 
 });
@@ -14,10 +14,17 @@ $(document).ready(function(){
         $('[data-bs-toggle="tooltip"]').tooltip();
     });
 
+    //Popup
+    $(function () {
+        $('#popup').modal('show');
+    });
+
+    //Toasts
     $(function () {
         $('.toast').toast('show');
     });
 
+    //Alerts
     $(function () {
         $('.alert').fadeTo(2000, 500).slideUp(500, function () {
             $('.alert').slideUp(500);
@@ -45,6 +52,11 @@ $(document).ready(function(){
         }
     });
 
+    //Navbar
+    $(this).on('click', function () {
+        $('#navbarMenuSupportedContent').collapse('hide');
+    });
+
     // $('.navbar-toggler').click(function(){
     //     $('.navbar-toggler span').toggleClass('open');
     // });
@@ -56,10 +68,17 @@ $(document).ready(function(){
 
 });
 
-function setCookie(name, value, days) {
+function setCookie(name, value, days, element = null, url = null) {
     let d = new Date();
     d.setTime(d.getTime() + (days*24*60*60*1000));
     let expires = "expires="+d.toUTCString();
     document.cookie = name + "=" + value + "; " + expires;
-    location.reload();
+
+    if (element !== null) {
+        element.fadeOut();
+    }
+
+    if (url !== null) {
+        location.href = url;
+    }
 }

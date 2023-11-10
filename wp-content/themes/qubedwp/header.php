@@ -127,5 +127,5 @@ if( ! class_exists('ACF') ) {
 <body <?php body_class(); ?>>
 
     <?php
-    get_template_part('template-parts/loading');
+    get_template_part('template-parts/loader');
     get_template_part('template-parts/navbar'); ?>

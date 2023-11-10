@@ -26,7 +26,7 @@ switch ( $template ) {
         if ( !is_product() ) {
             get_template_part('template-parts/blocks');
         }
-        echo '<div id="primary" class="content-area container"><main id="main" class="site-main" role="main">';
+        echo '<div id="primary" class="content-area container" data-block data-block-background="bg-white"><main id="main" class="site-main" role="main">';
         break;
     default:
         echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';

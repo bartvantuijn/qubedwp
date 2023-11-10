@@ -108,6 +108,10 @@ if ( $footerMenu ) : ?>
 <?php endif; ?>
 
 <?php
+if ( !isset($_COOKIE['website_popup']) ) {
+    get_template_part('template-parts/popup');
+}
+
 if ( !isset($_COOKIE['website_cookies']) ) {
     get_template_part('template-parts/cookiebanner');
 }
