@@ -53,8 +53,12 @@ $(document).ready(function(){
     });
 
     //Navbar
-    $(this).on('click', function () {
-        $('#navbarMenuSupportedContent').collapse('hide');
+    $(function() {
+        $(document).click(function (event) {
+            if (!$(event.target).is('.navbar-collapse *')) {
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
     });
 
     // $('.navbar-toggler').click(function(){
