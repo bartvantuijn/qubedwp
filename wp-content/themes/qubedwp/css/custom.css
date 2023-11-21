@@ -188,6 +188,11 @@ a:hover {
     background-color: var(--bs-primary);
 }
 
+/*----- BLOCKS -----*/
+*[data-block-count="-1"] .container {
+    padding: 0;
+}
+
 /*----- BLOCK SLIDER -----*/
 .block-slider .carousel-item {
     align-items: center;
@@ -241,6 +246,11 @@ footer .menu-item-has-children > a {
     font-size: 24px!important;
     color: var(--bs-primary)!important;
     margin-bottom: 1.5rem!important;
+}
+
+.woocommerce .product img {
+    min-height: 300px!important;
+    object-fit: cover!important;
 }
 
 .woocommerce .product .button {

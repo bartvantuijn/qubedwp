@@ -35,13 +35,13 @@ if( ! class_exists('ACF') ) {
 
     <?php
 
-    $themeColors = get_field('thema_instellingen_kleuren_aanpassen', 'options');
+    $themeColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
 
     if ( $themeColors ) : ?>
 
-        <?php if ( have_rows('thema_instellingen_kleuren', 'options') ) :
+        <?php if ( have_rows('uiterlijk_kleuren', 'options') ) :
 
-            while (have_rows('thema_instellingen_kleuren', 'options')) : the_row();
+            while (have_rows('uiterlijk_kleuren', 'options')) : the_row();
 
                 $primary = get_sub_field('primair');
                 $primary_hex = sprintf("#%02x%02x%02x", $primary['red'], $primary['green'], $primary['blue']); ?>

@@ -22,7 +22,7 @@ if ( $posts ) : ?>
                     <div class="col-6 col-md-3" data-aos="fade-up">
 
                         <div class="card border-0">
-                            <a href="<?php the_permalink(); ?>" class="card-image-top mb-3" style="min-height:350px;background-image:url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full') ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-repeat:no-repeat;"></a>
+                            <a href="<?php the_permalink(); ?>" class="card-image-top mb-3" style="min-height:300px;background-image:url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full') ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-repeat:no-repeat;"></a>
                             <div class="card-body text-body p-0">
                                 <h2 class="card-title h6"><?php the_title(); ?></h2>
                                 <?php if ( get_post_type() == 'product' && class_exists( 'woocommerce' ) ) :
