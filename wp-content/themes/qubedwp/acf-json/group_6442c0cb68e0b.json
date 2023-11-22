@@ -4,15 +4,35 @@
     "fields": [
         {
             "key": "field_64612e8714277",
-            "label": "Font",
-            "name": "uiterlijk_font",
+            "label": "Font headings",
+            "name": "uiterlijk_font_headings",
             "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_655e639a99059",
+            "label": "Font body",
+            "name": "uiterlijk_font_body",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -141,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698173358
+    "modified": 1700684726
 }

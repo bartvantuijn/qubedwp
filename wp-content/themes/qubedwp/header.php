@@ -75,20 +75,41 @@ if( ! class_exists('ACF') ) {
 
     <?php
 
-    $fontFamily = get_field('uiterlijk_font', 'options');
+    $fontFamilyHeadings = get_field('uiterlijk_font_headings', 'options');
+    $fontFamilyBody = get_field('uiterlijk_font_body', 'options');
 
-    if ( $fontFamily ) :
-
-        $fontUrl = str_replace(' ', '+', $fontFamily); ?>
+    if ( $fontFamilyHeadings || $fontFamilyBody ) : ?>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo $fontUrl; ?>:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" />
 
-        <style rel="media/screen">
-            body {
-                font-family: '<?php echo $fontFamily; ?>', sans-serif;
-            }
-        </style>
+        <?php if ( $fontFamilyHeadings ) :
+
+            $fontUrlHeadings = str_replace(' ', '+', $fontFamilyHeadings); ?>
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo $fontUrlHeadings; ?>:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" />
+
+            <style rel="media/screen">
+                .h1, .h2, .h3, .h4, .h5, .h6,
+                h1, h2, h3, h4, h5, h6 {
+                    font-family: '<?php echo $fontFamilyHeadings; ?>', sans-serif;
+                }
+            </style>
+
+        <?php endif; ?>
+
+        <?php if ( $fontFamilyBody ) :
+
+            $fontUrlBody = str_replace(' ', '+', $fontFamilyBody); ?>
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo $fontUrlBody; ?>:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" />
+
+            <style rel="media/screen">
+                body {
+                    font-family: '<?php echo $fontFamilyBody; ?>', sans-serif;
+                }
+            </style>
+
+        <?php endif; ?>
 
     <?php endif; ?>
 
