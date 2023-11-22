@@ -47,8 +47,17 @@ $(document).ready(function(){
     //WooCommerce
     $(function () {
         if ($('.woocommerce')[0]) {
+
+            //Bootstrap
             $('.input-text').addClass('form-control');
             $('.orderby').addClass('form-select');
+
+            //Scroll
+            if ($('body.woocommerce.archive')[0]) {
+                $('html, body').animate({
+                    scrollTop: $('#primary').offset().top -50
+                });
+            }
         }
     });
 

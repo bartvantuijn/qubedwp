@@ -47,6 +47,10 @@ a:hover {
 }
 
 /*----- ELEMENTS -----*/
+.card-image-top {
+    min-height: 300px;
+}
+
 /*----- TYPOGRAPHY -----*/
 /*----- COLORS -----*/
 .bg-primary {
@@ -248,19 +252,19 @@ footer .menu-item-has-children > a {
     margin-bottom: 1.5rem!important;
 }
 
-.woocommerce .product img {
+.woocommerce .products .product img {
     min-height: 300px!important;
     object-fit: cover!important;
 }
 
-.woocommerce .product .button {
+.woocommerce .products .product .button {
     font-weight: 400!important;
     color: var(--bs-white)!important;
     background-color: var(--bs-primary)!important;
     border-radius: 5px!important;
 }
 
-.woocommerce .product .button:hover {
+.woocommerce .products .product .button:hover {
     color: var(--bs-white)!important;
     background-color: var(--bs-primary-hover)!important;
 }
@@ -275,6 +279,12 @@ footer .menu-item-has-children > a {
 }
 
 @media screen and (max-width:1399px) {
+    /*----- ELEMENTS -----*/
+    .card-image-top {
+        min-height: 200px;
+    }
+
+    /*----- NAVBAR -----*/
     #navbarMenuSupportedContent {
         position: absolute;
         top: calc(100% + 2rem);
@@ -296,6 +306,11 @@ footer .menu-item-has-children > a {
 
     #navbarMenuSupportedContent .navbar-nav .nav-item:last-child > .nav-link {
         border-radius: 0 0 5px 5px;
+    }
+
+    /*----- WOOCOMMERCE -----*/
+    .woocommerce .products .product img {
+        min-height: 200px!important;
     }
 }
 

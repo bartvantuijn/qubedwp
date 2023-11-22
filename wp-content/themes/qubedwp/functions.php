@@ -39,6 +39,7 @@ function my_wp_nav_menu_objects( $items, $args ) {
         if( preg_match('/\{.*\}/', $item->title) ) {
             $item->title = substr($item->title, 1, -1);
 
+            //Custom {cart} item
             if ( $item->title == 'cart' && class_exists( 'woocommerce' ) ) {
                 global $woocommerce;
                 $item->title = wc_price($woocommerce->cart->total);
