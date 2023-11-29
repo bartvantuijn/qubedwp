@@ -204,7 +204,7 @@ function dequeue_before_accepted_cookies() {
     if ( isset($_COOKIE['website_cookies']) && $_COOKIE['website_cookies'] == 'yes' ) {
         $cookies = true;
     }
-    if( ! $cookies ) {
+    if ( ! $cookies ) {
         wp_dequeue_script( 'contact-form-7' );
         wp_dequeue_script( 'google-recaptcha' );
         wp_dequeue_script( 'wpcf7-recaptcha' );
@@ -373,8 +373,9 @@ function my_acf_block_access() {
 add_action( 'admin_head', 'my_acf_block_access' );
 
 //WooCommerce
-if ( class_exists( 'WooCommerce' ) ) {
+if ( class_exists( 'WooCommerce' ) ) :
 
+    //Register custom archive widget
     function register_woocommerce_archive_widgets() {
         register_sidebar( array(
             'id' => 'woocommerce_archive_widgets',
@@ -388,19 +389,32 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
     add_action( 'widgets_init', 'register_woocommerce_archive_widgets' );
 
-}
+    //Change add to cart text on single product page
+    add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' );
+    function woocommerce_custom_single_add_to_cart_text() {
+        return __( 'In winkelwagen', 'woocommerce' );
+    }
 
-//Change add to cart text on single product page
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' );
-function woocommerce_custom_single_add_to_cart_text() {
-    return __( 'In winkelwagen', 'woocommerce' );
-}
+    //Change add to cart text on product archives page
+    add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );
+    function woocommerce_custom_product_add_to_cart_text() {
+        return __( 'In winkelwagen', 'woocommerce' );
+    }
 
-//Change add to cart text on product archives page
-add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );
-function woocommerce_custom_product_add_to_cart_text() {
-    return __( 'In winkelwagen', 'woocommerce' );
-}
+    //Add custom new badge to products
+    function woocommerce_custom_product_new_badge() {
+        global $product;
+
+        $newness_days = 60;
+        $created = strtotime( $product->get_date_created() );
+
+        if ( ( time() - ( 60 * 60 * 24 * $newness_days ) ) < $created ) {
+            echo '<span class="badge bg-primary position-absolute top-0 end-0 m-3">' . esc_html__( 'Nieuw!', 'woocommerce' ) . '</span>';
+        }
+    }
+    add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_custom_product_new_badge', 3 );
+
+endif;
 
 //Custom Post Type
 //function custom_post_init() {

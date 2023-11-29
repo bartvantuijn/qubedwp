@@ -26,7 +26,14 @@ if ( $posts ) : ?>
                             <div class="card-body text-body p-0">
                                 <h2 class="card-title h6"><?php the_title(); ?></h2>
                                 <?php if ( get_post_type() == 'product' && class_exists( 'woocommerce' ) ) :
-                                    $product = wc_get_product( get_the_id() ); ?>
+                                    $product = wc_get_product( get_the_id() );
+
+                                    $newness_days = 60;
+                                    $created = strtotime( $product->get_date_created() );
+
+                                    if ( ( time() - ( 60 * 60 * 24 * $newness_days ) ) < $created ) {
+                                        echo '<span class="badge bg-primary position-absolute top-0 end-0 m-3">' . esc_html__( 'Nieuw!', 'woocommerce' ) . '</span>';
+                                    } ?>
                                     <span class="price" style="display:block;"><?php echo wc_price($product->get_price()); ?></span>
                                 <?php endif; ?>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Bekijk <?php echo strtolower(get_post_type_object(get_post_type($post->ID))->labels->singular_name); ?></a>
