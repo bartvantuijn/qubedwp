@@ -70,15 +70,6 @@ $(document).ready(function(){
         });
     });
 
-    // $('.navbar-toggler').click(function(){
-    //     $('.navbar-toggler span').toggleClass('open');
-    // });
-    //
-    // $('.navbar-nav > li > a').click(function(){
-    //     $('.navbar-collapse').collapse('hide');
-    //     $('.navbar-toggler span').removeClass('open');
-    // });
-
 });
 
 function setCookie(name, value, days, element = null, url = null) {
@@ -88,7 +79,7 @@ function setCookie(name, value, days, element = null, url = null) {
     document.cookie = name + "=" + value + "; " + expires + "; path=/";
 
     if (element !== null) {
-        element.fadeOut();
+        element.remove();
     }
 
     if (url !== null) {

@@ -82,6 +82,12 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
                 get_template_part('template-parts/blocks/block-accordion', null, $args);
             endif;
 
+        elseif ( $blockType == 'block-card' ) :
+
+            if( $blockAccess && in_array('kaart', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-card', null, $args);
+            endif;
+
         endif;
 
     endwhile;

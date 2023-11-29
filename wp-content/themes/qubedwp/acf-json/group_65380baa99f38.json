@@ -22,7 +22,8 @@
                 "galerij": "Galerij",
                 "slider": "Slider",
                 "post": "Post",
-                "accordion": "Accordion"
+                "accordion": "Accordion",
+                "kaart": "Kaart"
             },
             "default_value": [
                 "tekst",
@@ -30,7 +31,8 @@
                 "galerij",
                 "slider",
                 "post",
-                "accordion"
+                "accordion",
+                "kaart"
             ],
             "return_format": "value",
             "allow_custom": 0,
@@ -58,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698255483
+    "modified": 1701284892
 }

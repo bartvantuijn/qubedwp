@@ -58,7 +58,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
                 <?php endif; ?>
 
-                <button class="navbar-toggler <?php echo $headerMenuAlignment; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuSupportedContent" aria-controls="navbarMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuSupportedContent" aria-controls="navbarMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
