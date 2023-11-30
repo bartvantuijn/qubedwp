@@ -46,7 +46,16 @@ a:hover {
     color: var(--bs-primary-hover);
 }
 
+a[href="#"]:hover {
+    cursor: default;
+}
+
 /*----- ELEMENTS -----*/
+.card {
+    color: var(--bs-body-color);
+    background-color: var(--bs-white);
+}
+
 .card-image-top {
     min-height: 300px;
 }
@@ -157,7 +166,8 @@ a:hover {
     padding: .5rem 1rem;
 }
 
-.navbar-nav .nav-item.active > .nav-link {
+.navbar-nav .nav-item.active > .nav-link,
+.navbar-nav .nav-item.active > .dropdown-item {
     color: var(--bs-primary);
 }
 
@@ -250,6 +260,10 @@ footer .menu-item-has-children > a {
 }
 
 /*----- WOOCOMMERCE -----*/
+.woocommerce .onsale {
+    display: none!important;
+}
+
 .woocommerce .price {
     font-size: 24px!important;
     color: var(--bs-primary)!important;

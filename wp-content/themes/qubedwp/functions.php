@@ -214,10 +214,27 @@ function dequeue_before_accepted_cookies() {
 }
 add_action( 'wp_enqueue_scripts', 'dequeue_before_accepted_cookies', 99 );
 
+//Remove form before Cookies are accepted
 add_filter( 'wpcf7_form_elements', 'my_wpcf7_form_elements' );
 function my_wpcf7_form_elements( $content ) {
     if ( !isset($_COOKIE['website_cookies']) || $_COOKIE['website_cookies'] == 'no' ) {
-        $content = '<button type="button" onclick="setCookie(\'website_cookies\', \'yes\', 365, null, location.href);" class="btn btn-success">' . __('Accepteer cookies') . '</button>';
+        $privacy_policy_page = get_option('wp_page_for_privacy_policy');
+        $content = '<div class="card my-5 p-5">
+                        <h4 class="card-title mb-3">Accepteer de cookies om het contactformulier in te vullen!</h4>
+                        <div class="card-body p-0">
+                            <button type="button" class="btn btn-primary" onclick="setCookie(\'website_cookies\', \'yes\', 365, null, location.href);">'
+                                . __('Accepteren') . '
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="setCookie(\'website_cookies\', \'no\', 1, null, location.href);">'
+                                . __('Weigeren') . '
+                            </button>';
+        if ($privacy_policy_page) {
+            $content .= '<button type="button" class="btn btn-light" onclick="setCookie(\'website_cookies\', \'no\', 1, null,\'' . esc_url( get_permalink( $privacy_policy_page ) ) . '\');">'
+                            . __('Privacybeleid') . '
+                         </button>';
+        }
+        $content .= '</div>
+                 </div>';
     }
     return $content;
 }
