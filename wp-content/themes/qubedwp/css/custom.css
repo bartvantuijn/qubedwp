@@ -61,6 +61,10 @@ a[href="#"]:hover {
 }
 
 /*----- TYPOGRAPHY -----*/
+.form-control:focus {
+    border-color: var(--bs-primary);
+}
+
 /*----- COLORS -----*/
 .bg-primary {
     background-color: var(--bs-primary)!important;
