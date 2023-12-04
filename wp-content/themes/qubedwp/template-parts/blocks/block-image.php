@@ -109,7 +109,7 @@ if ( $image ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
-            let c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .img').css('background-color', c);
         </script>
     </div>

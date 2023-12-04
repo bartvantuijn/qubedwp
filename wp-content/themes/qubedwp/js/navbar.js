@@ -7,7 +7,7 @@ $(document).ready(function(){
     //If navbar is floating
     if($('nav.navbar').hasClass('floating')) {
         //Total height of #nav-wrapper
-        let total = 0;
+        var total = 0;
         $('#nav-wrapper .navbar').each(function(){
             total += $(this).outerHeight();
         });
@@ -42,7 +42,7 @@ $(document).scroll(function () {
 
     //Header submenu scrollbar
     if($('#scrollbar')) {
-        let percentage = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
+        var percentage = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
         $('#scrollbar').css('width', percentage + '%');
     }
 
