@@ -28,26 +28,30 @@ if ( $image ) : ?>
 
                             <div class="col-lg d-flex flex-column justify-content-center p-5 <?php echo $position_background . ' ' . $position_color; ?> <?php echo $position == 'left' ? 'order-1' : 'order-3'; ?>" data-aos="fade-up">
 
-                                <?php if ( $text ) : ?>
+                                <div class="w-100">
 
-                                    <?php echo $text; ?>
+                                    <?php if ( $text ) : ?>
 
-                                <?php endif; ?>
+                                        <?php echo $text; ?>
 
-                                <?php if ( $link ) :
+                                    <?php endif; ?>
 
-                                    if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
-                                        $link['title'] = explode('{', $link['title'])[0];
-                                        $class = $output[1];
-                                    } else {
-                                        $class = 'btn-primary';
-                                    }
+                                    <?php if ( $link ) :
 
-                                    ?>
+                                        if ( preg_match('~{(.*?)}~', $link['title'], $output) ) {
+                                            $link['title'] = explode('{', $link['title'])[0];
+                                            $class = $output[1];
+                                        } else {
+                                            $class = 'btn-primary';
+                                        }
 
-                                    <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+                                        ?>
 
-                                <?php endif; ?>
+                                        <?php echo '<a class="btn ' . $class . ' mt-4" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">' . $link['title'] . '</a>'; ?>
+
+                                    <?php endif; ?>
+
+                                </div>
 
                             </div>
 
