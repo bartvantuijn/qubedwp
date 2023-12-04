@@ -4,20 +4,19 @@ $(window).on('load', function() {
 
 $(document).ready(function(){
 
-    //Fix floating navbar margins
+    //If navbar is floating
     if($('nav.navbar').hasClass('floating')) {
-        var total = 0;
+        //Total height of #nav-wrapper
+        let total = 0;
         $('#nav-wrapper .navbar').each(function(){
             total += $(this).outerHeight();
         });
-        $('#nav-wrapper').css('margin-bottom', -total);
-        $('*[data-block-count="1"]:not(".block-slider")').css('margin-top', total);
-        $('*[data-block-count="-1"]').css('margin-top', -total);
-    }
 
-    //Change floating navbar brand
-    if($('nav.navbar').hasClass('floating')) {
-        if($('[data-block-count=1]').hasClass('block-slider')) {
+        //Change margin of first slider block
+        $('*[data-block-count="1"].block-slider:not(*[data-block-count="-1"] *)').css('margin-top', -total);
+
+        //Change floating navbar brand color
+        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider')) {
             $('.navbar-brand').css('color','var(--bs-white)');
         }
     }
@@ -26,12 +25,13 @@ $(document).ready(function(){
 
 $(document).scroll(function () {
 
-    //Toggle floating navbar background
-    $('nav.navbar.floating').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
-
-    //Change floating navbar brand on scroll
+    //If navbar is floating
     if($('nav.navbar').hasClass('floating')) {
-        if($('[data-block-count=1]').hasClass('block-slider')) {
+        //Toggle floating navbar background
+        $('nav.navbar.floating').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
+
+        //Change floating navbar brand on scroll
+        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider')) {
             if ($(this).scrollTop() > 25) {
                 $('.navbar-brand').css('color','var(--bs-primary)');
             } else {
@@ -42,10 +42,8 @@ $(document).scroll(function () {
 
     //Header submenu scrollbar
     if($('#scrollbar')) {
-        var docHeight = $(document).height();
-        var winHeight = $(window).height();
-        var scrollPercent = $(window).scrollTop() / (docHeight - winHeight) * 100;
-        $('#scrollbar').css('width', scrollPercent + '%');
+        let percentage = $(window).scrollTop() / ($(document).height() - $(window).height()) * 100;
+        $('#scrollbar').css('width', percentage + '%');
     }
 
 });

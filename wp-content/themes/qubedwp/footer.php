@@ -97,11 +97,11 @@ if ( $footerMenu ) : ?>
 
     <script type="text/javascript">
         $('footer').append('<div class="<?php echo $footerMenuBackground; ?>"></div>');
-        var c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+        let c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
         $('footer').css('background-color', c);
 
         $('footer').append('<div class="<?php echo $footerMenuColor; ?>"></div>');
-        var d = $('footer .<?php echo $footerMenuColor; ?>').css('color');
+        let d = $('footer .<?php echo $footerMenuColor; ?>').css('color');
         $('footer a').css('color', d);
     </script>
 
