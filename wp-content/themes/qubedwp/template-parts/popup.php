@@ -7,7 +7,7 @@ if ( $popupActive ) :
     $popupText = get_field('popup_tekst', 'options');
     $popupLink = get_field('popup_link', 'options'); ?>
 
-    <div id="popup" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div id="popup" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <?php if ( $popupText ) : ?>
