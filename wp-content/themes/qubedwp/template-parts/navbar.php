@@ -5,7 +5,7 @@ $headerTopMenuAlignment = get_field('header_topmenu_uitlijnen', $headerTopMenu);
 
 if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 
-    <div class="navbar navbar-expand bg-primary" style="z-index:9999;">
+    <div class="navbar navbar-expand bg-primary" style="z-index:999;">
         <div class="container">
 
             <?php
@@ -35,7 +35,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 
-        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? 'bg-white shadow' : 'floating'; ?> py-3">
+        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? 'bg-white shadow' : 'floating'; ?> py-3" style="z-index:99;">
             <div class="container position-relative">
 
                 <?php
@@ -102,7 +102,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     <?php else : ?>
 
-        <nav class="navbar bg-white shadow py-3">
+        <nav class="navbar bg-white shadow py-3" style="z-index:99;">
             <div class="container">
                 <a class="navbar-brand m-auto" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="line-height:37px;">
                     <?php bloginfo('name'); ?>
@@ -119,7 +119,7 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
     if ( has_nav_menu( 'header-submenu' ) ) : ?>
 
-        <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex">
+        <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex" style="z-index:9;">
             <div class="container">
 
                 <button class="navbar-toggler <?php echo $headerMenuAlignment; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSubMenuSupportedContent" aria-controls="navbarSubMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
