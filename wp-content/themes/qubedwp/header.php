@@ -35,9 +35,9 @@ if( ! class_exists('ACF') ) {
 
     <?php
 
-    $themeColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
+    $customColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
 
-    if ( $themeColors ) : ?>
+    if ( $customColors ) : ?>
 
         <?php if ( have_rows('uiterlijk_kleuren', 'options') ) :
 
@@ -131,16 +131,19 @@ if( ! class_exists('ACF') ) {
             --bs-primary-light: rgba(var(--bs-primary-rgb), .1);
             --bs-secondary-hover: rgba(var(--bs-secondary-rgb), .9);
             --bs-secondary-light: rgba(var(--bs-secondary-rgb), .1);
+            --bs-tertiary: rgba(var(--bs-secondary-rgb), 1);
+            --bs-tertiary-hover: rgba(var(--bs-secondary-rgb), .9);
+            --bs-tertiary-light: rgba(var(--bs-secondary-rgb), .1);
         }
     </style>
 
     <?php
 
-    $themeColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
+    $customColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
 
-    if ( $themeColors ) :
+    if ( $customColors ) :
 
-        get_template_part('template-parts/theme-colors');
+        get_template_part('template-parts/colors');
 
     endif; ?>
 

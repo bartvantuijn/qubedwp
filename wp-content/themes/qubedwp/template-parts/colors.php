@@ -6,6 +6,7 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
 
         $primary = get_sub_field('primair');
         $secondary = get_sub_field('secundair');
+        $tertiary = get_sub_field('tertiair');
         $text = get_sub_field('tekst'); ?>
 
         <style type="text/css" media="screen">
@@ -22,6 +23,13 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
                     --bs-secondary: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue']; ?>);
                     --bs-secondary-hover: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .9'; ?>);
                     --bs-secondary-light: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .1'; ?>);
+
+                <?php endif; ?>
+                <?php if ( $tertiary ) : ?>
+
+                    --bs-tertiary: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue']; ?>);
+                    --bs-tertiary-hover: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue'] . ', .9'; ?>);
+                    --bs-tertiary-light: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue'] . ', .1'; ?>);
 
                 <?php endif; ?>
                 <?php if ( $text ) : ?>

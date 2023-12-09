@@ -19,7 +19,8 @@
             "choices": {
                 "bg-white": "Wit",
                 "bg-primary": "Primair",
-                "bg-secondary": "Secundair"
+                "bg-secondary": "Secundair",
+                "bg-tertiary": "Tertiair"
             },
             "default_value": false,
             "return_format": "value",
@@ -47,7 +48,8 @@
                 "text-body": "Normaal",
                 "text-white": "Wit",
                 "text-primary": "Primair",
-                "text-secondary": "Secundair"
+                "text-secondary": "Secundair",
+                "text-tertiary": "Tertiair"
             },
             "default_value": false,
             "return_format": "value",
@@ -197,5 +199,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699566828
+    "modified": 1702163435
 }

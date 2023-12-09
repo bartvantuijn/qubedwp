@@ -160,13 +160,13 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
 <?php if ($headerMenuCanvas) : ?>
 
-    <div class="offcanvas offcanvas-end py-5" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="max-width:300px;">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="max-width:300px;">
         <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
         </div>
         <div class="offcanvas-body">
-            <div class="navbar flex-column">
+            <div class="navbar flex-column p-0">
                 <?php
                 get_search_form();
                 wp_nav_menu( array(
