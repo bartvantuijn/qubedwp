@@ -23,6 +23,26 @@
             "ui": 1
         },
         {
+            "key": "field_6572329d8ac22",
+            "label": "Canvas",
+            "name": "header_menu_canvas",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_6442c0cbfec51",
             "label": "Logo",
             "name": "header_menu_logo",
@@ -111,5 +131,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701726050
+    "modified": 1701982892
 }

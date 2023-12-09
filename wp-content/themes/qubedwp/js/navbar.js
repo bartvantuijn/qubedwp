@@ -27,8 +27,8 @@ $(document).scroll(function () {
 
     //If navbar is floating
     if($('nav.navbar').hasClass('floating')) {
-        //Toggle floating navbar background
-        $('nav.navbar.floating').toggleClass('bg-white shadow', $(this).scrollTop() > 25);
+        //Toggle scrolled navbar classes
+        $('nav.navbar.floating').toggleClass('scrolled bg-white shadow', $(this).scrollTop() > 25);
 
         //Change floating navbar brand on scroll
         if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider')) {

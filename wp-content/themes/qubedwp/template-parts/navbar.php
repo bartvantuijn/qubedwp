@@ -29,7 +29,8 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 <?php
 
 $headerMenu = wp_get_nav_menu_object('header-menu');
-$headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
+$headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
+$headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
 <div id="nav-wrapper" class="sticky-top" style="z-index:99;">
 
@@ -58,25 +59,32 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
 
                 <?php endif; ?>
 
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuSupportedContent" aria-controls="navbarMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <?php if($headerMenuCanvas) : ?>
+
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                <?php else : ?>
+
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenuSupportedContent" aria-controls="navbarMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                <?php endif; ?>
 
                 <div class="collapse navbar-collapse" id="navbarMenuSupportedContent">
                     <?php
-                        wp_nav_menu( array(
-                            'theme_location'  => 'header-menu',
-                            'depth'           => 2,
-                            'container'       => '',
-                            'container_class' => '',
-                            'container_id'    => 'header-menu',
-                            'menu_class'      => 'navbar-nav ' . $headerMenuAlignment,
-                            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                            'walker'          => new WP_Bootstrap_Navwalker(),
-                        ) );
-                    ?>
-
-                    <?php
+                    wp_nav_menu( array(
+                        'theme_location'  => 'header-menu',
+                        'depth'           => 2,
+                        'container'       => '',
+                        'container_class' => '',
+                        'container_id'    => 'header-menu',
+                        'menu_class'      => 'navbar-nav ' . $headerMenuAlignment,
+                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'          => new WP_Bootstrap_Navwalker(),
+                    ) );
 
                     $headerSubMenu = wp_get_nav_menu_object('header-submenu');
 
@@ -92,7 +100,6 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
                             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                             'walker'          => new WP_Bootstrap_Navwalker(),
                         ) );
-                        //get_search_form();
 
                     endif; ?>
                 </div>
@@ -122,25 +129,19 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
         <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex">
             <div class="container">
 
-                <button class="navbar-toggler <?php echo $headerMenuAlignment; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSubMenuSupportedContent" aria-controls="navbarSubMenuSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSubMenuSupportedContent">
-                    <?php
-                    wp_nav_menu( array(
-                        'theme_location'  => 'header-submenu',
-                        'depth'           => 2,
-                        'container'       => '',
-                        'container_class' => '',
-                        'container_id'    => 'header-submenu',
-                        'menu_class'      => 'navbar-nav',
-                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker'          => new WP_Bootstrap_Navwalker(),
-                    ) );
-                    get_search_form();
-                    ?>
-                </div>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'  => 'header-submenu',
+                    'depth'           => 2,
+                    'container'       => '',
+                    'container_class' => '',
+                    'container_id'    => 'header-submenu',
+                    'menu_class'      => 'navbar-nav',
+                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'          => new WP_Bootstrap_Navwalker(),
+                ) );
+                get_search_form();
+                ?>
 
             </div>
         </div>
@@ -156,3 +157,47 @@ $headerMenuFloat = get_field('header_menu_zweven', $headerMenu); ?>
     <?php endif; ?>
 
 </div>
+
+<?php if ($headerMenuCanvas) : ?>
+
+    <div class="offcanvas offcanvas-end py-5" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="max-width:300px;">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="navbar flex-column">
+                <?php
+                get_search_form();
+                wp_nav_menu( array(
+                    'theme_location'  => 'header-menu',
+                    'depth'           => 2,
+                    'container'       => '',
+                    'container_class' => '',
+                    'container_id'    => 'header-menu',
+                    'menu_class'      => 'navbar-nav w-100',
+                    'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'          => new WP_Bootstrap_Navwalker(),
+                ) );
+
+                $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+
+                if ( has_nav_menu( 'header-submenu' ) ) :
+
+                    wp_nav_menu( array(
+                        'theme_location'  => 'header-submenu',
+                        'depth'           => 2,
+                        'container'       => '',
+                        'container_class' => '',
+                        'container_id'    => 'header-submenu',
+                        'menu_class'      => 'navbar-nav w-100',
+                        'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'          => new WP_Bootstrap_Navwalker(),
+                    ) );
+
+                endif; ?>
+            </div>
+        </div>
+    </div>
+
+<?php endif; ?>
