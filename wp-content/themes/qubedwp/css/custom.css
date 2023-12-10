@@ -201,26 +201,13 @@ a[href="#"]:not(.dropdown-toggle):hover {
 
 .navbar-nav .nav-item.cta-item > .nav-link,
 .navbar-nav .nav-item.cta-item > .dropdown-item {
-    color: var(--bs-white);
-    background-color: var(--bs-primary);
+    color: var(--bs-white)!important;
+    background-color: var(--bs-primary)!important;
 }
 
 .navbar-nav .nav-item.cta-item > .nav-link:hover,
 .navbar-nav .nav-item.cta-item > .dropdown-item:hover {
-    color: var(--bs-primary);
-    background-color: var(--bs-white);
-}
-
-.navbar-nav:not(.navbar-collapse > *) .nav-item.cta-item > .nav-link,
-.navbar-nav:not(.navbar-collapse > *) .nav-item.cta-item > .dropdown-item {
-    color: var(--bs-primary);
-    background-color: var(--bs-white);
-}
-
-.navbar-nav:not(.navbar-collapse > *) .nav-item.cta-item > .nav-link:hover,
-.navbar-nav:not(.navbar-collapse > *) .nav-item.cta-item > .dropdown-item:hover {
-    color: var(--bs-white);
-    background-color: var(--bs-primary);
+    background-color: var(--bs-primary-hover)!important;
 }
 
 .navbar-nav .nav-item > .dropdown-menu {
@@ -235,24 +222,12 @@ a[href="#"]:not(.dropdown-toggle):hover {
 
 .navbar-nav .nav-item > .dropdown-item:active {
     color: var(--bs-white);
-    background-color: var(--bs-primary);
+    background-color: var(--bs-primary-hover);
 }
 
 .offcanvas .navbar-nav .nav-item > .nav-link {
     padding: .5rem 1rem;
     color: var(--bs-body-color);
-}
-
-.offcanvas .navbar-nav .nav-item.cta-item > .nav-link,
-.offcanvas .navbar-nav .nav-item.cta-item > .dropdown-item {
-    color: var(--bs-white);
-    background-color: var(--bs-primary);
-}
-
-.offcanvas .navbar-nav .nav-item.cta-item > .nav-link:hover,
-.offcanvas .navbar-nav .nav-item.cta-item > .dropdown-item:hover {
-    color: var(--bs-primary);
-    background-color: var(--bs-white);
 }
 
 /*----- BLOCKS -----*/
