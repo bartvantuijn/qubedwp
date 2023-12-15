@@ -20,7 +20,7 @@ if ( $columns ) : ?>
                     $text = get_sub_field('tekst');
                     $link = get_sub_field('link'); ?>
 
-                    <div class="col-lg" data-aos="fade-up">
+                    <div class="col-lg-4" data-aos="fade-up">
 
                         <div class="card h-100 p-5">
 

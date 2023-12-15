@@ -41,7 +41,7 @@ if ( $footerMenu ) : ?>
             if ( $socialMediaChannels ) : ?>
 
                 <div class="row">
-                    <div class="col-lg text-center mt-4" data-aos="fade-up">
+                    <div class="col-lg text-center pt-5" data-aos="fade-up">
 
                         <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
 
@@ -73,7 +73,7 @@ if ( $footerMenu ) : ?>
             <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
 
                 <div class="row">
-                    <div class="col-lg mt-4" data-aos="fade-up">
+                    <div class="col-lg pt-5" data-aos="fade-up">
 
                         <?php
                         wp_nav_menu( array(

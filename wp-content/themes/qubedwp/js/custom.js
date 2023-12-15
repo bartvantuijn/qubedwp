@@ -51,6 +51,7 @@ $(document).ready(function(){
             //Bootstrap
             $('.input-text').addClass('form-control');
             $('.orderby').addClass('form-select');
+            $('.variations select').addClass('form-select');
 
             //Scroll
             if ($('body.woocommerce.archive')[0]) {

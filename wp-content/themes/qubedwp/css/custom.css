@@ -194,11 +194,6 @@ a[href="#"]:not(.dropdown-toggle):hover {
     color: var(--bs-white);
 }
 
-.navbar-nav:not(#menu-header-topmenu) .nav-item.active:not(.cta-item) > .nav-link,
-.navbar-nav .nav-item.active:not(.cta-item) > .dropdown-item {
-    color: var(--bs-primary);
-}
-
 .navbar-nav .nav-item.cta-item > .nav-link,
 .navbar-nav .nav-item.cta-item > .dropdown-item {
     color: var(--bs-white)!important;
@@ -285,6 +280,16 @@ footer .menu-item-has-children > a {
 }
 
 /*----- WOOCOMMERCE -----*/
+.woocommerce-message,
+.woocommerce-info {
+    border-top-color: var(--bs-primary)!important;
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+    color: var(--bs-primary)!important;
+}
+
 .woocommerce .onsale {
     display: none!important;
 }
@@ -292,7 +297,7 @@ footer .menu-item-has-children > a {
 .woocommerce .price {
     font-size: 24px!important;
     color: var(--bs-primary)!important;
-    margin-bottom: 1.5rem!important;
+    margin-bottom: 1rem!important;
 }
 
 .woocommerce .button {
@@ -313,13 +318,28 @@ footer .menu-item-has-children > a {
     object-fit: cover!important;
 }
 
-.woocommerce .products .woocommerce-loop-product__title {
+.woocommerce .products .product h2 {
     color: var(--bs-body-color)!important;
 }
 
-.woocommerce .products .price {
+.woocommerce .products .product .price {
     font-size: 14px!important;
     margin-bottom: 0!important;
+}
+
+.woocommerce .product .images li {
+    padding: 10px 10px 10px 0!important;
+}
+
+.woocommerce .product .woocommerce-tabs a {
+    font-weight: 400!important;
+}
+
+.woocommerce .product .related h2:not(.products .product h2),
+.woocommerce .cart-collaterals .cart_totals h2,
+.woocommerce .checkout #customer_details,
+.woocommerce .checkout > h3 {
+    margin-bottom: 1.5rem!important;
 }
 
 @media screen and (max-width:1399px) {
