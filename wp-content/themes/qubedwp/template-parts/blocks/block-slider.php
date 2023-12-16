@@ -29,7 +29,7 @@ if ( $slides ) : ?>
                 $image = get_sub_field('afbeelding');
                 $link = get_sub_field('link'); ?>
 
-                <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
+                <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> p-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
 
                     <div class="container">
 
