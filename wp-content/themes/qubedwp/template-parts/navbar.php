@@ -140,8 +140,11 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
                     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'          => new WP_Bootstrap_Navwalker(),
                 ) );
-                get_search_form();
                 ?>
+
+                <div class="ms-auto">
+                    <?php get_search_form(); ?>
+                </div>
 
             </div>
         </div>

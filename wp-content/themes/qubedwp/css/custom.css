@@ -279,17 +279,12 @@ footer .menu-item-has-children > a {
     font-weight: 500;
 }
 
+.copyright,
+.copyright a {
+    color: var(--bs-white);
+}
+
 /*----- WOOCOMMERCE -----*/
-.woocommerce-message,
-.woocommerce-info {
-    border-top-color: var(--bs-primary)!important;
-}
-
-.woocommerce-message::before,
-.woocommerce-info::before {
-    color: var(--bs-primary)!important;
-}
-
 .woocommerce .onsale {
     display: none!important;
 }

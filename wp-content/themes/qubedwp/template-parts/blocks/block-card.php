@@ -22,7 +22,7 @@ if ( $columns ) : ?>
 
                     <div class="col-lg-4" data-aos="fade-up">
 
-                        <div class="card h-100 p-5">
+                        <div class="card h-100 p-4">
 
                             <?php if ( $image ) : ?>
 

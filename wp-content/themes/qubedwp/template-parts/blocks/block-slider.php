@@ -29,7 +29,7 @@ if ( $slides ) : ?>
                 $image = get_sub_field('afbeelding');
                 $link = get_sub_field('link'); ?>
 
-                <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> p-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
+                <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
 
                     <div class="container">
 
@@ -68,13 +68,13 @@ if ( $slides ) : ?>
 
         <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
 
-            <button class="carousel-control-prev <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="prev" style="width:10%;">
-                <i class="fas fa-chevron-left"></i>
+            <button class="carousel-control-prev <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="prev" style="width:5%;">
+                <i class="fas fa-chevron-left d-none d-lg-block"></i>
                 <span class="visually-hidden">Previous</span>
             </button>
 
-            <button class="carousel-control-next <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="next" style="width:10%;">
-                <i class="fas fa-chevron-right"></i>
+            <button class="carousel-control-next <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="next" style="width:5%;">
+                <i class="fas fa-chevron-right d-none d-lg-block"></i>
                 <span class="visually-hidden">Next</span>
             </button>
 
