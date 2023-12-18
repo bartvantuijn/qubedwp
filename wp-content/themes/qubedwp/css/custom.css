@@ -295,7 +295,7 @@ footer .menu-item-has-children > a {
     margin-bottom: 1rem!important;
 }
 
-.woocommerce .button {
+.woocommerce .button:not(.wc-block-components-notice-banner .button) {
     font-weight: 400!important;
     color: var(--bs-white)!important;
     background-color: var(--bs-primary)!important;
