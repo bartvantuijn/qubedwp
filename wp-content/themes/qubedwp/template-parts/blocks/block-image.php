@@ -2,14 +2,15 @@
 // BLOCK IMAGE
 
 // GET BLOCK DATA
+$background = get_sub_field('achtergrond');
+$overlay = get_sub_field('overlay');
 $height = get_sub_field('hoogte');
 $image = get_sub_field('afbeelding');
-$background = get_sub_field('achtergrond');
 $position = get_sub_field('tekstpositie');
 
 if ( $image ) : ?>
 
-    <div class="block-image" data-block-background="bg-white" data-block-count="<?php echo $args['blockCount']; ?>" data-block>
+    <div class="block-image <?php echo $background; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 
@@ -26,7 +27,7 @@ if ( $image ) : ?>
                             $text = get_sub_field('tekst');
                             $link = get_sub_field('link');
                             $padding = 'py-5';
-                            if ($position_background == 'bg-white') {
+                            if ($background == 'bg-white' && $position_background == 'bg-white') {
                                 if ($position == 'left') {
                                     $padding .= ' pt-0 pt-lg-5 pe-lg-5 ';
                                 } else {
@@ -122,8 +123,8 @@ if ( $image ) : ?>
         </div>
 
         <script type="text/javascript">
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .img').css('background-color', c);
         </script>
     </div>

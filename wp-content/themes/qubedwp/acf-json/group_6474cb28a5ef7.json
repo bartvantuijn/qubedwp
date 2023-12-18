@@ -170,28 +170,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_650a038a04dfd",
-                            "label": "Afbeelding",
-                            "name": "afbeelding",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_650a03587b9a8"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_650a04cae4fcd",
                             "label": "Achtergrond",
                             "name": "achtergrond",
@@ -214,6 +192,28 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_6580a30cbfd1d",
+                            "label": "Overlay",
+                            "name": "overlay",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6580a3da9443c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_650a061786ef0",
                             "label": "Hoogte",
                             "name": "hoogte",
@@ -229,6 +229,28 @@
                             },
                             "clone": [
                                 "field_64a9c592ec2d6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_650a038a04dfd",
+                            "label": "Afbeelding",
+                            "name": "afbeelding",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_650a03587b9a8"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -487,8 +509,8 @@
                     "sub_fields": [
                         {
                             "key": "field_6474d62ee857e",
-                            "label": "Achtergrond",
-                            "name": "achtergrond",
+                            "label": "Overlay",
+                            "name": "overlay",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -500,7 +522,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6474ce7d45b5d"
+                                "field_6580a3da9443c"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -722,7 +744,8 @@
                             "return_format": "id",
                             "min": "",
                             "max": "",
-                            "elements": ""
+                            "elements": "",
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -1058,5 +1081,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701285281
+    "modified": 1702930407
 }

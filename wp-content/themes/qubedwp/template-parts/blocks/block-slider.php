@@ -2,7 +2,7 @@
 // BLOCK SLIDER
 
 // GET BLOCK DATA
-$background = get_sub_field('achtergrond');
+$overlay = get_sub_field('overlay');
 $color = get_sub_field('kleur');
 $height = get_sub_field('hoogte');
 $slides = get_sub_field('slides');
@@ -15,7 +15,7 @@ if ( $slides ) : ?>
 
             <div class="carousel-indicators">
                 <?php while ( have_rows('slides') ) : the_row(); ?>
-                    <button type="button" class="<?php echo $background . (get_row_index() == 1 ? ' active' : ''); ?>" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide-to="<?php echo get_row_index() - 1; ?>" aria-current="<?php echo get_row_index() == 1 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo get_row_index(); ?>"></button>
+                    <button type="button" class="<?php echo $overlay . (get_row_index() == 1 ? ' active' : ''); ?>" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide-to="<?php echo get_row_index() - 1; ?>" aria-current="<?php echo get_row_index() == 1 ? 'true' : 'false'; ?>" aria-label="Slide <?php echo get_row_index(); ?>"></button>
                 <?php endwhile; ?>
             </div>
 
@@ -81,8 +81,8 @@ if ( $slides ) : ?>
         <?php endif; ?>
 
         <script type="text/javascript">
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $background; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $background; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
 
             $(document).scroll(function () {
