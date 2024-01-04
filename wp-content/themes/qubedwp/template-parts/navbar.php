@@ -142,7 +142,7 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
                 ) );
                 ?>
 
-                <div class="ms-auto">
+                <div class="ms-auto" style="min-width:275px;">
                     <?php get_search_form(); ?>
                 </div>
 

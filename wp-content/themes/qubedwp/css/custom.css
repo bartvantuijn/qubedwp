@@ -235,9 +235,7 @@ a[href="#"]:not(.dropdown-toggle):hover {
     align-items: center;
     transition: all 1s ease-out;
 }
-.block-slider .carousel-item.scrolled {
-    background-position: center 47.5%!important;
-}
+
 .block-slider .carousel-item-next, .carousel-item-prev, .carousel-item.active {
     display: flex;
 }

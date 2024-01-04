@@ -27,9 +27,10 @@ if ( $slides ) : ?>
 
                 $text = get_sub_field('tekst');
                 $image = get_sub_field('afbeelding');
+                $alignment = get_sub_field('uitlijnen');
                 $link = get_sub_field('link'); ?>
 
-                <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;">
+                <div class="carousel-item carousel-item-<?php echo get_row_index(); ?> <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;">
 
                     <div class="container">
 
@@ -61,6 +62,12 @@ if ( $slides ) : ?>
                     </div>
 
                 </div>
+
+                <style type="text/css">
+                    .block-slider .carousel-item-<?php echo get_row_index(); ?>.scrolled {
+                        background-position: <?php echo explode('-', $alignment)[1] == 'top' ? 'center 2.5%' : (explode('-', $alignment)[1] == 'bottom' ? 'center 97.5%' : explode('-', $alignment)[1] . ' 47.5%'); ?>!important;
+                    }
+                </style>
 
             <?php endwhile; ?>
 

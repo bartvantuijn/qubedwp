@@ -17,6 +17,7 @@ if ( $columns ) : ?>
                 <?php while ( have_rows('kolommen') ) : the_row();
 
                     $image = get_sub_field('afbeelding');
+                    $alignment = get_sub_field('uitlijnen');
                     $text = get_sub_field('tekst');
                     $link = get_sub_field('link'); ?>
 
@@ -26,7 +27,7 @@ if ( $columns ) : ?>
 
                             <?php if ( $image ) : ?>
 
-                                <div class="card-image-top mb-3" style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:center;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                <div class="card-image-top mb-3" style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
 
                             <?php endif; ?>
 

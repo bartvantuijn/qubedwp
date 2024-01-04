@@ -258,6 +258,28 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_65971c59dac87",
+                            "label": "Uitlijnen",
+                            "name": "uitlijnen",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_65970fee97087"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_650b3cdcf7586",
                             "label": "Tekstpositie",
                             "name": "tekstpositie",
@@ -267,7 +289,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -494,6 +516,29 @@
                                     "prefix_label": 0,
                                     "prefix_name": 0,
                                     "parent_repeater": "field_6511e237190e3"
+                                },
+                                {
+                                    "key": "field_65971dca7c23a",
+                                    "label": "Uitlijnen",
+                                    "name": "uitlijnen",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_65970fee97087"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_6511e237190e3"
                                 }
                             ]
                         }
@@ -610,6 +655,29 @@
                                     },
                                     "clone": [
                                         "field_650a03587b9a8"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_6474d642e8589"
+                                },
+                                {
+                                    "key": "field_6597112f509ae",
+                                    "label": "Uitlijnen",
+                                    "name": "uitlijnen",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_65970fee97087"
                                     ],
                                     "display": "seamless",
                                     "layout": "block",
@@ -992,6 +1060,29 @@
                                     "parent_repeater": "field_65678c4894d3e"
                                 },
                                 {
+                                    "key": "field_65971d530ced7",
+                                    "label": "Uitlijnen",
+                                    "name": "uitlijnen",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_65970fee97087"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65678c4894d3e"
+                                },
+                                {
                                     "key": "field_65678c4894d41",
                                     "label": "Tekst",
                                     "name": "tekst",
@@ -1081,5 +1172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702930407
+    "modified": 1704402404
 }

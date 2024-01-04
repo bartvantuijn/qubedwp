@@ -207,6 +207,35 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_65970fee97087",
+            "label": "Uitlijnen",
+            "name": "uitlijnen",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Selecteer de uitlijning van het blok",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "center-center": "Midden",
+                "center-top": "Boven",
+                "center-right": "Rechts",
+                "center-bottom": "Onder",
+                "center-left": "Links"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -227,5 +256,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702929580
+    "modified": 1704401832
 }
