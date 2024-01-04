@@ -112,6 +112,12 @@ a[href="#"]:not(.dropdown-toggle):hover {
 .btn-outline-primary {
     color: var(--bs-primary);
     background-color: var(--bs-white);
+    border: 1px solid var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
 }
 
 .btn-secondary {
@@ -127,21 +133,33 @@ a[href="#"]:not(.dropdown-toggle):hover {
 .btn-outline-secondary {
     color: var(--bs-secondary);
     background-color: var(--bs-white);
+    border: 1px solid var(--bs-secondary);
 }
 
-.btn-tertiaru {
+.btn-outline-secondary {
     color: var(--bs-white);
-    background-color: var(--bs-teriary);
+    background-color: var(--bs-secondary);
 }
 
-.btn-tertiaru:hover {
+.btn-tertiary {
     color: var(--bs-white);
-    background-color: var(--bs-teriary-hover);
+    background-color: var(--bs-tertiary);
 }
 
-.btn-outline-tertiaru {
-    color: var(--bs-teriary);
+.btn-tertiary:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-tertiary-hover);
+}
+
+.btn-outline-tertiary {
+    color: var(--bs-tertiary);
     background-color: var(--bs-white);
+    border: 1px solid var(--bs-tertiary);
+}
+
+.btn-outline-tertiary:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-tertiary);
 }
 
 /*----- NAVBAR -----*/
