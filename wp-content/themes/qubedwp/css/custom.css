@@ -118,6 +118,7 @@ a[href="#"]:not(.dropdown-toggle):hover {
 .btn-outline-primary:hover {
     color: var(--bs-white);
     background-color: var(--bs-primary);
+    border: 1px solid var(--bs-primary);
 }
 
 .btn-secondary {
@@ -136,9 +137,10 @@ a[href="#"]:not(.dropdown-toggle):hover {
     border: 1px solid var(--bs-secondary);
 }
 
-.btn-outline-secondary {
+.btn-outline-secondary:hover {
     color: var(--bs-white);
     background-color: var(--bs-secondary);
+    border: 1px solid var(--bs-secondary);
 }
 
 .btn-tertiary {
@@ -160,6 +162,7 @@ a[href="#"]:not(.dropdown-toggle):hover {
 .btn-outline-tertiary:hover {
     color: var(--bs-white);
     background-color: var(--bs-tertiary);
+    border: 1px solid var(--bs-tertiary);
 }
 
 /*----- NAVBAR -----*/
