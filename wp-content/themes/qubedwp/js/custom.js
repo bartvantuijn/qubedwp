@@ -47,7 +47,6 @@ $(document).ready(function(){
     //WooCommerce
     $(function () {
         if ($('.woocommerce')[0]) {
-
             //Bootstrap
             $('.input-text').addClass('form-control');
             $('.orderby').addClass('form-select');
@@ -59,6 +58,9 @@ $(document).ready(function(){
                     scrollTop: $('#primary').offset().top -50
                 });
             }
+
+            //Button icons
+            $('.add_to_cart_button,.single_add_to_cart_button').prepend('<i class="fas fa-shopping-cart me-2"></i>');
         }
     });
 

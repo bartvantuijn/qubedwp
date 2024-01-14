@@ -3,6 +3,24 @@
     "title": "Header menu",
     "fields": [
         {
+            "key": "field_65a44ce1f17e1",
+            "label": "Kleur",
+            "name": "header_menu_kleur",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "array"
+        },
+        {
             "key": "field_6495d722f6047",
             "label": "Zweven",
             "name": "header_menu_zweven",
@@ -131,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701982892
+    "modified": 1705266497
 }

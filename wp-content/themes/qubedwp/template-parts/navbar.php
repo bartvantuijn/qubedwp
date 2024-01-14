@@ -1,11 +1,12 @@
 <?php
 
 $headerTopMenu = wp_get_nav_menu_object('header-topmenu');
+$headerTopMenuColor = get_field('header_topmenu_kleur', $headerTopMenu);
 $headerTopMenuAlignment = get_field('header_topmenu_uitlijnen', $headerTopMenu);
 
 if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 
-    <div class="navbar navbar-expand bg-primary" style="z-index:999;">
+    <div class="navbar navbar-expand bg-primary" style="z-index:999;<?php echo $headerTopMenuColor ? 'background-color:rgb(' . $headerTopMenuColor['red'] . ',' . $headerTopMenuColor['green'] . ',' . $headerTopMenuColor['blue'] . ')!important;' : '' ?>">
         <div class="container">
 
             <?php
@@ -29,6 +30,7 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 <?php
 
 $headerMenu = wp_get_nav_menu_object('header-menu');
+$headerMenuColor = get_field('header_menu_kleur', $headerMenu);
 $headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
 $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
@@ -36,7 +38,7 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 
-        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? 'bg-white shadow' : 'floating'; ?> py-3" style="z-index:1;">
+        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? 'bg-white shadow' : 'floating'; ?> py-3" style="z-index:1;<?php echo $headerMenuColor ? 'background-color:rgb(' . $headerMenuColor['red'] . ',' . $headerMenuColor['green'] . ',' . $headerMenuColor['blue'] . ')!important;' : '' ?>">
             <div class="container position-relative">
 
                 <?php
@@ -122,11 +124,12 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
     <?php
 
     $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+    $headerSubMenuColor = get_field('header_submenu_kleur', $headerSubMenu);
     $headerSubMenuScrollbar = get_field('header_submenu_scrollbar', $headerSubMenu);
 
     if ( has_nav_menu( 'header-submenu' ) ) : ?>
 
-        <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex">
+        <div class="navbar navbar-expand-xxl bg-secondary d-none d-xxl-flex" style="<?php echo $headerSubMenuColor ? 'background-color:rgb(' . $headerSubMenuColor['red'] . ',' . $headerSubMenuColor['green'] . ',' . $headerSubMenuColor['blue'] . ')!important;' : '' ?>">
             <div class="container">
 
                 <?php
