@@ -116,7 +116,15 @@ if( ! class_exists('ACF') ) {
     <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />
+    <?php
+
+    $scrollAnimations = get_field('uiterlijk_scroll_animaties', 'options');
+
+    if ( $scrollAnimations ) : ?>
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />
+
+    <?php endif; ?>
 
     <link rel="stylesheet" href="<?php bloginfo('template_url'); echo '/css/glightbox.min.css'; ?>" type="text/css" />
     <link rel="stylesheet" href="<?php bloginfo('template_url'); echo '/css/custom.css?v=' . filemtime( get_stylesheet_directory() . '/css/custom.css'); ?>" type="text/css" />

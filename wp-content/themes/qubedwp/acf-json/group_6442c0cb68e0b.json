@@ -3,6 +3,26 @@
     "title": "Uiterlijk",
     "fields": [
         {
+            "key": "field_65ad34c73870c",
+            "label": "Scroll animaties",
+            "name": "uiterlijk_scroll_animaties",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_64612e8714277",
             "label": "Font headings",
             "name": "uiterlijk_font_headings",
@@ -179,5 +199,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702163633
+    "modified": 1705851784
 }

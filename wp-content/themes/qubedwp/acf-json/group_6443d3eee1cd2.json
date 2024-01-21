@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_65a44ce1f17e1",
-            "label": "Kleur",
-            "name": "header_menu_kleur",
+            "label": "Achtergrond",
+            "name": "header_menu_achtergrond",
             "aria-label": "",
-            "type": "color_picker",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,9 +16,19 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "enable_opacity": 0,
-            "return_format": "array"
+            "choices": {
+                "bg-white": "Wit",
+                "bg-primary": "Primair",
+                "bg-secondary": "Secundair",
+                "bg-tertiary": "Tertiair"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_6495d722f6047",
@@ -149,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1705266497
+    "modified": 1705850325
 }
