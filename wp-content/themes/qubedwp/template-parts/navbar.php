@@ -3,13 +3,35 @@
 $headerTopMenu = wp_get_nav_menu_object('header-topmenu');
 $headerTopMenuBackground = get_field('header_topmenu_achtergrond', $headerTopMenu);
 $headerTopMenuAlignment = get_field('header_topmenu_uitlijnen', $headerTopMenu);
+$headerTopMenuSlider = get_field('header_topmenu_slider', $headerTopMenu);
 
 if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 
-    <div class="navbar navbar-expand <?php echo $headerTopMenuBackground ?: 'bg-primary'; ?>" style="z-index:999;">
-        <div class="container">
+    <?php if ($headerTopMenuSlider) : ?>
+
+        <div class="navbar navbar-expand carousel slide <?php echo $headerTopMenuBackground ?: 'bg-primary'; ?>" data-bs-ride="carousel" style="z-index:999;">
 
             <?php
+            wp_nav_menu( array(
+                'theme_location'  => 'header-topmenu',
+                'depth'           => 2,
+                'container'       => '',
+                'container_class' => '',
+                'container_id'    => 'header-topmenu',
+                'menu_class'      => 'navbar-nav carousel-inner d-flex justify-content-center overflow-visible',
+                'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'          => new WP_Bootstrap_Navwalker(),
+            ) );
+            ?>
+
+        </div>
+
+    <?php else : ?>
+
+        <div class="navbar navbar-expand <?php echo $headerTopMenuBackground ?: 'bg-primary'; ?>" style="z-index:999;">
+            <div class="container">
+
+                <?php
                 wp_nav_menu( array(
                     'theme_location'  => 'header-topmenu',
                     'depth'           => 2,
@@ -20,10 +42,12 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
                     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                     'walker'          => new WP_Bootstrap_Navwalker(),
                 ) );
-            ?>
+                ?>
 
+            </div>
         </div>
-    </div>
+
+    <?php endif; ?>
 
 <?php endif; ?>
 

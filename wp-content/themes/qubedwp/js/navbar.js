@@ -21,6 +21,14 @@ $(document).ready(function(){
         }
     }
 
+    //If navbar is carousel
+    if($('.navbar').hasClass('carousel')) {
+        $('.navbar.carousel .navbar-nav > .nav-item').addClass('carousel-item');
+        $('.navbar.carousel .navbar-nav > .nav-item:first-child').addClass('active');
+        $('.navbar.carousel .navbar-nav > .nav-item > .nav-link').addClass('translate-middle-x');
+        $('.navbar.carousel .navbar-nav > .nav-item .dropdown-menu').addClass('end-100').css('transform', 'translateX(50%)');
+    }
+
 });
 
 $(document).scroll(function () {

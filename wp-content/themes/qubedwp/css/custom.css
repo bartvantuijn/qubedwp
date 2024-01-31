@@ -252,6 +252,15 @@ a[href="#"]:not(.dropdown-toggle):hover {
     color: var(--bs-body-color);
 }
 
+.navbar.carousel .navbar-nav > .nav-item > .nav-link {
+    opacity: 0;
+    transition: all .2s;
+}
+
+.navbar.carousel .navbar-nav > .nav-item.active > .nav-link {
+    opacity: 1;
+}
+
 /*----- BLOCKS -----*/
 *[data-block-count="-1"] .container {
     padding: 0;
