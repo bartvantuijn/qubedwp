@@ -18,7 +18,7 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
                 'container'       => '',
                 'container_class' => '',
                 'container_id'    => 'header-topmenu',
-                'menu_class'      => 'navbar-nav carousel-inner d-flex justify-content-center overflow-visible',
+                'menu_class'      => 'navbar-nav carousel-inner d-flex justify-content-center',
                 'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                 'walker'          => new WP_Bootstrap_Navwalker(),
             ) );

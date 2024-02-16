@@ -64,7 +64,7 @@ if ( $slides ) : ?>
                 </div>
 
                 <style type="text/css">
-                    .block-slider .carousel-item-<?php echo get_row_index(); ?>.scrolled {
+                    *[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item-<?php echo get_row_index(); ?>.scrolled {
                         background-position: <?php echo explode('-', $alignment)[1] == 'top' ? 'center 2.5%' : (explode('-', $alignment)[1] == 'bottom' ? 'center 97.5%' : explode('-', $alignment)[1] . ' 47.5%'); ?>!important;
                     }
                 </style>

@@ -24,7 +24,7 @@ if ( $columns ) : ?>
 
                         <?php if ( $icon ) : ?>
 
-                            <?php echo '<i class="fa fa-' . $icon . ' d-block h1 text-center mb-4"></i>'; ?>
+                            <?php echo '<i class="fa fa-' . $icon . ' mb-4"></i>'; ?>
 
                         <?php endif; ?>
 
