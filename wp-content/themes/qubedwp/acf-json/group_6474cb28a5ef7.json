@@ -1133,6 +1133,82 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_65d7980564e00": {
+                    "key": "layout_65d7980564e00",
+                    "name": "block-code",
+                    "label": "Code",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_65d79a072c101",
+                            "label": "Achtergrond",
+                            "name": "achtergrond",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6474ce7d45b5d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_65d79a1a2c102",
+                            "label": "Kleur",
+                            "name": "kleur",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6474ceb145b5e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_65d7981f64e0c",
+                            "label": "Code",
+                            "name": "code",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_65d798aa4ab26"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1172,5 +1248,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704402404
+    "modified": 1708628551
 }

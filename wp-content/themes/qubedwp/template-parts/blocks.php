@@ -88,6 +88,12 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
                 get_template_part('template-parts/blocks/block-card', null, $args);
             endif;
 
+        elseif ( $blockType == 'block-code' ) :
+
+            if( $blockAccess && in_array('code', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-code', null, $args);
+            endif;
+
         endif;
 
     endwhile;

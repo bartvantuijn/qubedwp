@@ -7,6 +7,7 @@ $footerMenuBackground = get_field('footer_menu_achtergrond', $footerMenu);
 $footerMenuColor = get_field('footer_menu_kleur', $footerMenu);
 $footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
 $footerMenuImage = get_field('footer_menu_afbeelding', $footerMenu);
+$footerMenuText = get_field('footer_menu_tekst', $footerMenu);
 
 if ( $footerMenu ) : ?>
 
@@ -64,6 +65,18 @@ if ( $footerMenu ) : ?>
                             <?php endif; ?>
 
                         <?php endwhile; ?>
+
+                    </div>
+                </div>
+
+            <?php endif; ?>
+
+            <?php if ( $footerMenuText ) : ?>
+
+                <div class="row">
+                    <div class="col-lg pt-5" data-aos="fade-up">
+
+                        <?php echo $footerMenuText; ?>
 
                     </div>
                 </div>

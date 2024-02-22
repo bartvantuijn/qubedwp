@@ -401,6 +401,14 @@ function my_acf_block_access() {
         }
         </style>';
     }
+
+    if( $blockAccess && !in_array('code', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-code"] {
+            display:none!important;
+        }
+        </style>';
+    }
 }
 add_action( 'admin_head', 'my_acf_block_access' );
 

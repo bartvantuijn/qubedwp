@@ -23,7 +23,8 @@
                 "slider": "Slider",
                 "post": "Post",
                 "accordion": "Accordion",
-                "kaart": "Kaart"
+                "kaart": "Kaart",
+                "code": "Code"
             },
             "default_value": [
                 "tekst",
@@ -32,7 +33,8 @@
                 "slider",
                 "post",
                 "accordion",
-                "kaart"
+                "kaart",
+                "code"
             ],
             "return_format": "value",
             "allow_custom": 0,
@@ -60,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701284892
+    "modified": 1708628638
 }

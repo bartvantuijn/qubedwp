@@ -236,6 +236,26 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_65d798aa4ab26",
+            "label": "Code",
+            "name": "code",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
         }
     ],
     "location": [
@@ -256,5 +276,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704401832
+    "modified": 1708628172
 }
