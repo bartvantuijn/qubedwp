@@ -378,6 +378,14 @@ function my_acf_block_access() {
         </style>';
     }
 
+    if( $blockAccess && !in_array('carousel', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-carousel"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
     if( $blockAccess && !in_array('post', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-post"] {

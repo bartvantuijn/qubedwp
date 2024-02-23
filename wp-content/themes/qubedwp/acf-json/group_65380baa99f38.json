@@ -21,6 +21,7 @@
                 "afbeelding": "Afbeelding",
                 "galerij": "Galerij",
                 "slider": "Slider",
+                "carousel": "Carousel",
                 "post": "Post",
                 "accordion": "Accordion",
                 "kaart": "Kaart",
@@ -31,6 +32,7 @@
                 "afbeelding",
                 "galerij",
                 "slider",
+                "carousel",
                 "post",
                 "accordion",
                 "kaart",
@@ -62,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708628638
+    "modified": 1708685267
 }

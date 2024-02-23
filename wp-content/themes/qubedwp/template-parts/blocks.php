@@ -70,6 +70,12 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
                 get_template_part('template-parts/blocks/block-slider', null, $args);
             endif;
 
+        elseif ( $blockType == 'block-carousel' ) :
+
+            if( $blockAccess && in_array('carousel', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-carousel', null, $args);
+            endif;
+
         elseif ( $blockType == 'block-post' ) :
 
             if( $blockAccess && in_array('post', $blockAccess) ) :
