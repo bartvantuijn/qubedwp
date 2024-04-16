@@ -73,6 +73,23 @@ if( ! class_exists('ACF') ) {
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous" />
 
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" />
+
+    <?php
+
+    $scrollAnimations = get_field('uiterlijk_scroll_animaties', 'options');
+
+    if ( $scrollAnimations ) : ?>
+
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />
+
+    <?php endif; ?>
+
     <?php
 
     $fontFamilyHeadings = get_field('uiterlijk_font_headings', 'options');
@@ -110,19 +127,6 @@ if( ! class_exists('ACF') ) {
             </style>
 
         <?php endif; ?>
-
-    <?php endif; ?>
-
-    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" />
-
-    <?php
-
-    $scrollAnimations = get_field('uiterlijk_scroll_animaties', 'options');
-
-    if ( $scrollAnimations ) : ?>
-
-        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css" />
 
     <?php endif; ?>
 

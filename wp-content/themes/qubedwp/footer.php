@@ -133,6 +133,7 @@ get_template_part('template-parts/copyright');
 wp_footer(); ?>
 
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
 <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script defer src="<?php bloginfo('template_url'); echo '/js/glightbox.min.js?v=' . filemtime( get_stylesheet_directory() . '/js/glightbox.min.js'); ?>"></script>
 <script defer src="<?php bloginfo('template_url'); echo '/js/navbar.js?v=' . filemtime( get_stylesheet_directory() . '/js/navbar.js'); ?>"></script>

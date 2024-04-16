@@ -62,7 +62,7 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
     <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
 
-        <nav class="navbar navbar-expand-xxl <?php echo ! $headerMenuFloat ? ($headerMenuBackground ?: 'bg-white') . ' shadow' : 'floating'; ?> py-3" style="z-index:1;">
+        <nav class="navbar navbar-expand-lg <?php echo ! $headerMenuFloat ? ($headerMenuBackground ?: 'bg-white') . ' shadow' : 'floating'; ?> py-3" style="z-index:1;">
             <div class="container position-relative">
 
                 <?php
@@ -122,7 +122,7 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
                             'container'       => '',
                             'container_class' => '',
                             'container_id'    => 'header-submenu',
-                            'menu_class'      => 'navbar-nav d-xxl-none',
+                            'menu_class'      => 'navbar-nav d-lg-none',
                             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                             'walker'          => new WP_Bootstrap_Navwalker(),
                         ) );
@@ -153,7 +153,7 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
     if ( has_nav_menu( 'header-submenu' ) ) : ?>
 
-        <div class="navbar navbar-expand-xxl <?php echo $headerSubMenuBackground ?: 'bg-secondary'; ?> d-none d-xxl-flex">
+        <div class="navbar navbar-expand-lg <?php echo $headerSubMenuBackground ?: 'bg-secondary'; ?> d-none d-lg-flex">
             <div class="container">
 
                 <?php

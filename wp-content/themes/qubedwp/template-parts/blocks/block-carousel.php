@@ -4,7 +4,11 @@
 // GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $color = get_sub_field('kleur');
-$text = get_sub_field('tekst');
+$arrows = get_sub_field('pijltjes');
+$dots = get_sub_field('puntjes');
+$banner = get_sub_field('banner');
+$height = get_sub_field('hoogte');
+$height_banner = get_sub_field('hoogte_banner');
 $slides = get_sub_field('slides');
 
 if ( $slides ) : ?>
@@ -14,117 +18,236 @@ if ( $slides ) : ?>
     <div class="container">
 
         <div class="row">
-            <div class="col-lg" data-aos="fade-up">
+            <div class="col-lg p-0" data-aos="fade-up">
 
-                <?php if ( $text ) : ?>
+                <?php if ( $banner ) : ?>
 
-                    <?php echo $text; ?>
+                    <div class="slick-carousel<?php echo $args['blockCount']; ?> slider-for">
 
-                <?php endif; ?>
+                        <?php while ( have_rows('slides') ) : the_row();
 
-            </div>
-        </div>
+                            $slide_background = get_sub_field('achtergrond');
+                            $slide_color = get_sub_field('kleur');
+                            $image = get_sub_field('afbeelding');
+                            $alignment = get_sub_field('uitlijnen');
+                            $position = get_sub_field('tekstpositie');
+                            $text = get_sub_field('tekst'); ?>
 
-        <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="carousel slide p-4" data-bs-ride="carousel">
-            <div class="carousel-inner">
+                            <div class="p-4 h-100">
 
-                <?php while ( have_rows('slides') ) : the_row();
+                                <?php if ( $position == 'center' ) : ?>
 
-                    $text = get_sub_field('tekst');
-                    $link = get_sub_field('link'); ?>
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up">
 
-                    <div class="carousel-item <?php echo get_row_index() == 1 ? ' active' : ''; ?> row ms-0">
+                                        <?php if ( have_rows('tekst') ) : ?>
 
-                        <div class="col-lg-3">
-                            <div class="card shadow">
-                                <div class="card-body">
+                                            <?php while ( have_rows('tekst') ) : the_row();
 
-                                    <?php echo $text; ?>
+                                                $text = get_sub_field('tekst');
+                                                $link = get_sub_field('link'); ?>
 
-                                </div>
+                                                <?php if ( $text ) : ?>
+
+                                                    <?php echo $text; ?>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                    </div>
+
+                                <?php elseif ( $position == 'bottom' ) : ?>
+
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden">
+
+                                        <?php if ( $image ) : ?>
+
+                                            <div class="card-image-top mb-3" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+
+                                        <?php endif; ?>
+
+                                        <?php if ( have_rows('tekst') ) : ?>
+
+                                            <?php while ( have_rows('tekst') ) : the_row();
+
+                                                $text = get_sub_field('tekst');
+                                                $link = get_sub_field('link'); ?>
+
+                                                <?php if ( $text ) : ?>
+
+                                                    <div class="card-body">
+                                                        <?php echo $text; ?>
+                                                    </div>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                    </div>
+
+                                <?php else : ?>
+
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+
+                                <?php endif; ?>
+
                             </div>
-                        </div>
+
+                        <?php endwhile; ?>
 
                     </div>
 
-                <?php endwhile; ?>
+                <?php endif; ?>
+
+                <div class="slick-carousel<?php echo $args['blockCount']; ?> slider-nav">
+
+                    <?php while ( have_rows('slides') ) : the_row();
+
+                        $slide_background = get_sub_field('achtergrond');
+                        $slide_color = get_sub_field('kleur');
+                        $image = get_sub_field('afbeelding');
+                        $alignment = get_sub_field('uitlijnen');
+                        $position = get_sub_field('tekstpositie');
+                        $text = get_sub_field('tekst'); ?>
+
+                        <div class="p-4 h-100">
+
+                            <?php if ( $position == 'center' ) : ?>
+
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up">
+
+                                    <?php if ( have_rows('tekst') ) : ?>
+
+                                        <?php while ( have_rows('tekst') ) : the_row();
+
+                                            $text = get_sub_field('tekst');
+                                            $link = get_sub_field('link'); ?>
+
+                                            <?php if ( $text ) : ?>
+
+                                                <?php echo $text; ?>
+
+                                            <?php endif; ?>
+
+                                        <?php endwhile; ?>
+
+                                    <?php endif; ?>
+
+                                </div>
+
+                            <?php elseif ( $position == 'bottom' ) : ?>
+
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden">
+
+                                    <?php if ( $image ) : ?>
+
+                                        <div class="card-image-top mb-3" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+
+                                    <?php endif; ?>
+
+                                    <?php if ( have_rows('tekst') ) : ?>
+
+                                        <?php while ( have_rows('tekst') ) : the_row();
+
+                                            $text = get_sub_field('tekst');
+                                            $link = get_sub_field('link'); ?>
+
+                                            <?php if ( $text ) : ?>
+
+                                                <div class="card-body">
+                                                    <?php echo $text; ?>
+                                                </div>
+
+                                            <?php endif; ?>
+
+                                        <?php endwhile; ?>
+
+                                    <?php endif; ?>
+
+                                </div>
+
+                            <?php else : ?>
+
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                    <?php endwhile; ?>
+
+                </div>
 
             </div>
-
-            <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
-
-                <button class="carousel-control-prev <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="prev" style="width:25px;">
-                    <i class="fas fa-chevron-left"></i>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-
-                <button class="carousel-control-next <?php echo $color; ?>" type="button" data-bs-target="#carouselExampleControls<?php echo $args['blockCount']; ?>" data-bs-slide="next" style="width:25px;">
-                    <i class="fas fa-chevron-right"></i>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
-            <?php endif; ?>
-
         </div>
     </div>
 
-</div>
-
-<style type="text/css">
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item {
-        z-index: 2;
-    }
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item.active {
-        z-index: 1;
-    }
-
-    @media (max-width: 991px) {
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item > div {
-            display: none;
+    <style type="text/css">
+        *[data-block-count="<?php echo $args['blockCount']; ?>"] .slick-prev:before,
+        *[data-block-count="<?php echo $args['blockCount']; ?>"] .slick-next:before,
+        *[data-block-count="<?php echo $args['blockCount']; ?>"] .slick-dots button:before {
+            <?php if($color == 'text-body') : ?>
+                color: var(--bs-body-color)!important;
+            <?php elseif($color == 'text-white') : ?>
+                color: var(--bs-white)!important;
+            <?php elseif($color == 'text-primary') : ?>
+                color: var(--bs-primary)!important;
+            <?php elseif($color == 'text-secondary') : ?>
+                color: var(--bs-secondary)!important;
+            <?php elseif($color == 'text-tertiary') : ?>
+                color: var(--bs-tertiary)!important;
+            <?php endif; ?>
         }
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item > div:first-child {
-            display: block;
-        }
-    }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            <?php if ( $banner ) : ?>
+                //Initialize carousel
+                $('.slick-carousel<?php echo $args['blockCount']; ?>.slider-for').slick({
+                    slidesToShow: 1,
+                    arrows: false,
+                    dots: false,
+                    fade: true,
+                    asNavFor: '.slick-carousel<?php echo $args['blockCount']; ?>.slider-nav'
+                });
+            <?php endif; ?>
 
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item.active,
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-next,
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-prev {
-        display: flex;
-    }
-
-    @media (min-width: 992px) {
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-end.active,
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-next {
-            transform: translateX(25%);
-        }
-
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-start.active,
-        #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-prev {
-            transform: translateX(-25%);
-        }
-    }
-
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-end,
-    #carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-inner .carousel-item-start {
-        transform: translateX(0);
-    }
-</style>
-<script type="text/javascript">
-    $(document).ready(function() {
-        let items = $('#carouselExampleControls<?php echo $args['blockCount']; ?> .carousel-item');
-        items.each(function () {
-            const minPerSlide = 4;
-            let next = $(this).next();
-            for (let i = 1; i < minPerSlide; i++) {
-                if (!next.length) {
-                    next = items.first();
-                }
-                $(this).append(next.clone().children().eq(0));
-                next = next.next();
-            }
+            //Initialize carousel
+            $('.slick-carousel<?php echo $args['blockCount']; ?>.slider-nav').slick({
+                centerMode: true,
+                centerPadding: '0px',
+                arrows: <?php echo $arrows ? 'true' : 'false'; ?>,
+                dots: <?php echo $dots ? 'true' : 'false'; ?>,
+                slidesToShow: <?php echo count($slides) > 4 ? 4 : (count($slides) -1 !== 0 ? count($slides) -1 : count($slides)); ?>,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                focusOnSelect: true,
+                asNavFor: '<?php echo $banner ? '.slick-carousel' . $args['blockCount'] . '.slider-for' : ''; ?>',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            centerMode: true,
+                            centerPadding: '0px',
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            centerMode: true,
+                            centerPadding: '60px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
         });
-    });
-</script>
+    </script>
+</div>
 
 <?php endif; ?>

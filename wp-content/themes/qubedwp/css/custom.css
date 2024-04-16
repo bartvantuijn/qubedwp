@@ -276,6 +276,19 @@ a[href="#"]:not(.dropdown-toggle):hover {
     display: flex;
 }
 
+/*----- BLOCK CAROUSEL -----*/
+.block-carousel .slick-track {
+    display: flex;
+}
+
+.block-carousel .slick-slide {
+    height: inherit;
+}
+
+.block-carousel .slick-slide > div {
+    height: 100%;
+}
+
 /*----- BLOCK POST -----*/
 .block-post .card {
     background-color: transparent;
@@ -371,7 +384,27 @@ footer .menu-item-has-children > a {
     margin-bottom: 1.5rem!important;
 }
 
-@media screen and (max-width:1399px) {
+.woocommerce .woocommerce-pagination ul {
+    border: 1px solid var(--bs-primary)!important;
+}
+
+.woocommerce .woocommerce-pagination ul li {
+    border-right: 1px solid var(--bs-primary)!important;
+}
+
+.woocommerce .woocommerce-pagination ul li a,
+.woocommerce .woocommerce-pagination ul li span {
+    padding: .75em!important;
+}
+
+.woocommerce .woocommerce-pagination ul li a:focus,
+.woocommerce .woocommerce-pagination ul li a:hover,
+.woocommerce .woocommerce-pagination ul li span.current {
+    background-color: var(--bs-primary)!important;
+    color: var(--bs-white)!important;
+}
+
+@media screen and (max-width:991px) {
     /*----- ELEMENTS -----*/
     .card-image-top {
         min-height: 200px;
@@ -410,16 +443,4 @@ footer .menu-item-has-children > a {
     .woocommerce .products .product img {
         min-height: 200px!important;
     }
-}
-
-@media screen and (max-width:991px) {
-
-}
-
-@media screen and (max-width:767px) {
-
-}
-
-@media screen and (max-width:575px) {
-
 }

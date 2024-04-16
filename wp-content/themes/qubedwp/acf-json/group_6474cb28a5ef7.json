@@ -766,7 +766,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_65d877f8fa532",
+                            "key": "field_65fc98c958fe1",
                             "label": "Kleur",
                             "name": "kleur",
                             "aria-label": "",
@@ -788,9 +788,69 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_65d8782efa53a",
-                            "label": "Tekst",
-                            "name": "tekst",
+                            "key": "field_65fc9a795b4ee",
+                            "label": "Pijltjes",
+                            "name": "pijltjes",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_65fc9a935b4ef",
+                            "label": "Puntjes",
+                            "name": "puntjes",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_661e3169a47a2",
+                            "label": "Banner",
+                            "name": "banner",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_6618421f71bf7",
+                            "label": "Hoogte",
+                            "name": "hoogte",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -802,12 +862,40 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6474d5a209d82"
+                                "field_64a9c592ec2d6"
                             ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_661e3c42fff69",
+                            "label": "Hoogte banner",
+                            "name": "hoogte_banner",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Voer de minimale hoogte van het banner blok in (px, em, rem, %)",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_661e3169a47a2",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_65d877f8fa534",
@@ -831,9 +919,9 @@
                             "rows_per_page": 20,
                             "sub_fields": [
                                 {
-                                    "key": "field_65d877f8fa537",
-                                    "label": "Tekst",
-                                    "name": "tekst",
+                                    "key": "field_65fc94b8d5da4",
+                                    "label": "Achtergrond",
+                                    "name": "achtergrond",
                                     "aria-label": "",
                                     "type": "clone",
                                     "instructions": "",
@@ -845,7 +933,7 @@
                                         "id": ""
                                     },
                                     "clone": [
-                                        "field_6474d5a209d82"
+                                        "field_6474ce7d45b5d"
                                     ],
                                     "display": "seamless",
                                     "layout": "block",
@@ -854,9 +942,9 @@
                                     "parent_repeater": "field_65d877f8fa534"
                                 },
                                 {
-                                    "key": "field_65d877f8fa538",
-                                    "label": "Link",
-                                    "name": "link",
+                                    "key": "field_65fc95a8d5da5",
+                                    "label": "Kleur",
+                                    "name": "kleur",
                                     "aria-label": "",
                                     "type": "clone",
                                     "instructions": "",
@@ -868,12 +956,133 @@
                                         "id": ""
                                     },
                                     "clone": [
-                                        "field_650b3b63bb95b"
+                                        "field_6474ceb145b5e"
                                     ],
                                     "display": "seamless",
                                     "layout": "block",
                                     "prefix_label": 0,
                                     "prefix_name": 0,
+                                    "parent_repeater": "field_65d877f8fa534"
+                                },
+                                {
+                                    "key": "field_65fc9630d5da7",
+                                    "label": "Afbeelding",
+                                    "name": "afbeelding",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_650a03587b9a8"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65d877f8fa534"
+                                },
+                                {
+                                    "key": "field_65fc9658d5da8",
+                                    "label": "Uitlijnen",
+                                    "name": "uitlijnen",
+                                    "aria-label": "",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_65970fee97087"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0,
+                                    "parent_repeater": "field_65d877f8fa534"
+                                },
+                                {
+                                    "key": "field_65fc968fd5da9",
+                                    "label": "Tekstpositie",
+                                    "name": "tekstpositie",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "Selecteer de tekstpositie van het blok",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "bottom": "Onder",
+                                        "center": "Midden"
+                                    },
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 1,
+                                    "ui": 0,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "parent_repeater": "field_65d877f8fa534"
+                                },
+                                {
+                                    "key": "field_661845f51bc60",
+                                    "label": "Tekst",
+                                    "name": "tekst",
+                                    "aria-label": "",
+                                    "type": "group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_65fc968fd5da9",
+                                                "operator": "!=empty"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_661846031bc61",
+                                            "label": "Tekst",
+                                            "name": "tekst",
+                                            "aria-label": "",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "field_6474d5a209d82"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0
+                                        }
+                                    ],
                                     "parent_repeater": "field_65d877f8fa534"
                                 }
                             ]
@@ -1393,5 +1602,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708685410
+    "modified": 1713265647
 }
