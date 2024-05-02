@@ -66,31 +66,31 @@ a[href="#"]:not(.dropdown-toggle):hover {
 
 /*----- COLORS -----*/
 .bg-primary {
-    background-color: rgba(var(--bs-primary), var(--bs-bg-opacity))!important;
+    background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity))!important;
 }
 
 .bg-secondary {
-    background-color: rgba(var(--bs-secondary), var(--bs-bg-opacity))!important;
+    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity))!important;
 }
 
 .bg-tertiary {
-    background-color: rgba(var(--bs-tertiary), var(--bs-bg-opacity))!important;
+    background-color: rgba(var(--bs-tertiary-rgb), var(--bs-bg-opacity))!important;
 }
 
 .text-body {
-    color: rgba(var(--bs-body-color), var(--bs-text-opacity))!important;
+    color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity))!important;
 }
 
 .text-primary {
-    color: rgba(var(--bs-primary), var(--bs-text-opacity))!important;
+    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity))!important;
 }
 
 .text-secondary {
-    color: rgba(var(--bs-secondary), var(--bs-text-opacity))!important;
+    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity))!important;
 }
 
 .text-tertiary {
-    color: rgba(var(--bs-tertiary), var(--bs-text-opacity))!important;
+    color: rgba(var(--bs-tertiary-rgb), var(--bs-text-opacity))!important;
 }
 
 /*----- BUTTONS -----*/
