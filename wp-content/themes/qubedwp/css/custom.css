@@ -66,31 +66,31 @@ a[href="#"]:not(.dropdown-toggle):hover {
 
 /*----- COLORS -----*/
 .bg-primary {
-    background-color: var(--bs-primary)!important;
+    background-color: rgba(var(--bs-primary), var(--bs-bg-opacity))!important;
 }
 
 .bg-secondary {
-    background-color: var(--bs-secondary)!important;
+    background-color: rgba(var(--bs-secondary), var(--bs-bg-opacity))!important;
 }
 
 .bg-tertiary {
-    background-color: var(--bs-tertiary)!important;
+    background-color: rgba(var(--bs-tertiary), var(--bs-bg-opacity))!important;
 }
 
 .text-body {
-    color: var(--bs-body-color)!important;
+    color: rgba(var(--bs-body-color), var(--bs-text-opacity))!important;
 }
 
 .text-primary {
-    color: var(--bs-primary)!important;
+    color: rgba(var(--bs-primary), var(--bs-text-opacity))!important;
 }
 
 .text-secondary {
-    color: var(--bs-secondary)!important;
+    color: rgba(var(--bs-secondary), var(--bs-text-opacity))!important;
 }
 
 .text-tertiary {
-    color: var(--bs-tertiary)!important;
+    color: rgba(var(--bs-tertiary), var(--bs-text-opacity))!important;
 }
 
 /*----- BUTTONS -----*/

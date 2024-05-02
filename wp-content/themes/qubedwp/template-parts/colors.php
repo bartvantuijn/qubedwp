@@ -14,6 +14,7 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
                 <?php if ( $primary ) : ?>
 
                     --bs-primary: rgb(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue']; ?>);
+                    --bs-primary-rgb: <?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue']; ?>;
                     --bs-primary-hover: rgba(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue'] . ', .9'; ?>);
                     --bs-primary-light: rgba(<?php echo $primary['red'] . ',' . $primary['green'] . ',' . $primary['blue'] . ', .1'; ?>);
 
@@ -21,6 +22,7 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
                 <?php if ( $secondary ) : ?>
 
                     --bs-secondary: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue']; ?>);
+                    --bs-secondary-rgb: <?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue']; ?>;
                     --bs-secondary-hover: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .9'; ?>);
                     --bs-secondary-light: rgb(<?php echo $secondary['red'] . ',' . $secondary['green'] . ',' . $secondary['blue'] . ', .1'; ?>);
 
@@ -28,6 +30,7 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
                 <?php if ( $tertiary ) : ?>
 
                     --bs-tertiary: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue']; ?>);
+                    --bs-tertiary-rgb: <?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue']; ?>;
                     --bs-tertiary-hover: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue'] . ', .9'; ?>);
                     --bs-tertiary-light: rgb(<?php echo $tertiary['red'] . ',' . $tertiary['green'] . ',' . $tertiary['blue'] . ', .1'; ?>);
 
@@ -35,6 +38,7 @@ if ( have_rows('uiterlijk_kleuren', 'options') ) :
                 <?php if ( $text ) : ?>
 
                     --bs-body-color: rgb(<?php echo $text['red'] . ',' . $text['green'] . ',' . $text['blue']; ?>);
+                    --bs-body-color-rgb: <?php echo $text['red'] . ',' . $text['green'] . ',' . $text['blue']; ?>;
 
                 <?php endif; ?>
             }
