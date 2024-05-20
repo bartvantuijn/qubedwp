@@ -89,8 +89,8 @@ if( ! class_exists('ACF') ) {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=<?php echo $fontUrlHeadings; ?>:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" />
 
             <style rel="media/screen">
-                .h1, .h2, .h3, .h4, .h5, .h6,
-                h1, h2, h3, h4, h5, h6 {
+                h1, h2, h3, h4, h5, h6,
+                .h1, .h2, .h3, .h4, .h5, .h6 {
                     font-family: '<?php echo $fontFamilyHeadings; ?>', sans-serif;
                 }
             </style>
@@ -139,11 +139,14 @@ if( ! class_exists('ACF') ) {
 
     <style type="text/css" media="screen">
         :root {
+            --bs-bg-opacity: 1;
+            --bs-text-opacity: 1;
             --bs-primary-hover: rgba(var(--bs-primary-rgb), .9);
             --bs-primary-light: rgba(var(--bs-primary-rgb), .1);
             --bs-secondary-hover: rgba(var(--bs-secondary-rgb), .9);
             --bs-secondary-light: rgba(var(--bs-secondary-rgb), .1);
             --bs-tertiary: rgba(var(--bs-secondary-rgb), 1);
+            --bs-tertiary-rgb: var(--bs-secondary-rgb);
             --bs-tertiary-hover: rgba(var(--bs-secondary-rgb), .9);
             --bs-tertiary-light: rgba(var(--bs-secondary-rgb), .1);
         }

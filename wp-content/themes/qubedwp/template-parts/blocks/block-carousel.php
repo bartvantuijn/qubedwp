@@ -33,7 +33,7 @@ if ( $slides ) : ?>
                             $position = get_sub_field('tekstpositie');
                             $text = get_sub_field('tekst'); ?>
 
-                            <div class="p-4 h-100">
+                            <div class="h-100">
 
                                 <?php if ( $position == 'center' ) : ?>
 
@@ -60,11 +60,11 @@ if ( $slides ) : ?>
 
                                 <?php elseif ( $position == 'bottom' ) : ?>
 
-                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden">
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden p-4">
 
                                         <?php if ( $image ) : ?>
 
-                                            <div class="card-image-top mb-3" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                            <div class="card-image-top mb-3" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-repeat:no-repeat;"></div>
 
                                         <?php endif; ?>
 
@@ -77,7 +77,7 @@ if ( $slides ) : ?>
 
                                                 <?php if ( $text ) : ?>
 
-                                                    <div class="card-body">
+                                                    <div class="card-body p-0">
                                                         <?php echo $text; ?>
                                                     </div>
 
@@ -114,7 +114,7 @@ if ( $slides ) : ?>
                         $position = get_sub_field('tekstpositie');
                         $text = get_sub_field('tekst'); ?>
 
-                        <div class="p-4 h-100">
+                        <div class="h-100">
 
                             <?php if ( $position == 'center' ) : ?>
 
@@ -141,11 +141,11 @@ if ( $slides ) : ?>
 
                             <?php elseif ( $position == 'bottom' ) : ?>
 
-                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden">
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 overflow-hidden p-4">
 
                                     <?php if ( $image ) : ?>
 
-                                        <div class="card-image-top mb-3" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                        <div class="card-image-top mb-3" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-repeat:no-repeat;"></div>
 
                                     <?php endif; ?>
 
@@ -158,7 +158,7 @@ if ( $slides ) : ?>
 
                                             <?php if ( $text ) : ?>
 
-                                                <div class="card-body">
+                                                <div class="card-body p-0">
                                                     <?php echo $text; ?>
                                                 </div>
 
@@ -233,7 +233,8 @@ if ( $slides ) : ?>
                         settings: {
                             centerMode: true,
                             centerPadding: '0px',
-                            slidesToShow: 3
+                            arrows: false,
+                            slidesToShow: <?php echo count($slides) > 3 ? 3 : (count($slides) -1 !== 0 ? count($slides) -1 : count($slides)); ?>,
                         }
                     },
                     {
@@ -241,7 +242,8 @@ if ( $slides ) : ?>
                         settings: {
                             centerMode: true,
                             centerPadding: '60px',
-                            slidesToShow: 1
+                            arrows: false,
+                            slidesToShow: <?php echo count($slides) > 1 ? 1 : (count($slides) -1 !== 0 ? count($slides) -1 : count($slides)); ?>,
                         }
                     }
                 ]

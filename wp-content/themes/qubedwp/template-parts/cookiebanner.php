@@ -18,9 +18,8 @@ if ( $cookieBannerActive ) :
             <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, $('#cookiebanner'));">Weigeren</button>
             <?php
             $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
-            if( $privacy_policy_page ) :
-                $permalink = esc_url( get_permalink( $privacy_policy_page ) ); ?>
-                <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, null, '<?php echo $permalink; ?>');">Privacybeleid</button>
+            if( $privacy_policy_page && get_post_status($privacy_policy_page) == 'publish') : ?>
+                <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, null, '<?php echo esc_url( get_permalink( $privacy_policy_page ) ); ?>');">Privacybeleid</button>
             <?php endif;?>
         </div>
     </div>

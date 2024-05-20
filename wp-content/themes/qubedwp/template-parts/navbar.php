@@ -1,11 +1,13 @@
 <?php
 
-$headerTopMenu = wp_get_nav_menu_object('header-topmenu');
+$menuLocations = get_nav_menu_locations();
+
+$headerTopMenu = wp_get_nav_menu_object($menuLocations['header-topmenu']);
 $headerTopMenuBackground = get_field('header_topmenu_achtergrond', $headerTopMenu);
 $headerTopMenuAlignment = get_field('header_topmenu_uitlijnen', $headerTopMenu);
 $headerTopMenuSlider = get_field('header_topmenu_slider', $headerTopMenu);
 
-if ( has_nav_menu( 'header-topmenu' ) ) : ?>
+if ( $headerTopMenu ) : ?>
 
     <?php if ($headerTopMenuSlider) : ?>
 
@@ -53,14 +55,14 @@ if ( has_nav_menu( 'header-topmenu' ) ) : ?>
 
 <?php
 
-$headerMenu = wp_get_nav_menu_object('header-menu');
+$headerMenu = wp_get_nav_menu_object($menuLocations['header-menu']);
 $headerMenuBackground = get_field('header_menu_achtergrond', $headerMenu);
 $headerMenuFloat = get_field('header_menu_zweven', $headerMenu);
 $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
 <div id="nav-wrapper" class="sticky-top" style="z-index:99;">
 
-    <?php if ( has_nav_menu( 'header-menu' ) ) : ?>
+    <?php if ( $headerMenu ) : ?>
 
         <nav class="navbar navbar-expand-lg <?php echo ! $headerMenuFloat ? ($headerMenuBackground ?: 'bg-white') . ' shadow' : 'floating'; ?> py-3" style="z-index:1;">
             <div class="container position-relative">
@@ -112,9 +114,9 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
                         'walker'          => new WP_Bootstrap_Navwalker(),
                     ) );
 
-                    $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+                    $headerSubMenu = wp_get_nav_menu_object($menuLocations['header-submenu']);
 
-                    if ( has_nav_menu( 'header-submenu' ) ) :
+                    if ( $headerSubMenu ) :
 
                         wp_nav_menu( array(
                             'theme_location'  => 'header-submenu',
@@ -147,11 +149,11 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
 
     <?php
 
-    $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+    $headerSubMenu = wp_get_nav_menu_object($menuLocations['header-submenu']);
     $headerSubMenuBackground = get_field('header_submenu_achtergrond', $headerSubMenu);
     $headerSubMenuScrollbar = get_field('header_submenu_scrollbar', $headerSubMenu);
 
-    if ( has_nav_menu( 'header-submenu' ) ) : ?>
+    if ( $headerSubMenu ) : ?>
 
         <div class="navbar navbar-expand-lg <?php echo $headerSubMenuBackground ?: 'bg-secondary'; ?> d-none d-lg-flex">
             <div class="container">
@@ -210,9 +212,9 @@ $headerMenuCanvas = get_field('header_menu_canvas', $headerMenu); ?>
                     'walker'          => new WP_Bootstrap_Navwalker(),
                 ) );
 
-                $headerSubMenu = wp_get_nav_menu_object('header-submenu');
+                $headerSubMenu = wp_get_nav_menu_object($menuLocations['header-submenu']);
 
-                if ( has_nav_menu( 'header-submenu' ) ) :
+                if ( $headerSubMenu ) :
 
                     wp_nav_menu( array(
                         'theme_location'  => 'header-submenu',

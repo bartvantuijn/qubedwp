@@ -27,7 +27,15 @@ if ( $columns ) : ?>
 
                             <?php if ( $image ) : ?>
 
-                                <div class="card-image-top mb-3" style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                <?php if ( $link ) : ?>
+
+                                    <a href="<?php echo $link['url']; ?>" class="card-image-top mb-3" style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-repeat:no-repeat;"></a>
+
+                                <?php else : ?>
+
+                                    <div class="card-image-top mb-3" style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-repeat:no-repeat;"></div>
+
+                                <?php endif; ?>
 
                             <?php endif; ?>
 

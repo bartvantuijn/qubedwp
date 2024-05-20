@@ -1,8 +1,8 @@
 <?php
-// FOOTER MENU
-$footerMenu = wp_get_nav_menu_object('footer-menu');
 
-// GET FOOTER DATA
+$menuLocations = get_nav_menu_locations();
+
+$footerMenu = wp_get_nav_menu_object($menuLocations['footer-menu']);
 $footerMenuBackground = get_field('footer_menu_achtergrond', $footerMenu);
 $footerMenuColor = get_field('footer_menu_kleur', $footerMenu);
 $footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
@@ -83,26 +83,22 @@ if ( $footerMenu ) : ?>
 
             <?php endif; ?>
 
-            <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
+            <div class="row">
+                <div class="col-lg pt-5" data-aos="fade-up">
 
-                <div class="row">
-                    <div class="col-lg pt-5" data-aos="fade-up">
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location'  => 'footer-menu',
+                        'depth'           => 2,
+                        'container'       => '',
+                        'container_class' => '',
+                        'container_id'    => 'footer-menu',
+                        'menu_class'      => 'footer-nav row list-unstyled',
+                    ) );
+                    ?>
 
-                        <?php
-                        wp_nav_menu( array(
-                            'theme_location'  => 'footer-menu',
-                            'depth'           => 2,
-                            'container'       => '',
-                            'container_class' => '',
-                            'container_id'    => 'footer-menu',
-                            'menu_class'      => 'footer-nav row list-unstyled',
-                        ) );
-                        ?>
-
-                    </div>
                 </div>
-
-            <?php endif; ?>
+            </div>
 
         </div>
 
