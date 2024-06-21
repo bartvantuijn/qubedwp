@@ -125,6 +125,23 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_66756003ab6ae",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "Selecteer de video van het blok",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
             "key": "field_6580a3da9443c",
             "label": "Overlay",
             "name": "overlay",
@@ -276,5 +293,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708628172
+    "modified": 1718968866
 }

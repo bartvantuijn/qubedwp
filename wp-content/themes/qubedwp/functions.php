@@ -362,6 +362,14 @@ function my_acf_block_access() {
         </style>';
     }
 
+    if( $blockAccess && !in_array('video', $blockAccess) ) {
+        echo '<style>
+        *[data-layout="block-video"] {
+            display:none!important;
+        }
+        </style>';
+    }
+
     if( $blockAccess && !in_array('galerij', $blockAccess) ) {
         echo '<style>
         *[data-layout="block-gallery"] {

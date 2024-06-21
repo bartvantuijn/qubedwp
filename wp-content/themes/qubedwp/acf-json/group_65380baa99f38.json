@@ -19,6 +19,7 @@
             "choices": {
                 "tekst": "Tekst",
                 "afbeelding": "Afbeelding",
+                "video": "Video",
                 "galerij": "Galerij",
                 "slider": "Slider",
                 "carousel": "Carousel",
@@ -30,6 +31,7 @@
             "default_value": [
                 "tekst",
                 "afbeelding",
+                "video",
                 "galerij",
                 "slider",
                 "carousel",
@@ -64,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708685267
+    "modified": 1718968471
 }

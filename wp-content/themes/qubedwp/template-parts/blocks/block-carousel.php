@@ -22,7 +22,7 @@ if ( $slides ) : ?>
 
                 <?php if ( $banner ) : ?>
 
-                    <div class="slick-carousel<?php echo $args['blockCount']; ?> slider-for">
+                    <div class="slick-carousel<?php echo $args['blockCount']; ?> slider-for d-none d-lg-block">
 
                         <?php while ( have_rows('slides') ) : the_row();
 

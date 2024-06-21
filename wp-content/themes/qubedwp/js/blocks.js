@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     //Change block distance
-    $($('*[data-block]:not(.block-slider)')).each(function() {
+    $($('*[data-block]:not(.block-slider, .block-video[data-block-position="center"])')).each(function() {
         if( $(this).data('block-background') && ($(this).data('block-background') === $(this).next('*[data-block]').data('block-background')) ) {
             $(this).addClass('pt-5');
         } else {

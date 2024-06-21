@@ -58,6 +58,12 @@ if ( $pageID && have_rows('blokken', $pageID) ) :
                 get_template_part('template-parts/blocks/block-image', null, $args);
             endif;
 
+        elseif ( $blockType == 'block-video' ) :
+
+            if( $blockAccess && in_array('video', $blockAccess) ) :
+                get_template_part('template-parts/blocks/block-video', null, $args);
+            endif;
+
         elseif ( $blockType == 'block-gallery' ) :
 
             if( $blockAccess && in_array('galerij', $blockAccess) ) :
