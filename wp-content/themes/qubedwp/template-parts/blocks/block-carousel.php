@@ -37,7 +37,7 @@ if ( $slides ) : ?>
 
                                 <?php if ( $position == 'center' ) : ?>
 
-                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up">
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up">
 
                                         <?php if ( have_rows('tekst') ) : ?>
 
@@ -91,7 +91,7 @@ if ( $slides ) : ?>
 
                                 <?php else : ?>
 
-                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                    <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height_banner ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up"></div>
 
                                 <?php endif; ?>
 
@@ -118,7 +118,7 @@ if ( $slides ) : ?>
 
                             <?php if ( $position == 'center' ) : ?>
 
-                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up">
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up">
 
                                     <?php if ( have_rows('tekst') ) : ?>
 
@@ -172,7 +172,7 @@ if ( $slides ) : ?>
 
                             <?php else : ?>
 
-                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up"></div>
+                                <div class="card <?php echo $slide_background . ' ' . $slide_color; ?> h-100 p-4 <?php echo $image ? 'border-0' : ''; ?>" style="min-height:<?php echo $height ?: '300px'; ?>;background-image:url('<?php echo $image ?: ''; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up"></div>
 
                             <?php endif; ?>
 

@@ -183,7 +183,7 @@ if ( $video ) :
 
         <script type="text/javascript">
             var iframe = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').height();
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').css('top', (iframe - <?php echo $height ?: 450; ?>) / -2 + 'px');
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').css('top', (iframe - <?php echo str_replace('px', '', $height) ?: 450; ?>) / -2 + 'px');
 
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
             <?php if( $position == 'center' ) : ?>

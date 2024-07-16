@@ -74,7 +74,7 @@ if ( $image ) : ?>
 
                 <?php endif; ?>
 
-                <div class="img col-lg d-flex flex-column justify-content-center py-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;" data-aos="fade-up">
+                <div class="img col-lg d-flex flex-column justify-content-center py-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up">
 
                     <?php if ( $position == 'center' ) : ?>
 

@@ -31,7 +31,7 @@ if ( $slides ) : ?>
                 $alignment = get_sub_field('uitlijnen');
                 $link = get_sub_field('link'); ?>
 
-                <div class="carousel-item carousel-item-<?php echo get_row_index(); ?> <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:multiply;">
+                <div class="carousel-item carousel-item-<?php echo get_row_index(); ?> <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;">
 
                     <div class="container">
 
