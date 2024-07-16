@@ -4,6 +4,7 @@
 // GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $overlay = get_sub_field('overlay');
+$opacity = get_sub_field('transparantie');
 $height = get_sub_field('hoogte');
 $image = get_sub_field('afbeelding');
 $alignment = get_sub_field('uitlijnen');
@@ -125,7 +126,11 @@ if ( $image ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            <?php if( $position == 'center' ) : ?>
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.8'; ?>)');
+            <?php else : ?>
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
+            <?php endif; ?>
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .img').css('background-color', c);
         </script>
     </div>

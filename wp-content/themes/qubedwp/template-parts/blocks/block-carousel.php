@@ -241,7 +241,7 @@ if ( $slides ) : ?>
                         breakpoint: 480,
                         settings: {
                             centerMode: true,
-                            centerPadding: '40px',
+                            centerPadding: '20px',
                             arrows: false,
                             slidesToShow: <?php echo count($slides) > 1 ? 1 : (count($slides) -1 !== 0 ? count($slides) -1 : count($slides)); ?>,
                         }

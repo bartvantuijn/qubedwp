@@ -4,6 +4,7 @@
 // GET BLOCK DATA
 $background = get_sub_field('achtergrond');
 $overlay = get_sub_field('overlay');
+$opacity = get_sub_field('transparantie');
 $height = get_sub_field('hoogte');
 $video = get_sub_field('video');
 $position = get_sub_field('tekstpositie');
@@ -16,12 +17,16 @@ if ( $video ) :
 
     // Add extra parameters to src and replace HTML.
     $params = array(
-        'controls'  => 0,
-        'hd'        => 1,
-        'autohide'  => 1,
-        'autoplay'  => 1,
-        'loop'      => 1,
-        'muted'     => 1,
+        'controls'          => 0,
+        'hd'                => 1,
+        'autohide'          => 1,
+        'autoplay'          => 1,
+        'loop'              => 1,
+        'muted'             => 1,
+        'mute'              => 1,
+        'showinfo'          => 0,
+        'rel'               => 0,
+        'modestbranding'    => 0,
     );
     $new_src = add_query_arg($params, $src);
     $video = str_replace($src, $new_src, $video);
@@ -36,14 +41,13 @@ if ( $video ) :
             padding-bottom: 56.25%;
             overflow: hidden;
             max-width: 100%;
-            height: auto;
+            height: 100%;
         }
 
         .embed-container iframe,
         .embed-container object,
         .embed-container embed {
             position: absolute;
-            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
@@ -114,7 +118,7 @@ if ( $video ) :
 
                 <div class="video col-lg position-relative d-flex flex-column justify-content-center py-5 px-0 order-2 overflow-hidden" style="min-height:<?php echo $height ?: '450px'; ?>;" data-aos="fade-up">
 
-                    <div class="position-absolute w-100">
+                    <div class="position-absolute w-100 h-100">
                         <div class="embed-container">
                             <?php echo $video; ?>
                             <div class="overlay position-absolute w-100 h-100"></div>
@@ -178,8 +182,15 @@ if ( $video ) :
         </div>
 
         <script type="text/javascript">
+            var iframe = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').height();
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').css('top', (iframe - <?php echo $height ?: 450; ?>) / -2 + 'px');
+
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            <?php if( $position == 'center' ) : ?>
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.8'; ?>)');
+            <?php else : ?>
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
+            <?php endif; ?>
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
         </script>
     </div>

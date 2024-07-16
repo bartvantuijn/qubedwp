@@ -3,6 +3,7 @@
 
 // GET BLOCK DATA
 $overlay = get_sub_field('overlay');
+$opacity = get_sub_field('transparantie');
 $color = get_sub_field('kleur');
 $height = get_sub_field('hoogte');
 $slides = get_sub_field('slides');
@@ -89,7 +90,7 @@ if ( $slides ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
 
             $(document).scroll(function () {

@@ -214,6 +214,28 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_6696cc30d3125",
+                            "label": "Transparantie",
+                            "name": "transparantie",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6696cb93fd316"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_650a061786ef0",
                             "label": "Hoogte",
                             "name": "hoogte",
@@ -467,6 +489,28 @@
                             },
                             "clone": [
                                 "field_6580a3da9443c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6696cc4fd3126",
+                            "label": "Transparantie",
+                            "name": "transparantie",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6696cb93fd316"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -806,6 +850,28 @@
                             },
                             "clone": [
                                 "field_6580a3da9443c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6696cc83d3127",
+                            "label": "Transparantie",
+                            "name": "transparantie",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6696cb93fd316"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1840,5 +1906,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718968832
+    "modified": 1721158832
 }
