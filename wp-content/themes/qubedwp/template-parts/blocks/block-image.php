@@ -74,7 +74,8 @@ if ( $image ) : ?>
 
                 <?php endif; ?>
 
-                <div class="img col-lg d-flex flex-column justify-content-center py-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;" data-aos="fade-up">
+                <div class="col-lg position-relative d-flex flex-column justify-content-center py-5 order-2" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;" data-aos="fade-up">
+                    <div class="overlay"></div>
 
                     <?php if ( $position == 'center' ) : ?>
 
@@ -87,7 +88,7 @@ if ( $image ) : ?>
                                 $text = get_sub_field('tekst');
                                 $link = get_sub_field('link'); ?>
 
-                                <div class="<?php echo $position_color; ?> w-100">
+                                <div class="<?php echo $position_color; ?> w-100" style="z-index:1;">
 
                                     <?php if ( $text ) : ?>
 
@@ -127,11 +128,11 @@ if ( $image ) : ?>
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
             <?php if( $position == 'center' ) : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.8'; ?>)');
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
             <?php else : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
             <?php endif; ?>
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .img').css('background-color', c);
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
         </script>
     </div>
 

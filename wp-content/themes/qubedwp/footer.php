@@ -11,7 +11,7 @@ $footerMenuText = get_field('footer_menu_tekst', $footerMenu);
 
 if ( $footerMenu ) : ?>
 
-    <footer class="block-footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:overlay;">
+    <footer class="block-footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:soft-light;">
 
         <div class="container">
 

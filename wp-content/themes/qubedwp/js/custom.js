@@ -60,7 +60,7 @@ $(document).ready(function(){
             }
 
             //Button icons
-            $('.add_to_cart_button,.single_add_to_cart_button').prepend('<i class="fas fa-shopping-cart me-2"></i>');
+            $('.add_to_cart_button, .single_add_to_cart_button').prepend('<i class="fas fa-shopping-cart me-2"></i>');
         }
     });
 

@@ -22,11 +22,11 @@ if ( $video ) :
         'autohide'          => 1,
         'autoplay'          => 1,
         'loop'              => 1,
-        'muted'             => 1,
         'mute'              => 1,
+        'muted'             => 1,
         'showinfo'          => 0,
-        'rel'               => 0,
         'modestbranding'    => 0,
+        'rel'               => 0,
     );
     $new_src = add_query_arg($params, $src);
     $video = str_replace($src, $new_src, $video);
@@ -120,8 +120,8 @@ if ( $video ) :
 
                     <div class="position-absolute w-100 h-100">
                         <div class="embed-container">
+                            <div class="overlay"></div>
                             <?php echo $video; ?>
-                            <div class="overlay position-absolute w-100 h-100"></div>
                         </div>
                     </div>
 
@@ -187,9 +187,9 @@ if ( $video ) :
 
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
             <?php if( $position == 'center' ) : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.8'; ?>)');
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
             <?php else : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
+                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
             <?php endif; ?>
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
         </script>

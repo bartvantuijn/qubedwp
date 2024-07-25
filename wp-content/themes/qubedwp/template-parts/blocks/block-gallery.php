@@ -21,7 +21,7 @@ if ( $images ) : ?>
                     $alignment = get_sub_field('uitlijnen'); ?>
 
                     <div class="col-4" data-aos="fade-up">
-                        <div style="min-height:<?php echo $height ?: '250px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;"></div>
+                        <div style="min-height:<?php echo $height ?: '250px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;"></div>
                     </div>
 
                 <?php endwhile; ?>

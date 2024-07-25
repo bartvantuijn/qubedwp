@@ -10,7 +10,7 @@ $slides = get_sub_field('slides');
 
 if ( $slides ) : ?>
 
-    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="carousel" data-block data-block-count="<?php echo $args['blockCount']; ?>">
+    <div id="carouselExampleControls<?php echo $args['blockCount']; ?>" class="block-slider carousel slide" data-bs-ride="caousel" data-block data-block-count="<?php echo $args['blockCount']; ?>">
 
         <?php if ( count(get_sub_field('slides')) > 1 ) : ?>
 
@@ -31,9 +31,10 @@ if ( $slides ) : ?>
                 $alignment = get_sub_field('uitlijnen');
                 $link = get_sub_field('link'); ?>
 
-                <div class="carousel-item carousel-item-<?php echo get_row_index(); ?> <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;background-blend-mode:overlay;">
+                <div class="carousel-item carousel-item-<?php echo get_row_index(); ?> <?php echo get_row_index() == 1 ? ' active' : ''; ?> py-5" style="min-height:<?php echo $height ?: '450px'; ?>;background-image:url('<?php echo $image ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:<?php echo str_replace('-', ' ', $alignment) ?: 'center'; ?>;">
+                    <div class="overlay"></div>
 
-                    <div class="container">
+                    <div class="container" style="z-index:1;">
 
                         <div class="<?php echo $color; ?>" data-aos="fade-up">
 
@@ -90,8 +91,8 @@ if ( $slides ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '.4'; ?>)');
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').css('background-color', c);
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
+            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
 
             $(document).scroll(function () {
                 $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .carousel-item').toggleClass('scrolled', $(this).scrollTop() > 25);

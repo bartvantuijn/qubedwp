@@ -59,6 +59,17 @@ a[href="#"]:not(.dropdown-toggle):hover {
     min-height: 300px;
 }
 
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    pointer-events: none;
+    z-index: 1;
+}
+
 /*----- TYPOGRAPHY -----*/
 .form-control:focus {
     border-color: var(--bs-primary);
