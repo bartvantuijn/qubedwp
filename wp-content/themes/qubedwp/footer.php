@@ -11,9 +11,10 @@ $footerMenuText = get_field('footer_menu_tekst', $footerMenu);
 
 if ( $footerMenu ) : ?>
 
-    <footer class="block-footer <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;background-blend-mode:soft-light;">
+    <footer class="block-footer position-relative <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;">
+        <div class="overlay"></div>
 
-        <div class="container">
+        <div class="container position-relative" style="z-index:1;">
 
             <div class="row">
                 <div class="col-lg text-center" data-aos="fade-up">
@@ -106,8 +107,8 @@ if ( $footerMenu ) : ?>
 
     <script type="text/javascript">
         $('footer').append('<div class="<?php echo $footerMenuBackground; ?>"></div>');
-        var c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 0.4)');
-        $('footer').css('background-color', c);
+        var c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 1)');
+        $('footer .overlay').css('background-color', c);
 
         $('footer').append('<div class="<?php echo $footerMenuColor; ?>"></div>');
         var d = $('footer .<?php echo $footerMenuColor; ?>').css('color');

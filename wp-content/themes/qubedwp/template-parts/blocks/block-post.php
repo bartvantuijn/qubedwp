@@ -36,6 +36,7 @@ if ( $posts ) : ?>
                                     } ?>
                                     <span class="price" style="display:block;"><?php echo wc_price($product->get_price()); ?></span>
                                 <?php endif; ?>
+                                <p class="card-text"><?php the_excerpt(); ?></p>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Bekijk <?php echo strtolower(get_post_type_object(get_post_type($post->ID))->labels->singular_name); ?></a>
                             </div>
                         </div>
