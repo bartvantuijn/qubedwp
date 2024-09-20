@@ -35,26 +35,25 @@ if ( $video ) :
     $attributes = 'frameborder="0"';
     $video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video); ?>
 
-    <style>
-        .embed-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            overflow: hidden;
-            max-width: 100%;
-            height: 100%;
-        }
-
-        .embed-container iframe,
-        .embed-container object,
-        .embed-container embed {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
     <div class="block-video <?php echo $background; ?>" data-block data-block-position="<?php echo $position; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
+        <style>
+            .embed-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                overflow: hidden;
+                max-width: 100%;
+                height: 100%;
+            }
+
+            .embed-container iframe,
+            .embed-container object,
+            .embed-container embed {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
 
         <div class="<?php echo ($position == 'center' ? 'container-fluid' : 'container'); ?>">
 
