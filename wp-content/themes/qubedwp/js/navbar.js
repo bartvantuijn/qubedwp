@@ -12,11 +12,12 @@ $(document).ready(function(){
             total += $(this).outerHeight();
         });
 
-        //Change margin of first slider block
+        //Change margin of first slider and video block
         $('*[data-block-count="1"].block-slider:not(*[data-block-count="-1"] *)').css('margin-top', -total);
+        $('*[data-block-count="1"].block-video:not(*[data-block-count="-1"] *)').css('margin-top', -total);
 
         //Change floating navbar brand color
-        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider')) {
+        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider') || $('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-video')) {
             $('.navbar-brand').css('color','var(--bs-white)');
         }
     }
@@ -40,7 +41,7 @@ $(document).scroll(function () {
         $('nav.navbar.floating').toggleClass('scrolled bg-white shadow', $(this).scrollTop() > 25);
 
         //Change floating navbar brand on scroll
-        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider')) {
+        if($('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-slider') || $('*[data-block-count="1"]:not(*[data-block-count="-1"] *)').hasClass('block-video')) {
             if ($(this).scrollTop() > 25) {
                 $('.navbar-brand').css('color','var(--bs-primary)');
             } else {

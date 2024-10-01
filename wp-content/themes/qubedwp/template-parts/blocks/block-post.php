@@ -24,7 +24,7 @@ if ( $posts ) : ?>
                         <div class="card border-0">
                             <a href="<?php the_permalink(); ?>" class="card-image-top mb-3" style="background-image:url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full') ?: bloginfo('template_url') . '/img/placeholder.png'; ?>');background-size:cover;background-position:center;background-repeat:no-repeat;"></a>
                             <div class="card-body text-body p-0">
-                                <h2 class="card-title h6"><?php the_title(); ?></h2>
+                                <h2 class="card-title h5"><?php the_title(); ?></h2>
                                 <?php if ( get_post_type() == 'product' && class_exists( 'woocommerce' ) ) :
                                     $product = wc_get_product( get_the_id() );
 
@@ -36,7 +36,12 @@ if ( $posts ) : ?>
                                     } ?>
                                     <span class="price" style="display:block;"><?php echo wc_price($product->get_price()); ?></span>
                                 <?php endif; ?>
-                                <p class="card-text"><?php the_excerpt(); ?></p>
+                                <?php if(get_the_date()) : ?>
+                                    <small style="display:block;"><i class="fas fa-calendar-alt me-2"></i><?php echo get_the_date(); ?></small>
+                                <?php endif; ?>
+                                <?php if(get_the_excerpt()) : ?>
+                                    <p class="card-text mt-3"><?php echo get_the_excerpt(); ?></p>
+                                <?php endif; ?>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Bekijk <?php echo strtolower(get_post_type_object(get_post_type($post->ID))->labels->singular_name); ?></a>
                             </div>
                         </div>

@@ -15,24 +15,25 @@ if ( $video ) :
     preg_match('/src="(.+?)"/', $video, $matches);
     $src = $matches[1];
 
+    if (preg_match('/embed\/(.*?)\?/', $src, $match) == 1) {
+        $id = $match[1];
+    }
+
     // Add extra parameters to src and replace HTML.
     $params = array(
-        'controls'          => 0,
         'hd'                => 1,
-        'autohide'          => 1,
         'autoplay'          => 1,
+        'controls'          => 1,
         'loop'              => 1,
         'mute'              => 1,
         'muted'             => 1,
-        'showinfo'          => 0,
-        'modestbranding'    => 0,
-        'rel'               => 0,
+        'playlist'          => $id ?? '',
     );
     $new_src = add_query_arg($params, $src);
     $video = str_replace($src, $new_src, $video);
 
     // Add extra attributes to iframe HTML.
-    $attributes = 'frameborder="0"';
+    $attributes = 'frameborder="0" class="pe-none"';
     $video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video); ?>
 
     <div class="block-video <?php echo $background; ?>" data-block data-block-position="<?php echo $position; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
