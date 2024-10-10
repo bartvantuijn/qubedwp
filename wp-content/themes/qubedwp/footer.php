@@ -108,7 +108,7 @@ if ( $footer ) : ?>
 
     <script type="text/javascript">
         $('footer').append('<div class="<?php echo $overlay; ?>"></div>');
-        var c = $('footer .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity / 100 ?: '1'; ?>)');
+        var c = $('footer .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ? ($opacity / 100) : '1'; ?>)');
         $('footer .overlay').css('background-color', c);
 
         $('footer').append('<div class="<?php echo $color; ?>"></div>');
