@@ -227,7 +227,7 @@ function my_wpcf7_form_elements( $content ) {
     if ( !isset($_COOKIE['website_cookies']) || $_COOKIE['website_cookies'] == 'no' ) {
         $privacy_policy_page = get_option('wp_page_for_privacy_policy');
         $content = '<div class="card p-3" style="width:100%;max-width:25rem;">
-                        <h4 class="card-title mb-3">Accepteer de cookies om het contactformulier in te vullen!</h4>
+                        <p class="card-text">Accepteer de cookies om het contactformulier in te vullen!</p>
                         <div class="card-body p-0">
                             <button type="button" class="btn btn-primary" onclick="setCookie(\'website_cookies\', \'yes\', 365, null, location.href);">'
                                 . __('Accepteren') . '

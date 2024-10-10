@@ -91,7 +91,7 @@ if ( $slides ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity / 100 ?: '1'; ?>)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
 
             $(document).scroll(function () {

@@ -35,12 +35,13 @@ if ( $posts ) : ?>
                                         echo '<span class="badge bg-primary position-absolute top-0 end-0 m-3">' . esc_html__( 'Nieuw!', 'woocommerce' ) . '</span>';
                                     } ?>
                                     <span class="price" style="display:block;"><?php echo wc_price($product->get_price()); ?></span>
-                                <?php endif; ?>
-                                <?php if(get_the_date()) : ?>
-                                    <small style="display:block;"><i class="fas fa-calendar-alt me-2"></i><?php echo get_the_date(); ?></small>
-                                <?php endif; ?>
-                                <?php if(get_the_excerpt()) : ?>
-                                    <p class="card-text mt-3"><?php echo get_the_excerpt(); ?></p>
+                                <?php else : ?>
+                                    <?php if(get_the_date()) : ?>
+                                        <small style="display:block;"><i class="fas fa-calendar-alt me-2"></i><?php echo get_the_date(); ?></small>
+                                    <?php endif; ?>
+                                    <?php if(get_the_excerpt()) : ?>
+                                        <p class="card-text mt-3"><?php echo get_the_excerpt(); ?></p>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Bekijk <?php echo strtolower(get_post_type_object(get_post_type($post->ID))->labels->singular_name); ?></a>
                             </div>

@@ -1,17 +1,18 @@
 <?php
 
-$menuLocations = get_nav_menu_locations();
+$menus = get_nav_menu_locations();
 
-$footerMenu = wp_get_nav_menu_object($menuLocations['footer-menu']);
-$footerMenuBackground = get_field('footer_menu_achtergrond', $footerMenu);
-$footerMenuColor = get_field('footer_menu_kleur', $footerMenu);
-$footerMenuLogo = get_field('footer_menu_logo', $footerMenu);
-$footerMenuImage = get_field('footer_menu_afbeelding', $footerMenu);
-$footerMenuText = get_field('footer_menu_tekst', $footerMenu);
+$footer = wp_get_nav_menu_object($menus['footer-menu']);
+$overlay = get_field('overlay', $footer);
+$opacity = get_field('transparantie', $footer);
+$color = get_field('kleur', $footer);
+$logo = get_field('logo', $footer);
+$image = get_field('afbeelding', $footer);
+$text = get_field('tekst', $footer);
 
-if ( $footerMenu ) : ?>
+if ( $footer ) : ?>
 
-    <footer class="block-footer position-relative <?php echo $footerMenuBackground . ' ' . $footerMenuColor; ?>" data-block style="background-image:url('<?php echo $footerMenuImage; ?>');background-size:cover;background-position:center;">
+    <footer class="block-footer position-relative <?php echo $color; ?>" data-block style="background-image:url('<?php echo $image; ?>');background-size:cover;background-position:center;">
         <div class="overlay"></div>
 
         <div class="container position-relative" style="z-index:1;">
@@ -19,10 +20,10 @@ if ( $footerMenu ) : ?>
             <div class="row">
                 <div class="col-lg text-center" data-aos="fade-up">
 
-                    <?php if ( $footerMenuLogo ) : ?>
+                    <?php if ( $logo ) : ?>
 
                         <a class="footer-brand p-0" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                            <?php echo wp_get_attachment_image( $footerMenuLogo, 'full', '', array('class' => 'img-fluid', 'loading' => 'eager') ); ?>
+                            <?php echo wp_get_attachment_image( $logo, 'full', '', array('class' => 'img-fluid', 'loading' => 'eager') ); ?>
                         </a>
 
                     <?php else : ?>
@@ -38,16 +39,16 @@ if ( $footerMenu ) : ?>
 
             <?php
 
-            $socialMediaChannels = get_field('social_media_kanalen', 'options');
+            $socials = get_field('social_media_kanalen', 'options');
 
-            if ( $socialMediaChannels ) : ?>
+            if ( $socials ) : ?>
 
                 <div class="row">
                     <div class="col-lg text-center pt-5" data-aos="fade-up">
 
                         <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
 
-                            $text = get_sub_field('naam');
+                            $name = get_sub_field('naam');
                             $icon = get_sub_field('icoon');
                             $link = get_sub_field('link'); ?>
 
@@ -72,12 +73,12 @@ if ( $footerMenu ) : ?>
 
             <?php endif; ?>
 
-            <?php if ( $footerMenuText ) : ?>
+            <?php if ( $text ) : ?>
 
                 <div class="row">
                     <div class="col-lg pt-5" data-aos="fade-up">
 
-                        <?php echo $footerMenuText; ?>
+                        <?php echo $text; ?>
 
                     </div>
                 </div>
@@ -106,12 +107,12 @@ if ( $footerMenu ) : ?>
     </footer>
 
     <script type="text/javascript">
-        $('footer').append('<div class="<?php echo $footerMenuBackground; ?>"></div>');
-        var c = $('footer .<?php echo $footerMenuBackground; ?>').css('background-color').replace('b', 'ba').replace(')', ', 1)');
+        $('footer').append('<div class="<?php echo $overlay; ?>"></div>');
+        var c = $('footer .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity / 100 ?: '1'; ?>)');
         $('footer .overlay').css('background-color', c);
 
-        $('footer').append('<div class="<?php echo $footerMenuColor; ?>"></div>');
-        var d = $('footer .<?php echo $footerMenuColor; ?>').css('color');
+        $('footer').append('<div class="<?php echo $color; ?>"></div>');
+        var d = $('footer .<?php echo $color; ?>').css('color');
         $('footer a').css('color', d);
     </script>
 

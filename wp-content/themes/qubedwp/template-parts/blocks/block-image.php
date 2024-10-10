@@ -127,11 +127,7 @@ if ( $image ) : ?>
 
         <script type="text/javascript">
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            <?php if( $position == 'center' ) : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
-            <?php else : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
-            <?php endif; ?>
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity / 100 ?: '1'; ?>)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
         </script>
     </div>

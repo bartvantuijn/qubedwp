@@ -129,7 +129,7 @@
             "label": "Video",
             "name": "video",
             "aria-label": "",
-            "type": "oembed",
+            "type": "file",
             "instructions": "Selecteer de video van het blok",
             "required": 0,
             "conditional_logic": 0,
@@ -138,8 +138,12 @@
                 "class": "",
                 "id": ""
             },
-            "width": "",
-            "height": ""
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ".mp4",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_6580a3da9443c",
@@ -186,11 +190,12 @@
             },
             "default_value": "",
             "min": 0,
-            "max": 1,
+            "max": 100,
+            "allow_in_bindings": 1,
             "placeholder": "",
-            "step": "",
+            "step": 1,
             "prepend": "",
-            "append": ""
+            "append": "%"
         },
         {
             "key": "field_650b3b63bb95b",
@@ -316,5 +321,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721938528
+    "modified": 1728587725
 }

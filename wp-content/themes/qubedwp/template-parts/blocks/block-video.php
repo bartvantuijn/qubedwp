@@ -9,52 +9,9 @@ $height = get_sub_field('hoogte');
 $video = get_sub_field('video');
 $position = get_sub_field('tekstpositie');
 
-if ( $video ) :
-
-    // Use preg_match to find iframe src.
-    preg_match('/src="(.+?)"/', $video, $matches);
-    $src = $matches[1];
-
-    if (preg_match('/embed\/(.*?)\?/', $src, $match) == 1) {
-        $id = $match[1];
-    }
-
-    // Add extra parameters to src and replace HTML.
-    $params = array(
-        'hd'                => 1,
-        'autoplay'          => 1,
-        'controls'          => 1,
-        'loop'              => 1,
-        'mute'              => 1,
-        'muted'             => 1,
-        'playlist'          => $id ?? '',
-    );
-    $new_src = add_query_arg($params, $src);
-    $video = str_replace($src, $new_src, $video);
-
-    // Add extra attributes to iframe HTML.
-    $attributes = 'frameborder="0" class="pe-none"';
-    $video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video); ?>
+if ( $video ) : ?>
 
     <div class="block-video <?php echo $background; ?>" data-block data-block-position="<?php echo $position; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
-        <style>
-            .embed-container {
-                position: relative;
-                padding-bottom: 56.25%;
-                overflow: hidden;
-                max-width: 100%;
-                height: 100%;
-            }
-
-            .embed-container iframe,
-            .embed-container object,
-            .embed-container embed {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
 
         <div class="<?php echo ($position == 'center' ? 'container-fluid' : 'container'); ?>">
 
@@ -119,10 +76,11 @@ if ( $video ) :
                 <div class="video col-lg position-relative d-flex flex-column justify-content-center py-5 px-0 order-2 overflow-hidden" style="min-height:<?php echo $height ?: '450px'; ?>;" data-aos="fade-up">
 
                     <div class="position-absolute w-100 h-100">
-                        <div class="embed-container">
-                            <div class="overlay"></div>
-                            <?php echo $video; ?>
-                        </div>
+                        <div class="overlay"></div>
+                        <video autoplay muted loop playsinline>
+                            <source src="<?php echo $video['url']; ?>" type="video/mp4">
+                            Je browser ondersteunt geen video-element.
+                        </video>
                     </div>
 
                     <?php if ( $position == 'center' ) : ?>
@@ -182,15 +140,8 @@ if ( $video ) :
         </div>
 
         <script type="text/javascript">
-            var iframe = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').height();
-            $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .embed-container > *').css('top', (iframe - <?php echo str_replace('px', '', $height) ?: 450; ?>) / -2 + 'px');
-
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"]').append('<div class="<?php echo $overlay; ?>"></div>');
-            <?php if( $position == 'center' ) : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
-            <?php else : ?>
-                var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity ?: '1'; ?>)');
-            <?php endif; ?>
+            var c = $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .<?php echo $overlay; ?>').css('background-color').replace('b', 'ba').replace(')', ', <?php echo $opacity / 100 ?: '1'; ?>)');
             $('*[data-block-count="<?php echo $args['blockCount']; ?>"] .overlay').css('background-color', c);
         </script>
     </div>

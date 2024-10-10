@@ -3,12 +3,12 @@
     "title": "Footer menu",
     "fields": [
         {
-            "key": "field_651c623ce9c3a",
-            "label": "Achtergrond",
-            "name": "footer_menu_achtergrond",
+            "key": "field_6708210b6947f",
+            "label": "Overlay",
+            "name": "overlay",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "Selecteer de overlay kleur van de footer",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,6 +17,7 @@
                 "id": ""
             },
             "choices": {
+                "bg-transparent": "Geen",
                 "bg-white": "Wit",
                 "bg-primary": "Primair",
                 "bg-secondary": "Secundair",
@@ -26,17 +27,41 @@
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
         },
         {
+            "key": "field_6708212669480",
+            "label": "Transparantie",
+            "name": "transparantie",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Voer de transparantie van de overlay in",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": 1,
+            "prepend": "",
+            "append": "%"
+        },
+        {
             "key": "field_651c6322e9c3b",
             "label": "Kleur",
-            "name": "footer_menu_kleur",
+            "name": "kleur",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "Selecteer de tekst kleur van de footer",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,6 +80,7 @@
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -62,10 +88,10 @@
         {
             "key": "field_64956754058e7",
             "label": "Logo",
-            "name": "footer_menu_logo",
+            "name": "logo",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Selecteer het logo van de footer",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -82,15 +108,16 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
+            "allow_in_bindings": 1,
             "preview_size": "medium"
         },
         {
             "key": "field_651c61fae9c39",
             "label": "Afbeelding",
-            "name": "footer_menu_afbeelding",
+            "name": "afbeelding",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Selecteer de afbeelding van de footer",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,12 +134,13 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
+            "allow_in_bindings": 1,
             "preview_size": "medium"
         },
         {
             "key": "field_65d79bf339208",
             "label": "Tekst",
-            "name": "footer_menu_tekst",
+            "name": "tekst",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -124,10 +152,11 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "text",
-            "media_upload": 0,
+            "allow_in_bindings": 1,
+            "tabs": "all",
             "toolbar": "full",
-            "delay": 0
+            "media_upload": 0,
+            "delay": 1
         }
     ],
     "location": [
@@ -148,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1708629025
+    "modified": 1728587954
 }

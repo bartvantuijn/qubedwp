@@ -287,6 +287,18 @@ a[href="#"]:not(.dropdown-toggle):hover {
     display: flex;
 }
 
+/*----- BLOCK VIDEO -----*/
+.block-video .video {
+    width: 100%;
+    overflow: hidden;
+}
+
+.block-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*----- BLOCK CAROUSEL -----*/
 .block-carousel .slick-track {
     display: flex;
