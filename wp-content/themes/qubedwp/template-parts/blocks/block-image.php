@@ -12,7 +12,7 @@ $position = get_sub_field('tekstpositie');
 
 if ( $image ) : ?>
 
-    <div class="block-image <?php echo $background; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-image <?php echo $background; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-position="<?php echo $position; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="container">
 

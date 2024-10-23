@@ -37,6 +37,10 @@ body {
     color: var(--bs-body-color);
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 a {
     color: var(--bs-primary);
 }

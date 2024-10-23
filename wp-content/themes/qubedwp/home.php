@@ -21,7 +21,7 @@
                                     <div class="card-body text-body p-0">
                                         <h2 class="card-title h5"><?php the_title(); ?></h2>
                                         <?php if(get_the_date()) : ?>
-                                            <small><i class="fas fa-calendar-alt me-2"></i><?php echo get_the_date(); ?></small>
+                                            <small style="display:block;"><i class="fas fa-calendar-alt me-2"></i><?php echo get_the_date(); ?></small>
                                         <?php endif; ?>
                                         <?php if(get_the_excerpt()) : ?>
                                             <p class="card-text mt-3"><?php echo get_the_excerpt(); ?></p>

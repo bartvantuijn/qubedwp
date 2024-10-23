@@ -11,7 +11,7 @@ $position = get_sub_field('tekstpositie');
 
 if ( $video ) : ?>
 
-    <div class="block-video <?php echo $background; ?>" data-block data-block-position="<?php echo $position; ?>" data-block-background="<?php echo $background; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
+    <div class="block-video <?php echo $background; ?>" data-block data-block-background="<?php echo $background; ?>" data-block-position="<?php echo $position; ?>" data-block-count="<?php echo $args['blockCount']; ?>">
 
         <div class="<?php echo ($position == 'center' ? 'container-fluid' : 'container'); ?>">
 
