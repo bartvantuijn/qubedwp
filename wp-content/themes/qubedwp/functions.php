@@ -10,19 +10,28 @@ function check_license() {
         return; // Als er geen licentie is, niets doen
     }
 
-    $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
-        'body' => [
-            'key' => $key,
-            'domain' => $_SERVER['HTTP_HOST'],
-        ],
-    ]);
+    // Probeer de licentie-informatie uit de cache te halen
+    $data = get_transient('license_check_' . $key);
 
-    if (is_wp_error($response)) {
-        return; // Fout bij verbinding maken met de API, geen actie ondernemen
+    if (false === $data) {
+        // De cache is leeg of verlopen, dus doe een API-aanroep
+        $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
+            'body' => [
+                'key' => $key,
+                'domain' => $_SERVER['HTTP_HOST'],
+            ],
+        ]);
+
+        if (is_wp_error($response)) {
+            return; // Fout bij verbinding maken met de API, geen actie ondernemen
+        }
+
+        // Haal de API-respons op en decodeer
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+
+        // Cache de gegevens voor 24 uur
+        set_transient('license_check_' . $key, $data, 24 * HOUR_IN_SECONDS);
     }
-
-    // Haal de API-respons op en decodeer
-    $data = json_decode(wp_remote_retrieve_body($response), true);
 
     // Controleer of de licentie ongeldig is
     if (empty($data['status']) || $data['status'] !== 'valid') {
