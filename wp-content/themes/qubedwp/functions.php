@@ -1,6 +1,48 @@
 <?php
 //QubedWP Functions
 
+//Validate Licence Key
+function check_license() {
+    $key = get_field('code', 'options'); // Ophalen van licentie uit de database
+
+    // Controleer of er een licentie is ingesteld
+    if (!isset($key)) {
+        return; // Als er geen licentie is, niets doen
+    }
+
+    $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
+        'body' => [
+            'key' => $key,
+            'domain' => $_SERVER['HTTP_HOST'],
+        ],
+    ]);
+
+    if (is_wp_error($response)) {
+        return; // Fout bij verbinding maken met de API, geen actie ondernemen
+    }
+
+    // Haal de API-respons op en decodeer
+    $data = json_decode(wp_remote_retrieve_body($response), true);
+
+    // Controleer of de licentie ongeldig is
+    if (empty($data['status']) || $data['status'] !== 'valid') {
+        if (!is_admin() && !is_login()) {
+            // Toon een simpele melding op de frontend
+            wp_die(
+                __('Deze website is tijdelijk niet beschikbaar vanwege een ongeldig licentieprobleem. Neem contact op met de beheerder.'),
+                __('Licentieprobleem'),
+                ['response' => 403]
+            );
+        } else {
+            // Toon een admin notice in de backend
+            add_action('admin_notices', function () use ($data) {
+                echo '<div class="notice notice-error"><p>' . __($data['message'] . ' Neem contact op met support.') . '</p></div>';
+            });
+        }
+    }
+}
+add_action('init', 'check_license');
+
 //Custom Theme Setup
 function custom_theme_setup() {
     add_theme_support( 'menus' );
@@ -308,6 +350,12 @@ if ( function_exists('acf_add_options_page') ) {
         'capability'  => 'manage_options',
         'redirect'    => true,
         'icon_url'    => 'dashicons-layout',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Licentie',
+        'menu_title'  => 'Licentie',
+        'parent_slug' => 'instellingen',
     ));
 
     acf_add_options_sub_page(array(
