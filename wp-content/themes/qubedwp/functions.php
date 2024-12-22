@@ -13,7 +13,7 @@ function check_license() {
     // Probeer de licentie-informatie uit de cache te halen
     $data = get_transient('license_check_' . $key);
 
-    if (false === $data) {
+    if (empty($data)) {
         // De cache is leeg of verlopen, dus doe een API-aanroep
         $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
             'body' => [
