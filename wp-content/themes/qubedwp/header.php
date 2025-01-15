@@ -33,6 +33,12 @@ if( ! class_exists('ACF') ) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <meta name="author" content="Qubed Group">
 
+    <link rel="icon" type="image/png" href="<?php echo bloginfo('url') . '/favicon/favicon-96x96.png'; ?>" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?php echo bloginfo('url') . '/favicon/favicon.svg'; ?>" />
+    <link rel="shortcut icon" href="<?php echo bloginfo('url') . '/favicon/favicon.icon'; ?>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo bloginfo('url') . '/favicon/apple-touch-icon.png'; ?>" />
+    <meta name="apple-mobile-web-app-title" content="<?php echo bloginfo('name'); ?>" />
+
     <?php
 
     $customColors = get_field('uiterlijk_kleuren_aanpassen', 'options');
@@ -46,27 +52,11 @@ if( ! class_exists('ACF') ) {
                 $primary = get_sub_field('primair');
                 $primary_hex = sprintf("#%02x%02x%02x", $primary['red'], $primary['green'], $primary['blue']); ?>
 
-                <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('url'); echo '/favicon/apple-touch-icon.png'; ?>">
-                <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('url'); echo '/favicon/favicon-32x32.png'; ?>">
-                <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('url'); echo '/favicon/favicon-16x16.png'; ?>">
-                <link rel="manifest" href="<?php bloginfo('url'); echo '/favicon/site.webmanifest'; ?>">
-                <link rel="mask-icon" href="<?php bloginfo('url'); echo '/favicon/safari-pinned-tab.svg'; ?>" color="<?php echo $primary_hex; ?>">
-                <meta name="msapplication-TileColor" content="<?php echo $primary_hex; ?>">
                 <meta name="theme-color" content="<?php echo $primary_hex; ?>">
 
             <?php endwhile; ?>
 
         <?php endif; ?>
-
-    <?php else : ?>
-
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('url'); echo '/favicon/apple-touch-icon.png'; ?>">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('url'); echo '/favicon/favicon-32x32.png'; ?>">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('url'); echo '/favicon/favicon-16x16.png'; ?>">
-        <link rel="manifest" href="<?php bloginfo('url'); echo '/favicon/site.webmanifest'; ?>">
-        <link rel="mask-icon" href="<?php bloginfo('url'); echo '/favicon/safari-pinned-tab.svg'; ?>" color="#ffffff">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="theme-color" content="#ffffff">
 
     <?php endif; ?>
 

@@ -6,6 +6,7 @@ $headerTopMenu = wp_get_nav_menu_object($menuLocations['header-topmenu']);
 $headerTopMenuBackground = get_field('header_topmenu_achtergrond', $headerTopMenu);
 $headerTopMenuAlignment = get_field('header_topmenu_uitlijnen', $headerTopMenu);
 $headerTopMenuSlider = get_field('header_topmenu_slider', $headerTopMenu);
+$headerTopMenuSocials = get_field('header_topmenu_socials', $headerTopMenu);
 
 if ( $headerTopMenu ) : ?>
 
@@ -32,6 +33,40 @@ if ( $headerTopMenu ) : ?>
 
         <div class="navbar navbar-expand <?php echo $headerTopMenuBackground ?: 'bg-primary'; ?>" style="z-index:999;">
             <div class="container">
+
+                <?php if ($headerTopMenuSocials) : ?>
+
+                    <ul class="navbar-nav">
+
+                        <?php while ( have_rows('social_media_kanalen', 'options') ) : the_row();
+
+                            $name = get_sub_field('naam');
+                            $icon = get_sub_field('icoon');
+                            $link = get_sub_field('link'); ?>
+
+                            <?php if ( $link ) : ?>
+
+                                <li class="nav-item">
+
+                                    <?php echo '<a class="nav-link" href="' . $link['url'] . '" title="' . $link['title'] . '" target="' . $link['target'] . '">'; ?>
+
+                                    <?php if ( $icon ) : ?>
+
+                                        <?php echo '<i class="fab fa-' . $icon . '"></i>'; ?>
+
+                                    <?php endif; ?>
+
+                                    <?php echo '</a>'; ?>
+
+                                </li>
+
+                            <?php endif; ?>
+
+                        <?php endwhile; ?>
+
+                    </ul>
+
+                <?php endif; ?>
 
                 <?php
                 wp_nav_menu( array(
