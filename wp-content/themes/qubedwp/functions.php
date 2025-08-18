@@ -18,7 +18,7 @@ function check_license() {
         $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
             'body' => [
                 'key' => $key,
-                'domain' => $_SERVER['HTTP_HOST'],
+                'domain' => strtolower($_SERVER['HTTP_HOST']),
             ],
         ]);
 
