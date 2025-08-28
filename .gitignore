@@ -8,6 +8,7 @@
 /wp-content/themes/*
 !/wp-content/themes/qubedwp
 !/wp-content/themes/qubedwp-child
+!/.github
 !/.gitignore
 !/README.md
 !/LICENSE.md
