@@ -1,5 +1,6 @@
 QubedWP Theme
-© 2024 Qubed Group. All rights reserved.
+
+Copyright © 2025 Qubed Group. All rights reserved.
 
 This theme is proprietary software. Unauthorized redistribution, modification, or resale is prohibited.
 You are granted a non-exclusive, non-transferable license to use this theme under the terms specified in your agreement with Qubed Group.

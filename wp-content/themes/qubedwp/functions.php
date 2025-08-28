@@ -14,11 +14,15 @@ function check_license() {
     $data = get_transient('license_check_' . $key);
 
     if (empty($data)) {
+        // Normaliseer de domeinnaam uit de WordPress instellingen
+        $parsed = parse_url(home_url());
+        $domain = strtolower(preg_replace('/^www\./i', '', $parsed['host']));
+
         // De cache is leeg of verlopen, dus doe een API-aanroep
         $response = wp_remote_post('https://portal.qubed.systems/api/license/validate', [
             'body' => [
                 'key' => $key,
-                'domain' => strtolower($_SERVER['HTTP_HOST']),
+                'domain' => $domain,
             ],
         ]);
 
