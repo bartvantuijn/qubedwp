@@ -10,5 +10,6 @@
 !/wp-content/themes/qubedwp-child
 !/.github
 !/.gitignore
+!/images
 !/README.md
 !/LICENSE.md
