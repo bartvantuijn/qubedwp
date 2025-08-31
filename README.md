@@ -1,12 +1,12 @@
 <p align="center">
-    <img src="images/logo.svg" width="250" alt="QubedWP Logo">
+    <img src="images/logo.svg" width="250" alt="Qubed Logo">
 </p>
 
 A flexible and reusable WordPress theme powered by [ACF Pro][acf] and [WooCommerce][woocommerce], designed for consistent, lightweight, and customizable websites.
 
 ---
 
-> Please note that QubedWP is still under active development
+> Please note that Qubed Portal is an internal project of Qubed Group
 
 ## Installation
 
