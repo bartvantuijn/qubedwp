@@ -6,7 +6,7 @@ A flexible and reusable WordPress theme powered by [ACF Pro][acf] and [WooCommer
 
 ---
 
-> Please note that Qubed Portal is an internal project of Qubed Group
+> Please note that **QubedWP** is an internal project of Qubed Group
 
 ## Installation
 
