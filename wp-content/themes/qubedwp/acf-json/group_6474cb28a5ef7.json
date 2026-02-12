@@ -1363,6 +1363,7 @@
                                         "id": ""
                                     },
                                     "layout": "block",
+                                    "parent_repeater": "field_65d877f8fa534",
                                     "sub_fields": [
                                         {
                                             "key": "field_661846031bc61",
@@ -1386,8 +1387,7 @@
                                             "prefix_label": 0,
                                             "prefix_name": 0
                                         }
-                                    ],
-                                    "parent_repeater": "field_65d877f8fa534"
+                                    ]
                                 }
                             ]
                         }
@@ -1444,6 +1444,27 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_698e3cf25be34",
+                            "label": "Verberg meta",
+                            "name": "verberg_meta",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "ui": 1
                         },
                         {
                             "key": "field_6496299670f1a",
@@ -1849,7 +1870,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "product"
+                "value": "post"
             }
         ]
     ],
@@ -1862,5 +1883,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728498667
+    "modified": 1770929552
 }

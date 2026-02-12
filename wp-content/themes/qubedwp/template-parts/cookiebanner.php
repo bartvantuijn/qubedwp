@@ -14,12 +14,12 @@ if ( $cookieBannerActive ) :
                     <?php echo $cookieBannerText; ?>
                 </p>
             <?php endif; ?>
-            <button type="button" class="btn btn-primary" onclick="setCookie('website_cookies', 'yes', 365, $('#cookiebanner'));">Accepteren</button>
-            <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, $('#cookiebanner'));">Weigeren</button>
+            <button type="button" class="btn btn-primary" onclick="setCookie('website_cookies', 'yes', 365, $('#cookiebanner'));"><?php echo __('Accepteren', 'qubedwp'); ?></button>
+            <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, $('#cookiebanner'));"><?php echo __('Weigeren', 'qubedwp'); ?></button>
             <?php
             $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
             if( $privacy_policy_page && get_post_status($privacy_policy_page) == 'publish') : ?>
-                <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, null, '<?php echo esc_url( get_permalink( $privacy_policy_page ) ); ?>');">Privacybeleid</button>
+                <button type="button" class="btn btn-light" onclick="setCookie('website_cookies', 'no', 1, null, '<?php echo esc_url( get_permalink( $privacy_policy_page ) ); ?>');"><?php echo __('Privacybeleid', 'qubedwp'); ?></button>
             <?php endif;?>
         </div>
     </div>

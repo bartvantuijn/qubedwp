@@ -1,0 +1,19 @@
+services:
+  qubedwp:
+    container_name: qubedwp
+    image: wordpress:latest
+    restart: unless-stopped
+    networks:
+      - venton
+    volumes:
+      - ./:/var/www/html
+    environment:
+      WORDPRESS_DB_NAME: qubedwp
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_HOST: venton_database
+      VIRTUAL_HOST: qubedwp.local
+
+networks:
+  venton:
+    external: true

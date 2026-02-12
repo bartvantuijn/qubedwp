@@ -9,8 +9,8 @@
                 <div class="row">
                     <div class="col-lg" data-aos="fade-up">
 
-                        <h1>Niet gevonden</h1>
-                        <p>Helaas, de pagina die je zoekt is niet gevonden.</p>
+                        <h1><?php echo __('Niet gevonden', 'qubedwp'); ?></h1>
+                        <p><?php echo __('Helaas, de pagina die je zoekt is niet gevonden.', 'qubedwp'); ?></p>
                         <?php get_search_form(); ?>
 
                     </div>

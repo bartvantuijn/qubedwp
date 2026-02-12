@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg" data-aos="fade-up">
 
-                        <h1 class="mb-3">Resultaten voor "<?php echo $_GET['s']; ?>"</h1>
+                        <h1 class="mb-3"><?php echo __('Resultaten voor', 'qubedwp'); ?> "<?php echo $_GET['s']; ?>"</h1>
                         <?php get_search_form(); ?>
 
                         <ul class="list-group mt-3">

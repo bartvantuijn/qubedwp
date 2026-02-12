@@ -58,6 +58,7 @@ add_action('init', 'check_license');
 
 //Custom Theme Setup
 function custom_theme_setup() {
+    load_theme_textdomain('qubedwp', get_template_directory() . '/languages');
     add_theme_support( 'menus' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
@@ -282,17 +283,17 @@ function my_wpcf7_form_elements( $content ) {
     if ( !isset($_COOKIE['website_cookies']) || $_COOKIE['website_cookies'] == 'no' ) {
         $privacy_policy_page = get_option('wp_page_for_privacy_policy');
         $content = '<div class="card p-3" style="width:100%;max-width:25rem;">
-                        <p class="card-text">Accepteer de cookies om het contactformulier in te vullen!</p>
+                        <p class="card-text">' . __('Accepteer de cookies om het contactformulier in te vullen!', 'qubedwp') . '</p>
                         <div class="card-body p-0">
                             <button type="button" class="btn btn-primary" onclick="setCookie(\'website_cookies\', \'yes\', 365, null, location.href);">'
-                                . __('Accepteren') . '
+                                . __('Accepteren', 'qubedwp') . '
                             </button>
                             <button type="button" class="btn btn-light" onclick="setCookie(\'website_cookies\', \'no\', 1, null, location.href);">'
-                                . __('Weigeren') . '
+                                . __('Weigeren', 'qubedwp') . '
                             </button>';
         if ($privacy_policy_page) {
             $content .= '<button type="button" class="btn btn-light" onclick="setCookie(\'website_cookies\', \'no\', 1, null,\'' . esc_url( get_permalink( $privacy_policy_page ) ) . '\');">'
-                            . __('Privacybeleid') . '
+                            . __('Privacybeleid', 'qubedwp') . '
                          </button>';
         }
         $content .= '</div>
